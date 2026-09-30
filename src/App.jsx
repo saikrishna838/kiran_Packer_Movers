@@ -13,7 +13,6 @@ export default function App() {
   const [showAdminPassword, setShowAdminPassword] = useState(false);
   const [adminEmail, setAdminEmail] = useState("");
   const [adminPassword, setAdminPassword] = useState("");
-  const [adminRole, setAdminRole] = useState("Branch Manager");
   const [rememberDevice, setRememberDevice] = useState(false);
   const [showAddLocation, setShowAddLocation] = useState(false);
   const [customLocations, setCustomLocations] = useState(() => {
@@ -44,7 +43,7 @@ export default function App() {
     address:
       "9-1-218, Street No. 7, Mukarampura, Mahalaxmi Supermarket, Karimnagar-505002, Telangana",
     maps:
-      "https://www.google.com/maps/search/?api=1&query=Nain+Packers+And+Movers%2C+9-1-218%2C+Street+No.+7%2C+Mukarampura%2C+Karimnagar%2C+Telangana",
+      "https://www.google.com/maps/search/?api=1&query=Kiran+Packers+And+Movers%2C+9-1-218%2C+Street+No.+7%2C+Mukarampura%2C+Karimnagar%2C+Telangana",
   };
 
   const getUserLocation = () => {
@@ -872,7 +871,7 @@ export default function App() {
       a: "Yes. Local relocation support is available for shifting requirements around Karimnagar and nearby areas.",
     },
     {
-      q: "How can I contact Nain Packers And Movers?",
+      q: "How can I contact Kiran Packers And Movers?",
       a: "You can call the listed number, use WhatsApp, or visit the Mukarampura location using the Google Maps button.",
     },
   ];
@@ -934,7 +933,7 @@ export default function App() {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      "Hello Nain Packers And Movers, I would like to know more about your packing and moving services."
+      "Hello Kiran Packers And Movers, I would like to know more about your packing and moving services."
     );
 
     window.open(
@@ -984,7 +983,7 @@ export default function App() {
     e.preventDefault();
 
     alert(
-      "Thank you for contacting Nain Packers And Movers. Your enquiry has been submitted."
+      "Thank you for contacting Kiran Packers And Movers. Your enquiry has been submitted."
     );
 
     setShowQuote(false);
@@ -1474,24 +1473,13 @@ export default function App() {
           font-weight: 700;
         }
 
-        .hero-action-contact-row {
-          width: 100%;
-          margin-top: 15px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) auto;
-          align-items: center;
-          gap: 16px;
-        }
-
         .hero-actions {
           display: flex;
-          justify-content: flex-end;
+          justify-content: flex-start;
           align-items: center;
-          gap: 8px;
-          flex-wrap: nowrap;
-          margin-top: 0;
-          flex: 0 0 auto;
-          min-width: max-content;
+          gap: 13px;
+          flex-wrap: wrap;
+          margin-top: 15px;
         }
 
         .btn {
@@ -1528,34 +1516,216 @@ export default function App() {
         }
 
         .hero-contact {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          align-items: center;
-          gap: 12px;
-          min-width: 0;
-          width: 100%;
+          margin-top: 17px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 30px;
+          flex-wrap: wrap;
         }
 
         .hero-contact-item {
           color: #e7f0fb;
-          font-size: 12.5px;
+          font-size: 14px;
           text-align: left;
-          white-space: nowrap;
-          min-width: 0;
-          overflow: visible;
         }
 
         .hero-contact-item strong {
           color: #E18443;
-          display: inline;
-          font-size: 10px;
+          display: block;
+          font-size: 11px;
           letter-spacing: 1px;
           text-transform: uppercase;
-          margin-right: 6px;
+          margin-bottom: 4px;
         }
 
-        .hero-contact-item span {
-          color: #e7f0fb;
+        .hero-layout {
+          position: relative;
+          z-index: 2;
+          width: min(1380px, calc(100% - 40px));
+          margin: 0 auto;
+          padding: 24px 0;
+          display: grid;
+          grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
+          gap: 34px;
+          align-items: center;
+        }
+
+        .hero-layout .hero-content {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .hero-quote-card {
+          width: 100%;
+          padding: 26px;
+          border-radius: 22px;
+          background: #f4f4f4;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+          color: #18283a;
+        }
+
+        .hero-quote-kicker {
+          display: inline-flex;
+          padding: 7px 11px;
+          border-radius: 999px;
+          background: #e18443;
+          color: #ffffff;
+          font-size: 10px;
+          font-weight: 900;
+          letter-spacing: 1.5px;
+        }
+
+        .hero-quote-card h2 {
+          margin: 12px 0 5px;
+          color: #10253b;
+          font-family: Georgia, serif;
+          font-size: clamp(28px, 3vw, 38px);
+          line-height: 1.1;
+        }
+
+        .hero-quote-intro {
+          margin: 0 0 15px;
+          color: #607083;
+          font-size: 13px;
+          line-height: 1.55;
+        }
+
+        .hero-price-box {
+          margin-bottom: 16px;
+          padding: 12px 14px;
+          border-radius: 12px;
+          background: #e9e9e9;
+          border-left: 4px solid #d96b27;
+        }
+
+        .hero-price-box strong {
+          display: block;
+          color: #b9541e;
+          font-size: 12px;
+          letter-spacing: 0.4px;
+        }
+
+        .hero-price-box span {
+          display: block;
+          margin-top: 3px;
+          color: #68798a;
+          font-size: 11px;
+        }
+
+        .hero-quote-form {
+          width: 100%;
+        }
+
+        .hero-quote-fields {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .hero-form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .hero-form-full {
+          grid-column: 1 / -1;
+        }
+
+        .hero-form-group label {
+          color: #23384c;
+          font-size: 11px;
+          font-weight: 800;
+        }
+
+        .hero-form-group input,
+        .hero-form-group select,
+        .hero-form-group textarea {
+          width: 100%;
+          border: 1px solid #d5dbe2;
+          border-radius: 9px;
+          background: #ffffff;
+          color: #24374a;
+          outline: none;
+          font-size: 12px;
+          padding: 10px 11px;
+          transition: 0.2s ease;
+        }
+
+        .hero-form-group input,
+        .hero-form-group select {
+          min-height: 40px;
+        }
+
+        .hero-form-group textarea {
+          min-height: 68px;
+          resize: vertical;
+        }
+
+        .hero-form-group input:focus,
+        .hero-form-group select:focus,
+        .hero-form-group textarea:focus {
+          border-color: #e18443;
+          box-shadow: 0 0 0 3px rgba(225, 132, 67, 0.12);
+        }
+
+        .hero-quote-submit {
+          width: 100%;
+          margin-top: 14px;
+          padding: 13px 18px;
+          border: 0;
+          border-radius: 10px;
+          background: #d96b27;
+          color: #ffffff;
+          cursor: pointer;
+          font-size: 13px;
+          font-weight: 900;
+          box-shadow: 0 10px 24px rgba(217, 107, 39, 0.22);
+          transition: 0.25s ease;
+        }
+
+        .hero-quote-submit:hover {
+          background: #b9541e;
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 1050px) {
+          .hero-layout {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+
+          .hero-quote-card {
+            max-width: 760px;
+            margin: 0 auto;
+          }
+        }
+
+        @media (max-width: 620px) {
+          .hero-layout {
+            width: min(100% - 24px, 1380px);
+            padding: 18px 0 24px;
+          }
+
+          .hero h1 {
+            white-space: normal;
+            font-size: clamp(34px, 10vw, 48px);
+          }
+
+          .hero-quote-card {
+            padding: 20px 16px;
+            border-radius: 17px;
+          }
+
+          .hero-quote-fields {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-form-full {
+            grid-column: auto;
+          }
         }
 
         /* =========================
@@ -1698,19 +1868,189 @@ export default function App() {
           height: 100%;
           min-height: 330px;
           border-radius: 18px;
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #061A30 0%, #0B2A4A 55%, #122f4f 100%);
+          border: 0;
+          box-shadow: 0 20px 45px rgba(11, 42, 74, 0.22);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-          background:
-            linear-gradient(
-              rgba(11, 42, 74, 0.3),
-              rgba(11, 42, 74, 0.6)
-            ),
-            url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85")
-              center / cover;
+        .kiran-about-animation {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
 
-          border: 5px solid #ffffff;
+        .kiran-about-title {
+          position: absolute;
+          top: 28px;
+          left: 28px;
+          right: 28px;
+          z-index: 5;
+          color: #ffffff;
+          text-align: center;
+          font-size: clamp(24px, 3vw, 38px);
+          font-weight: 900;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          text-shadow: 0 4px 18px rgba(0,0,0,.35);
+        }
 
-          box-shadow:
-            0 20px 45px rgba(11, 42, 74, 0.18);
+        .kiran-about-subtitle {
+          position: absolute;
+          top: 78px;
+          left: 20px;
+          right: 20px;
+          z-index: 5;
+          color: #E18443;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .kiran-road {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 38%;
+          min-height: 105px;
+          background: #182333;
+          border-top: 4px solid #E18443;
+        }
+
+        .kiran-road::after {
+          content: "";
+          position: absolute;
+          left: -10%;
+          right: -10%;
+          top: 50%;
+          height: 6px;
+          background: repeating-linear-gradient(90deg, #f5f5f5 0 70px, transparent 70px 125px);
+          animation: kiranRoad 1.1s linear infinite;
+        }
+
+        @keyframes kiranRoad {
+          from { transform: translateX(0); }
+          to { transform: translateX(-125px); }
+        }
+
+        .kiran-truck {
+          position: absolute;
+          z-index: 4;
+          bottom: 22%;
+          left: -280px;
+          width: min(430px, 78%);
+          animation: kiranTruckMove 7s linear infinite;
+        }
+
+        @keyframes kiranTruckMove {
+          0% { transform: translateX(-20px); }
+          100% { transform: translateX(calc(100vw * 0.78 + 500px)); }
+        }
+
+        .kiran-truck-body {
+          position: relative;
+          height: 105px;
+          border-radius: 10px 12px 8px 8px;
+          background: linear-gradient(180deg, #F28A3D 0%, #D96B27 100%);
+          border: 4px solid #ffffff;
+          box-shadow: 0 12px 25px rgba(0,0,0,.28);
+        }
+
+        .kiran-truck-cabin {
+          position: absolute;
+          right: -88px;
+          bottom: -4px;
+          width: 100px;
+          height: 82px;
+          border-radius: 8px 14px 8px 8px;
+          background: #E18443;
+          border: 4px solid #ffffff;
+        }
+
+        .kiran-truck-window {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          width: 58px;
+          height: 32px;
+          border-radius: 5px;
+          background: #08223c;
+          border: 2px solid rgba(255,255,255,.8);
+        }
+
+        .kiran-truck-name {
+          position: absolute;
+          inset: 25px 15px auto 15px;
+          color: #ffffff;
+          font-size: clamp(15px, 2vw, 24px);
+          font-weight: 900;
+          text-align: center;
+          letter-spacing: 1px;
+          white-space: nowrap;
+        }
+
+        .kiran-wheel {
+          position: absolute;
+          bottom: -25px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: #101820;
+          border: 7px solid #394553;
+          box-shadow: inset 0 0 0 5px #111820;
+          animation: kiranWheel 0.45s linear infinite;
+        }
+
+        .kiran-wheel.one { left: 42px; }
+        .kiran-wheel.two { right: -65px; }
+
+        @keyframes kiranWheel {
+          to { transform: rotate(360deg); }
+        }
+
+        .kiran-speed-line {
+          position: absolute;
+          height: 3px;
+          background: rgba(255,255,255,.6);
+          border-radius: 10px;
+          animation: kiranSpeed 1.2s linear infinite;
+        }
+
+        .kiran-speed-line.one { width: 100px; left: 8%; bottom: 58%; }
+        .kiran-speed-line.two { width: 150px; left: 18%; bottom: 48%; animation-delay: .25s; }
+        .kiran-speed-line.three { width: 75px; left: 3%; bottom: 38%; animation-delay: .5s; }
+
+        @keyframes kiranSpeed {
+          0% { opacity: 0; transform: translateX(80px); }
+          30% { opacity: 1; }
+          100% { opacity: 0; transform: translateX(-170px); }
+        }
+
+        @media (max-width: 900px) {
+          .kiran-truck {
+            width: min(350px, 75%);
+            animation-duration: 6.5s;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .kiran-about-title { top: 22px; }
+          .kiran-about-subtitle { top: 65px; }
+          .kiran-truck { width: 270px; bottom: 24%; }
+          .kiran-truck-body { height: 78px; }
+          .kiran-truck-cabin { right: -68px; width: 78px; height: 62px; }
+          .kiran-truck-window { width: 44px; height: 25px; }
+          .kiran-truck-name { font-size: 14px; inset: 19px 8px auto 8px; }
+          .kiran-wheel { width: 40px; height: 40px; bottom: -20px; border-width: 5px; }
+          .kiran-wheel.one { left: 28px; }
+          .kiran-wheel.two { right: -48px; }
         }
 
         .about-content {
@@ -3021,26 +3361,8 @@ export default function App() {
             padding: 18px;
           }
 
-          .hero-action-contact-row {
-            grid-template-columns: 1fr;
-            gap: 14px;
-          }
-
-          .hero-contact {
-            width: 100%;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-          }
-
-          .hero-contact-item {
-            white-space: normal;
-          }
-
           .hero-actions {
-            width: 100%;
             align-items: stretch;
-            flex-wrap: wrap;
-            min-width: 0;
           }
 
           .hero-actions .btn {
@@ -3049,6 +3371,10 @@ export default function App() {
 
           .home-location-button {
             width: 100%;
+          }
+
+          .hero-contact {
+            gap: 18px;
           }
 
         }
@@ -3099,6 +3425,436 @@ export default function App() {
 
         }
 
+        /* =====================================================
+           FINAL RESPONSIVE SCREEN-FIT OVERRIDES
+           Desktop + Tablet + Mobile
+        ===================================================== */
+
+        html,
+        body,
+        #root {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
+        .app {
+          width: 100%;
+          min-height: 100vh;
+          overflow-x: clip;
+        }
+
+        img,
+        iframe,
+        video,
+        svg {
+          max-width: 100%;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+          max-width: 100%;
+          font: inherit;
+        }
+
+        .container,
+        .nav,
+        .hero-content {
+          width: min(1240px, calc(100% - 32px));
+        }
+
+        .hero {
+          min-height: calc(100vh - 132px);
+          max-height: 760px;
+        }
+
+        .hero-content {
+          padding-top: 34px;
+          padding-bottom: 34px;
+        }
+
+        .hero h1 {
+          font-size: clamp(42px, 4.5vw, 62px);
+          white-space: normal;
+        }
+
+        .section {
+          padding: clamp(42px, 5vw, 68px) 0;
+        }
+
+        .section-heading {
+          margin-bottom: 28px;
+        }
+
+        .service-card,
+        .advantage-card,
+        .process-card,
+        .journal-card,
+        .contact-card,
+        .map-card,
+        .about-content,
+        .about-image {
+          min-width: 0;
+        }
+
+        .service-card p,
+        .advantage-card p,
+        .process-card p,
+        .journal-card p,
+        .contact-card p,
+        .about-content p {
+          overflow-wrap: anywhere;
+        }
+
+        .map-card {
+          width: 100%;
+          overflow: hidden;
+        }
+
+        .map-card iframe {
+          width: 100%;
+          display: block;
+          border: 0;
+        }
+
+        .sa-services-page,
+        .sa-modal,
+        .modal,
+        .quote-modal,
+        .admin-modal {
+          max-width: calc(100vw - 24px);
+        }
+
+        .sa-cities-grid,
+        .service-grid,
+        .advantage-grid,
+        .process-grid,
+        .journal-grid,
+        .footer-grid,
+        .about-grid,
+        .contact-grid,
+        .faq-grid {
+          width: 100%;
+        }
+
+        @media (min-width: 1101px) {
+          .nav {
+            min-height: 82px;
+          }
+
+          .hero-content {
+            padding-top: 38px;
+            padding-bottom: 38px;
+          }
+
+          .hero-extra-matter {
+            margin-top: 22px;
+            margin-bottom: 18px;
+          }
+
+          .section {
+            padding-top: 52px;
+            padding-bottom: 52px;
+          }
+        }
+
+        @media (max-width: 1050px) {
+          .hero {
+            min-height: auto;
+            max-height: none;
+          }
+
+          .hero h1 {
+            font-size: clamp(38px, 6vw, 54px);
+          }
+
+          .hero-extra-points {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .hero-bottom-matter {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .hero-bottom-matter > div:nth-child(2) {
+            border-right: 0;
+          }
+
+          .hero-bottom-matter > div:nth-child(-n + 2) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          }
+        }
+
+        @media (max-width: 850px) {
+          .container,
+          .nav,
+          .hero-content {
+            width: calc(100% - 28px);
+          }
+
+          .header {
+            position: sticky;
+          }
+
+          .nav {
+            min-height: 70px;
+          }
+
+          .hero {
+            min-height: auto;
+            max-height: none;
+          }
+
+          .hero-content {
+            padding: 30px 0 34px;
+          }
+
+          .hero h1 {
+            font-size: clamp(38px, 8vw, 54px);
+            line-height: 1.08;
+          }
+
+          .hero-extra-points {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .hero-contact {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+          }
+
+          .contact-grid,
+          .about-grid {
+            gap: 24px;
+          }
+
+          .footer-grid {
+            gap: 24px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .container,
+          .nav,
+          .hero-content {
+            width: calc(100% - 24px);
+          }
+
+          .nav {
+            gap: 10px;
+          }
+
+          .logo {
+            gap: 8px;
+            min-width: 0;
+          }
+
+          .logo-text strong {
+            font-size: 15px;
+          }
+
+          .logo-text span {
+            font-size: 10px;
+          }
+
+          .logo-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .hero-content {
+            padding: 24px 0 30px;
+          }
+
+          .hero-badge {
+            max-width: 100%;
+            font-size: 10px;
+            padding: 8px 11px;
+            letter-spacing: 0.7px;
+          }
+
+          .hero h1 {
+            font-size: clamp(34px, 10.5vw, 46px);
+            letter-spacing: -0.8px;
+          }
+
+          .hero p {
+            font-size: 14px;
+            line-height: 1.55;
+          }
+
+          .hero-extra-matter {
+            margin: 16px 0;
+          }
+
+          .hero-extra-intro {
+            padding: 16px;
+          }
+
+          .hero-extra-intro h3 {
+            font-size: 18px;
+            line-height: 1.3;
+          }
+
+          .hero-extra-intro p {
+            font-size: 12.5px;
+          }
+
+          .hero-extra-points,
+          .hero-bottom-matter,
+          .hero-contact {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-bottom-matter > div,
+          .hero-bottom-matter > div:nth-child(2) {
+            border-right: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          }
+
+          .hero-bottom-matter > div:last-child {
+            border-bottom: 0;
+          }
+
+          .hero-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+
+          .hero-actions .btn,
+          .contact-actions .btn {
+            width: 100%;
+            min-height: 48px;
+          }
+
+          .hero-contact-item {
+            font-size: 13px;
+          }
+
+          .section {
+            padding: 38px 0;
+          }
+
+          .section-heading h2 {
+            font-size: clamp(28px, 8vw, 38px);
+            line-height: 1.15;
+          }
+
+          .section-heading p {
+            font-size: 14px;
+            line-height: 1.6;
+          }
+
+          .trust-strip {
+            padding: 12px 0;
+          }
+
+          .trust-grid {
+            gap: 8px;
+          }
+
+          .trust-item {
+            padding: 8px 4px;
+          }
+
+          .trust-icon {
+            font-size: 21px;
+          }
+
+          .trust-item strong {
+            font-size: 11px;
+          }
+
+          .trust-item span {
+            font-size: 10px;
+          }
+
+          .about-image {
+            min-height: 240px;
+          }
+
+          .map-card,
+          .map-card iframe {
+            min-height: 280px;
+            height: 280px;
+          }
+
+          .footer-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .sa-search-input,
+          .sa-location-button,
+          .sa-add-location-button {
+            width: 100%;
+            max-width: 100%;
+          }
+
+          .sa-price-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .sa-price-table {
+            min-width: 600px;
+          }
+
+          .admin-modal,
+          .modal,
+          .quote-modal {
+            width: calc(100vw - 20px) !important;
+            max-height: calc(100vh - 20px);
+            overflow-y: auto;
+            padding: 18px !important;
+          }
+
+          .modal-header {
+            gap: 10px;
+          }
+
+          .modal-header h2 {
+            font-size: 23px;
+            line-height: 1.2;
+          }
+
+          input,
+          select,
+          textarea {
+            font-size: 16px !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .container,
+          .nav,
+          .hero-content {
+            width: calc(100% - 18px);
+          }
+
+          .hero h1 {
+            font-size: 32px;
+          }
+
+          .hero-extra-intro {
+            padding: 14px;
+          }
+
+          .service-card,
+          .advantage-card,
+          .process-card {
+            padding: 18px;
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
 
           html {
@@ -3118,31 +3874,6 @@ export default function App() {
             animation: none;
           }
 
-        }
-
-        /* ================= PAGE TIGHTENING ONLY ================= */
-        .section { padding: 22px 0; }
-        .section-heading { margin-bottom: 14px; }
-        .section-heading p { margin-top: 7px; line-height: 1.6; }
-        .footer { padding: 22px 0 14px; }
-        .footer-grid { gap: 20px; padding-bottom: 14px; }
-        .footer h3 { margin-bottom: 9px; }
-        .footer p { line-height: 1.55; }
-        .footer-links { gap: 7px; }
-        .footer-bottom { padding-top: 10px; }
-        .sa-services-page { min-height: auto; padding: 28px 20px 36px; }
-        .sa-heading { margin-bottom: 22px; }
-        .sa-cities-grid { gap: 18px; }
-        .sa-city-card { min-height: 140px; }
-        .sa-location-content-grid { gap: 20px; margin-top: 20px; }
-        .sa-location-section { margin-bottom: 20px; padding: 22px; }
-        .sa-services-list-section { margin-top: 20px; padding: 24px; }
-        @media (max-width: 850px) { .section { padding: 20px 0; } }
-        @media (max-width: 600px) {
-          .section { padding: 18px 0; }
-          .sa-services-page { padding: 22px 16px 28px; }
-          .sa-location-section { padding: 18px; }
-          .sa-services-list-section { padding: 20px; }
         }
 
         /* ================= SERVICE AREAS ONLY ================= */
@@ -4458,62 +5189,44 @@ export default function App() {
           className="hero"
         >
 
-          <div className="hero-content reveal show">
+          <div className="hero-layout">
 
-            <div className="hero-badge blink-text">
-              🚚 PACKING • MOVING • RELOCATION
-            </div>
+            <div className="hero-content reveal show">
 
-            <h1 className="blink-text">
-
-              Move with{" "}
-
-              <span>
-                confidence.
-              </span>
-
-              {" "}
-              Settle with ease.
-
-            </h1>
-
-            <p className="blink-text hero-main-matter">
-
-              Professional packing and moving support. Careful handling for homes and offices. Reliable relocation assistance across Karimnagar and beyond.
-
-            </p>
-
-            <div className="hero-extra-matter">
-
-              <div className="hero-extra-intro">
-
-                <div className="hero-extra-label">
-                  YOUR MOVE, PLANNED BETTER
-                </div>
-
-                <h3>
-                  Complete Packing & Moving Support
-                </h3>
-
-                <p>
-                  Moving to a new home or office becomes easier when every stage is properly planned. Kiran Packers And Movers helps coordinate packing, loading, transportation, unloading and delivery according to your moving requirement.
-                </p>
-
-                <p>
-                  Whether you are shifting within Karimnagar, moving to a nearby city or planning an intercity relocation, our team provides practical moving assistance from pickup to destination.
-                </p>
-
+              <div className="hero-badge blink-text">
+                🚚 PACKING • MOVING • RELOCATION
               </div>
 
-            </div>
+              <h1 className="blink-text">
+                Move with{" "}
+                <span>confidence.</span>{" "}
+                Settle with ease.
+              </h1>
 
-            <div className="hero-action-contact-row">
+              <p className="blink-text hero-main-matter">
+                Professional packing and moving support. Careful handling for homes and offices. Reliable relocation assistance across Karimnagar and beyond.
+              </p>
 
-              <div className="hero-contact">
+              <div className="hero-extra-matter">
 
-                <div className="hero-contact-item">
-                  <strong>Location</strong>
-                  <span>Mukarampura, Karimnagar</span>
+                <div className="hero-extra-intro">
+
+                  <div className="hero-extra-label">
+                    YOUR MOVE, PLANNED BETTER
+                  </div>
+
+                  <h3>
+                    Complete Packing &amp; Moving Support
+                  </h3>
+
+                  <p>
+                    Moving to a new home or office becomes easier when every stage is properly planned. Kiran Packers And Movers helps coordinate packing, loading, transportation, unloading and delivery according to your moving requirement.
+                  </p>
+
+                  <p>
+                    Whether you are shifting within Karimnagar, moving to a nearby city or planning an intercity relocation, our team provides practical moving assistance from pickup to destination.
+                  </p>
+
                 </div>
 
               </div>
@@ -4522,9 +5235,7 @@ export default function App() {
 
                 <button
                   className="btn btn-primary"
-                  onClick={() =>
-                    setShowQuote(true)
-                  }
+                  onClick={() => setShowQuote(true)}
                 >
                   📦 Get Free Quote
                 </button>
@@ -4545,24 +5256,144 @@ export default function App() {
 
               </div>
 
-            </div>
+              {locationMessage && (
+                <div className="home-location-message">
+                  {locationMessage}
+                  {userLocation && (
+                    <span>
+                      {" "}({userLocation.latitude.toFixed(5)}, {" "}
+                      {userLocation.longitude.toFixed(5)})
+                    </span>
+                  )}
+                </div>
+              )}
 
-            {locationMessage && (
+              <div className="hero-contact">
 
-              <div className="home-location-message">
+                <div className="hero-contact-item">
+                  <strong>Location</strong>
+                  Mukarampura, Karimnagar
+                </div>
 
-                {locationMessage}
+                <div className="hero-contact-item">
+                  <strong>Call</strong>
+                  {company.phone}
+                </div>
 
-                {userLocation && (
-                  <span>
-                    {" "}({userLocation.latitude.toFixed(5)},{" "}
-                    {userLocation.longitude.toFixed(5)})
-                  </span>
-                )}
+                <div className="hero-contact-item">
+                  <strong>Support</strong>
+                  Local &amp; Intercity Moves
+                </div>
 
               </div>
 
-            )}
+            </div>
+
+            <div className="hero-quote-card reveal show">
+
+              <div className="hero-quote-kicker">
+                FREE MOVING ESTIMATE
+              </div>
+
+              <h2>
+                Get Your Free Quote
+              </h2>
+
+              <p className="hero-quote-intro">
+                Tell us a few details about your moving requirement.
+              </p>
+
+              <div className="hero-price-box">
+                <strong>
+                  INDICATIVE STARTING PRICE — ₹8,999+
+                </strong>
+                <span>
+                  Final amount confirmed after move assessment.
+                </span>
+              </div>
+
+              <form
+                onSubmit={submitQuote}
+                className="hero-quote-form"
+              >
+
+                <div className="hero-quote-fields">
+
+                  <div className="hero-form-group">
+                    <label>Your Name</label>
+                    <input
+                      type="text"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+
+                  <div className="hero-form-group">
+                    <label>Phone Number</label>
+                    <input
+                      type="tel"
+                      placeholder="Enter phone number"
+                      required
+                    />
+                  </div>
+
+                  <div className="hero-form-group">
+                    <label>From Location</label>
+                    <input
+                      type="text"
+                      placeholder="Pickup location"
+                      required
+                    />
+                  </div>
+
+                  <div className="hero-form-group">
+                    <label>To Location</label>
+                    <input
+                      type="text"
+                      placeholder="Destination"
+                      required
+                    />
+                  </div>
+
+                  <div className="hero-form-group">
+                    <label>Moving Type</label>
+                    <select required defaultValue="">
+                      <option value="" disabled>
+                        Select service
+                      </option>
+                      <option>House Shifting</option>
+                      <option>Office Relocation</option>
+                      <option>Local Shifting</option>
+                      <option>Intercity Relocation</option>
+                      <option>Vehicle Transportation</option>
+                      <option>Packing &amp; Unpacking</option>
+                    </select>
+                  </div>
+
+                  <div className="hero-form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" />
+                  </div>
+
+                  <div className="hero-form-group hero-form-full">
+                    <label>Additional Details</label>
+                    <textarea
+                      placeholder="Tell us about your moving requirement..."
+                    />
+                  </div>
+
+                </div>
+
+                <button
+                  type="submit"
+                  className="hero-quote-submit"
+                >
+                  Submit Enquiry →
+                </button>
+
+              </form>
+
+            </div>
 
           </div>
 
@@ -4669,7 +5500,38 @@ export default function App() {
 
             <div className="about-grid">
 
-              <div className="about-image reveal" />
+              <div className="about-image reveal">
+
+                <div className="kiran-about-animation">
+
+                  <div className="kiran-about-title">
+                    Kiran Packers And Movers
+                  </div>
+
+                  <div className="kiran-about-subtitle">
+                    Packing • Moving • Relocation
+                  </div>
+
+                  <div className="kiran-speed-line one" />
+                  <div className="kiran-speed-line two" />
+                  <div className="kiran-speed-line three" />
+
+                  <div className="kiran-road" />
+
+                  <div className="kiran-truck">
+                    <div className="kiran-truck-body">
+                      <div className="kiran-truck-name">KIRAN PACKERS</div>
+                      <div className="kiran-truck-cabin">
+                        <div className="kiran-truck-window" />
+                      </div>
+                      <div className="kiran-wheel one" />
+                      <div className="kiran-wheel two" />
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
 
               <div className="about-content reveal">
 
@@ -5759,7 +6621,7 @@ export default function App() {
           <button
             className="floating-button float-whatsapp"
             onClick={openWhatsApp}
-            title="WhatsApp Nain Packers And Movers"
+            title="WhatsApp Kiran Packers And Movers"
           >
             💬
           </button>
@@ -5863,23 +6725,6 @@ export default function App() {
                       {showAdminPassword ? "🙈" : "👁️"}
                     </button>
                   </div>
-                </div>
-
-                <div className="admin-field">
-                  <label htmlFor="admin-role">
-                    Select Role
-                  </label>
-
-                  <select
-                    id="admin-role"
-                    className="admin-select"
-                    value={adminRole}
-                    onChange={(e) => setAdminRole(e.target.value)}
-                  >
-                    <option>Branch Manager</option>
-                    <option>Operations Manager</option>
-                    <option>Administrator</option>
-                  </select>
                 </div>
 
                 <div className="admin-options">
