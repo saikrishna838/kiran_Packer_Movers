@@ -5820,10 +5820,11 @@ export default function App() {
 
   #home.hero {
     width: 100%;
-    min-height: auto !important;
+
+    min-height: 0 !important;
     height: auto !important;
 
-    padding: 72px 12px 0 !important;
+    padding: 18px 12px 0 !important;
 
     margin: 0 !important;
 
@@ -5845,7 +5846,7 @@ export default function App() {
     display: flex;
     flex-direction: column;
 
-    gap: 10px !important;
+    gap: 14px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -6025,6 +6026,7 @@ export default function App() {
 
   #home .kiran-about-title {
     position: relative;
+
     z-index: 20;
 
     padding-top: 8px !important;
@@ -6037,6 +6039,7 @@ export default function App() {
 
   #home .kiran-about-subtitle {
     position: relative;
+
     z-index: 20;
 
     font-size: 9px !important;
@@ -6046,10 +6049,22 @@ export default function App() {
   }
 
 
-  /* ROAD */
+  /* =======================================================
+     SPEED LINES
+  ======================================================= */
+
+  #home .kiran-speed-line {
+    z-index: 5;
+  }
+
+
+  /* =======================================================
+     ROAD
+  ======================================================= */
 
   #home .kiran-road {
     position: absolute;
+
     z-index: 2;
 
     left: 0;
@@ -6071,11 +6086,18 @@ export default function App() {
     z-index: 15 !important;
 
     display: block !important;
+
     visibility: visible !important;
+
     opacity: 1 !important;
 
     left: 50% !important;
+
     bottom: 17px !important;
+
+    width: auto !important;
+
+    max-width: none !important;
 
     transform:
       translateX(-50%)
@@ -6084,10 +6106,14 @@ export default function App() {
     transform-origin: center bottom !important;
 
     animation-name: mobileKiranTruck !important;
+
     animation-duration: 5s !important;
+
     animation-timing-function: ease-in-out !important;
+
     animation-iteration-count: infinite !important;
   }
+
 
   @keyframes mobileKiranTruck {
 
@@ -6163,7 +6189,7 @@ export default function App() {
     max-width: 100%;
     min-width: 0;
 
-    margin: 10px 0 0 !important;
+    margin: 0 !important;
 
     padding: 13px 11px !important;
 
@@ -6249,6 +6275,7 @@ export default function App() {
     max-width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 6px !important;
@@ -6312,6 +6339,7 @@ export default function App() {
     box-sizing: border-box;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 2px !important;
@@ -6355,7 +6383,7 @@ export default function App() {
 
   /* =======================================================
      MOBILE CITY SCROLL
-     AFTER SUBMIT ENQUIRY
+     DIRECTLY AFTER SUBMIT
   ======================================================= */
 
   #home .mobile-home-city-strip {
@@ -6364,7 +6392,8 @@ export default function App() {
     width: 100%;
     max-width: 100%;
 
-    margin: 5px 0 0 !important;
+    margin: 4px 0 0 !important;
+
     padding: 0 !important;
 
     box-sizing: border-box;
@@ -6381,6 +6410,8 @@ export default function App() {
 
     padding: 4px 0 !important;
 
+    margin: 0 !important;
+
     white-space: nowrap;
 
     animation:
@@ -6396,12 +6427,14 @@ export default function App() {
     padding: 5px 8px !important;
 
     font-size: 8px !important;
+
     line-height: 1.1 !important;
 
     border-radius: 15px;
 
     white-space: nowrap;
   }
+
 
   @keyframes mobileCityScroll {
 
@@ -6417,14 +6450,18 @@ export default function App() {
 
 
   /* =======================================================
-     HOME MUST END TIGHT
+     REMOVE ANY FINAL MOBILE SPACE
   ======================================================= */
 
   #home .hero-quote-card,
   #home .mobile-home-city-strip,
   #home .hero-content,
-  #home .hero-layout {
+  #home .hero-layout,
+  #home .hero-quote-form {
     margin-bottom: 0 !important;
+  }
+
+  #home .mobile-home-city-strip {
     padding-bottom: 0 !important;
   }
 
@@ -6438,7 +6475,11 @@ export default function App() {
 @media (max-width: 420px) {
 
   #home.hero {
-    padding: 68px 10px 0 !important;
+    padding: 17px 10px 0 !important;
+  }
+
+  #home .hero-layout {
+    gap: 12px !important;
   }
 
   #home .hero-content h1 {
@@ -6447,6 +6488,10 @@ export default function App() {
 
   #home .hero-main-matter {
     font-size: 11px !important;
+  }
+
+  #home .hero-extra-matter {
+    margin-top: 8px !important;
   }
 
   #home .hero-extra-intro {
@@ -6461,6 +6506,10 @@ export default function App() {
     font-size: 10px !important;
   }
 
+  #home .hero-animation-card {
+    margin-top: 8px !important;
+  }
+
   #home .kiran-about-animation {
     height: 135px !important;
     min-height: 135px !important;
@@ -6468,7 +6517,10 @@ export default function App() {
 
   #home .kiran-truck {
     bottom: 14px !important;
-    transform: translateX(-50%) scale(.54) !important;
+
+    transform:
+      translateX(-50%)
+      scale(.54) !important;
   }
 
   #home .hero-quote-card {
@@ -6489,7 +6541,11 @@ export default function App() {
 @media (max-width: 360px) {
 
   #home.hero {
-    padding: 66px 8px 0 !important;
+    padding: 16px 8px 0 !important;
+  }
+
+  #home .hero-layout {
+    gap: 11px !important;
   }
 
   #home .hero-content h1 {
@@ -6519,7 +6575,10 @@ export default function App() {
 
   #home .kiran-truck {
     bottom: 12px !important;
-    transform: translateX(-50%) scale(.49) !important;
+
+    transform:
+      translateX(-50%)
+      scale(.49) !important;
   }
 
   #home .hero-quote-card {
