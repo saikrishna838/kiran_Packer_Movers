@@ -5823,7 +5823,7 @@ export default function App() {
     min-height: 0 !important;
     height: auto !important;
 
-    padding: 18px 12px 18px !important;
+    padding: 18px 12px 0 !important;
 
     margin: 0 !important;
 
@@ -5841,7 +5841,7 @@ export default function App() {
     display: flex;
     flex-direction: column;
 
-    gap: 14px !important;
+    gap: 10px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -6238,7 +6238,7 @@ export default function App() {
 
     margin: 0 !important;
 
-    padding: 13px 11px !important;
+    padding: 13px 11px 0 !important;
 
     border-radius: 14px;
 
@@ -6449,8 +6449,12 @@ export default function App() {
     width: 100%;
     max-width: 100%;
 
-    margin: 4px 0 0 !important;
+    margin: 2px 0 0 !important;
     padding: 0 !important;
+
+    height: 20px !important;
+
+    line-height: 0 !important;
 
     overflow: hidden;
 
@@ -6466,13 +6470,16 @@ export default function App() {
     gap: 6px;
 
     margin: 0 !important;
-    padding: 4px 0 !important;
+
+    padding: 2px 0 0 !important;
 
     white-space: nowrap;
 
+    line-height: 1 !important;
+
     animation:
       mobileCityScroll
-      24s
+      18s
       linear
       infinite;
   }
@@ -6506,26 +6513,40 @@ export default function App() {
 
 
   /* =======================================================
-     HOME BOTTOM = HOME TOP
+     IMPORTANT:
+     REMOVE ALL EXTRA SPACE AFTER HOME
   ======================================================= */
 
   #home .mobile-home-city-strip,
   #home .mobile-home-city-track,
-  #home .hero-quote-card {
+  #home .hero-quote-card,
+  #home .hero-quote-form {
+    margin-bottom: 0 !important;
+  }
+
+
+  #home .mobile-home-city-strip {
+    border: 0 !important;
+  }
+
+
+  #home.hero {
+    padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
 
 
   /* =======================================================
-     ABOUT - SAME PAGE TIGHTENING
+     ABOUT STARTS IMMEDIATELY AFTER HOME
   ======================================================= */
 
   #about {
     width: 100%;
 
-    margin: 0 !important;
+    margin-top: 0 !important;
 
-    padding: 18px 0 18px !important;
+    padding-top: 4px !important;
+    padding-bottom: 12px !important;
 
     box-sizing: border-box;
 
@@ -6547,9 +6568,11 @@ export default function App() {
 
     grid-template-columns: 1fr;
 
-    gap: 14px !important;
+    gap: 12px !important;
 
     margin: 0 !important;
+
+    padding: 0 !important;
 
     box-sizing: border-box;
   }
@@ -6582,8 +6605,8 @@ export default function App() {
 
     gap: 0;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
     overflow: hidden;
   }
@@ -6593,8 +6616,8 @@ export default function App() {
     width: 100%;
     height: 100%;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
     overflow: hidden;
   }
@@ -6609,8 +6632,8 @@ export default function App() {
     object-fit: cover;
     object-position: center;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
 
@@ -6693,6 +6716,16 @@ export default function App() {
     box-sizing: border-box;
   }
 
+
+  /* =======================================================
+     STOP MOBILE SMOOTH SCROLL
+     DOES NOT CHANGE DESKTOP
+  ======================================================= */
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
 }
 
 
@@ -6705,7 +6738,7 @@ export default function App() {
   /* HOME */
 
   #home.hero {
-    padding: 17px 10px 17px !important;
+    padding: 17px 10px 0 !important;
   }
 
 
@@ -6753,7 +6786,7 @@ export default function App() {
 
 
   #home .hero-quote-card {
-    padding: 12px 10px !important;
+    padding: 12px 10px 0 !important;
   }
 
 
@@ -6765,12 +6798,12 @@ export default function App() {
   /* ABOUT */
 
   #about {
-    padding: 17px 0 17px !important;
+    padding: 4px 0 10px !important;
   }
 
 
   #about .about-grid {
-    gap: 13px !important;
+    gap: 11px !important;
   }
 
 
@@ -6818,7 +6851,7 @@ export default function App() {
   /* HOME */
 
   #home.hero {
-    padding: 16px 8px 16px !important;
+    padding: 16px 8px 0 !important;
   }
 
 
@@ -6866,7 +6899,7 @@ export default function App() {
 
 
   #home .hero-quote-card {
-    padding: 11px 9px !important;
+    padding: 11px 9px 0 !important;
   }
 
 
@@ -6883,12 +6916,12 @@ export default function App() {
   /* ABOUT */
 
   #about {
-    padding: 16px 0 16px !important;
+    padding: 4px 0 9px !important;
   }
 
 
   #about .about-grid {
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
 
@@ -7332,7 +7365,10 @@ export default function App() {
         </button>
 
 
-        {/* MOBILE CITY SCROLL */}
+        {/* =================================================
+            MOBILE CITY SCROLL
+            ALWAYS AFTER SUBMIT
+        ================================================= */}
 
         <div className="mobile-home-city-strip">
 
@@ -7618,11 +7654,12 @@ export default function App() {
     @media (max-width: 620px) {
 
       #about {
-        padding: 18px 0 18px !important;
+        padding: 4px 0 12px !important;
+        margin-top: 0 !important;
       }
 
       #about .about-grid {
-        gap: 14px !important;
+        gap: 12px !important;
       }
 
       #about .about-image {
@@ -7680,11 +7717,12 @@ export default function App() {
     @media (max-width: 420px) {
 
       #about {
-        padding: 17px 0 17px !important;
+        padding: 4px 0 10px !important;
+        margin-top: 0 !important;
       }
 
       #about .about-grid {
-        gap: 13px !important;
+        gap: 11px !important;
       }
 
       #about .about-image {
@@ -7710,11 +7748,12 @@ export default function App() {
     @media (max-width: 360px) {
 
       #about {
-        padding: 16px 0 16px !important;
+        padding: 4px 0 9px !important;
+        margin-top: 0 !important;
       }
 
       #about .about-grid {
-        gap: 12px !important;
+        gap: 10px !important;
       }
 
       #about .about-image {
