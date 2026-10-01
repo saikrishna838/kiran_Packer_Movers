@@ -5799,574 +5799,977 @@ export default function App() {
   </nav>
 
 </header>
-        <style>{`
-
-/* =========================================================
-   MOBILE VERSION ONLY — DO NOT CHANGE DESKTOP
-========================================================= */
-
-@media (max-width: 768px) {
-
-  /* HERO */
-  #home.hero {
-    width: 100%;
-    min-height: auto;
-    padding: 85px 14px 35px;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-
-  /* LAYOUT */
-  #home .hero-layout {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    box-sizing: border-box;
-  }
-
-  /* =====================================================
-     LEFT HERO CONTENT
-  ===================================================== */
-
-  #home .hero-content {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  #home .hero-badge {
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 10px;
-    line-height: 1.35;
-    padding: 8px 12px;
-    text-align: center;
-  }
-
-  #home .hero-content h1 {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 15px 0 12px;
-    font-size: 34px;
-    line-height: 1.1;
-    letter-spacing: -0.8px;
-  }
-
-  #home .hero-content h1 span {
-    display: inline;
-  }
-
-  #home .hero-main-matter {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 13px;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  /* =====================================================
-     EXTRA MATTER
-  ===================================================== */
-
-  #home .hero-extra-matter {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 20px;
-    box-sizing: border-box;
-  }
-
-  #home .hero-extra-intro {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 16px;
-    text-align: left;
-    border-radius: 16px;
-  }
-
-  #home .hero-extra-label {
-    font-size: 9px;
-    line-height: 1.4;
-  }
-
-  #home .hero-extra-intro h3 {
-    font-size: 19px;
-    line-height: 1.25;
-    margin: 8px 0 10px;
-  }
-
-  #home .hero-extra-intro p {
-    font-size: 12px;
-    line-height: 1.6;
-    margin: 0 0 9px;
-  }
-
-  /* =====================================================
-     ANIMATION
-  ===================================================== */
-
-  #home .hero-animation-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin-top: 18px;
-    border-radius: 16px;
-  }
-
-  #home .kiran-about-animation {
-    width: 100%;
-    height: 185px;
-    min-height: 185px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  #home .kiran-about-title {
-    font-size: 16px;
-    padding-top: 13px;
-    text-align: center;
-  }
-
-  #home .kiran-about-subtitle {
-    font-size: 9px;
-    text-align: center;
-  }
-
-  #home .kiran-truck {
-    transform: translateX(-50%) scale(0.72);
-    transform-origin: center bottom;
-  }
-
-  /* Keep existing animation but scale truck on mobile */
-  @keyframes kiranTruckMoveMobile {
-    0% {
-      transform: translateX(-55%) scale(0.72);
-    }
-
-    50% {
-      transform: translateX(-45%) scale(0.72);
-    }
-
-    100% {
-      transform: translateX(-55%) scale(0.72);
-    }
-  }
-
-  #home .kiran-truck {
-    animation-name: kiranTruckMoveMobile;
-  }
-
-  /* =====================================================
-     LOCATION MESSAGE
-  ===================================================== */
-
-  #home .home-location-message {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin-top: 12px;
-    padding: 9px 10px;
-    font-size: 10px;
-    line-height: 1.45;
-    overflow-wrap: anywhere;
-    text-align: center;
-  }
-
-  /* =====================================================
-     CITY STRIP
-  ===================================================== */
-
-  #home .home-city-strip {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin-top: 18px;
-  }
-
-  #home .home-city-track {
-    width: max-content;
-    display: flex;
-    gap: 7px;
-    padding: 7px 0;
-    white-space: nowrap;
-  }
-
-  #home .home-city-pill {
-    flex-shrink: 0;
-    padding: 6px 10px;
-    font-size: 10px;
-    border-radius: 20px;
-  }
-
-  /* =====================================================
-     QUOTE CARD
-  ===================================================== */
-
-  #home .hero-quote-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-    padding: 18px 14px;
-    margin: 0;
-    border-radius: 18px;
-    overflow: hidden;
-  }
-
-  #home .hero-quote-kicker {
-    font-size: 9px;
-    line-height: 1.4;
-  }
-
-  #home .hero-quote-card h2 {
-    font-size: 24px;
-    line-height: 1.2;
-    margin: 6px 0 7px;
-  }
-
-  #home .hero-quote-intro {
-    font-size: 12px;
-    line-height: 1.5;
-    margin: 0 0 13px;
-  }
-
-  /* =====================================================
-     PRICE BOX
-  ===================================================== */
-
-  #home .hero-price-box {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 11px;
-    margin-bottom: 14px;
-    border-radius: 11px;
-  }
-
-  #home .hero-price-box strong {
-    display: block;
-    font-size: 11px;
-    line-height: 1.4;
-  }
-
-  #home .hero-price-box span {
-    display: block;
-    font-size: 9px;
-    line-height: 1.45;
-    margin-top: 3px;
-  }
-
-  /* =====================================================
-     FORM
-  ===================================================== */
-
-  #home .hero-quote-form {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  #home .hero-quote-fields {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-sizing: border-box;
-  }
-
-  #home .hero-form-group {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  #home .hero-form-group label {
-    display: block;
-    font-size: 10px;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-
-  #home .hero-form-group input,
-  #home .hero-form-group select {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    height: 43px;
-    padding: 0 10px;
-    box-sizing: border-box;
-    font-size: 12px;
-    border-radius: 9px;
-  }
-
-  #home .hero-form-group input::placeholder {
-    font-size: 11px;
-  }
-
-  /* =====================================================
-     PRICING
-  ===================================================== */
-
-  #home .hero-form-price {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    margin-top: 2px;
-    border-radius: 11px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  #home .hero-form-price strong {
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  #home .hero-form-price span {
-    font-size: 10px;
-    line-height: 1.35;
-  }
-
-  /* =====================================================
-     SUBMIT BUTTON
-  ===================================================== */
-
-  #home .hero-quote-submit {
-    width: 100%;
-    max-width: 100%;
-    min-height: 46px;
-    box-sizing: border-box;
-    margin-top: 13px;
-    padding: 11px 14px;
-    font-size: 13px;
-    border-radius: 10px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE — 420px
-========================================================= */
-
-@media (max-width: 420px) {
-
-  #home.hero {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  #home .hero-content h1 {
-    font-size: 31px;
-  }
-
-  #home .hero-main-matter {
-    font-size: 12px;
-  }
-
-  #home .hero-extra-intro {
-    padding: 14px;
-  }
-
-  #home .hero-extra-intro h3 {
-    font-size: 18px;
-  }
-
-  #home .hero-extra-intro p {
-    font-size: 11px;
-  }
-
-  #home .kiran-about-animation {
-    height: 175px;
-    min-height: 175px;
-  }
-
-  #home .hero-quote-card {
-    padding: 16px 12px;
-  }
-
-  #home .hero-quote-card h2 {
-    font-size: 22px;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE — 360px
-========================================================= */
-
-@media (max-width: 360px) {
-
-  #home.hero {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  #home .hero-content h1 {
-    font-size: 28px;
-  }
-
-  #home .hero-badge {
-    font-size: 9px;
-  }
-
-  #home .hero-quote-card h2 {
-    font-size: 21px;
-  }
-
-  #home .hero-quote-intro {
-    font-size: 11px;
-  }
-
-}
-
-`}</style>
-
+       {/* =====================================================
+    HOME / HERO SECTION
+===================================================== */}
 
 <section
   id="home"
   className="hero"
 >
 
+  <style>{`
+
+    /* =====================================================
+       MOBILE ONLY
+       DESKTOP REMAINS UNCHANGED
+    ===================================================== */
+
+    @media (max-width: 768px) {
+
+      /* ================================
+         HERO
+      ================================= */
+
+      #home.hero {
+        width: 100%;
+        min-height: auto;
+        padding: 70px 10px 16px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+      }
+
+      #home .hero-layout {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
+      }
+
+
+      /* ================================
+         HERO CONTENT
+      ================================= */
+
+      #home .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+
+      /* ================================
+         BADGE
+      ================================= */
+
+      #home .hero-badge {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+
+        padding: 6px 10px;
+
+        font-size: 9px;
+        line-height: 1.25;
+
+        text-align: center;
+
+        box-sizing: border-box;
+      }
+
+
+      /* ================================
+         MAIN HEADING
+      ================================= */
+
+      #home .hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 9px 0 7px;
+        padding: 0;
+
+        font-size: 30px;
+        line-height: 1.05;
+        letter-spacing: -0.7px;
+
+        text-align: center;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-content h1 span {
+        display: inline;
+      }
+
+
+      /* ================================
+         MAIN DESCRIPTION
+      ================================= */
+
+      #home .hero-main-matter {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+        padding: 0 2px;
+
+        font-size: 11.5px;
+        line-height: 1.45;
+
+        text-align: center;
+
+        box-sizing: border-box;
+      }
+
+
+      /* ================================
+         EXTRA CONTENT
+      ================================= */
+
+      #home .hero-extra-matter {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 10px;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-extra-intro {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 11px 12px;
+
+        border-radius: 12px;
+
+        text-align: left;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-extra-label {
+        font-size: 8px;
+        line-height: 1.3;
+      }
+
+      #home .hero-extra-intro h3 {
+        margin: 5px 0 6px;
+
+        font-size: 16px;
+        line-height: 1.2;
+      }
+
+      #home .hero-extra-intro p {
+        margin: 0 0 6px;
+
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      #home .hero-extra-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+
+      /* ================================
+         TRUCK ANIMATION
+      ================================= */
+
+      #home .hero-animation-card {
+        width: 100%;
+        max-width: 100%;
+
+        height: 175px;
+
+        margin-top: 10px;
+
+        overflow: hidden;
+
+        border-radius: 13px;
+
+        box-sizing: border-box;
+      }
+
+      #home .kiran-about-animation {
+        width: 100%;
+
+        height: 175px;
+        min-height: 175px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+      }
+
+      #home .kiran-about-title {
+        padding-top: 10px;
+
+        font-size: 15px;
+
+        text-align: center;
+      }
+
+      #home .kiran-about-subtitle {
+        font-size: 8px;
+
+        text-align: center;
+      }
+
+
+      /* ================================
+         MOBILE TRUCK
+      ================================= */
+
+      #home .kiran-truck {
+        transform:
+          translateX(-42%)
+          scale(0.92);
+
+        transform-origin: center bottom;
+
+        z-index: 20;
+      }
+
+      @keyframes kiranTruckMoveMobile {
+
+        0% {
+          transform:
+            translateX(-45%)
+            scale(0.92);
+        }
+
+        50% {
+          transform:
+            translateX(-15%)
+            scale(0.92);
+        }
+
+        100% {
+          transform:
+            translateX(-45%)
+            scale(0.92);
+        }
+
+      }
+
+      #home .kiran-truck {
+        animation-name: kiranTruckMoveMobile;
+      }
+
+
+      /* ================================
+         LOCATION MESSAGE
+      ================================= */
+
+      #home .home-location-message {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 6px;
+
+        padding: 7px 8px;
+
+        font-size: 9px;
+        line-height: 1.35;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        overflow-wrap: anywhere;
+      }
+
+
+      /* ================================
+         ORIGINAL CITY STRIP
+      ================================= */
+
+      #home .home-city-strip {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 7px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+      }
+
+      #home .home-city-track {
+        width: max-content;
+
+        display: flex;
+
+        gap: 6px;
+
+        padding: 4px 0;
+
+        white-space: nowrap;
+
+        animation:
+          mobileHomeCityScroll
+          22s
+          linear
+          infinite;
+      }
+
+      #home .home-city-pill {
+        flex-shrink: 0;
+
+        padding: 5px 9px;
+
+        font-size: 9px;
+
+        border-radius: 18px;
+
+        white-space: nowrap;
+      }
+
+      @keyframes mobileHomeCityScroll {
+
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+
+      }
+
+
+      /* ================================
+         QUOTE CARD
+      ================================= */
+
+      #home .hero-quote-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        padding: 15px 11px;
+
+        border-radius: 14px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-quote-kicker {
+        font-size: 8px;
+        line-height: 1.3;
+      }
+
+      #home .hero-quote-card h2 {
+        margin: 4px 0 5px;
+
+        font-size: 22px;
+        line-height: 1.15;
+      }
+
+      #home .hero-quote-intro {
+        margin: 0 0 9px;
+
+        font-size: 10.5px;
+        line-height: 1.4;
+      }
+
+
+      /* ================================
+         PRICE BOX
+      ================================= */
+
+      #home .hero-price-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 9px;
+
+        margin-bottom: 10px;
+
+        border-radius: 9px;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-price-box strong {
+        display: block;
+
+        font-size: 10px;
+        line-height: 1.3;
+      }
+
+      #home .hero-price-box span {
+        display: block;
+
+        margin-top: 2px;
+
+        font-size: 8.5px;
+        line-height: 1.35;
+      }
+
+
+      /* ================================
+         FORM
+      ================================= */
+
+      #home .hero-quote-form {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-quote-fields {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-form-group {
+        width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-form-group label {
+        display: block;
+
+        margin-bottom: 3px;
+
+        font-size: 9px;
+        line-height: 1.25;
+      }
+
+      #home .hero-form-group input,
+      #home .hero-form-group select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        height: 39px;
+
+        padding: 0 9px;
+
+        font-size: 11px;
+
+        border-radius: 8px;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-form-group input::placeholder {
+        font-size: 10px;
+      }
+
+
+      /* ================================
+         PRICING
+      ================================= */
+
+      #home .hero-form-price {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 9px;
+
+        margin-top: 1px;
+
+        border-radius: 9px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 3px;
+
+        box-sizing: border-box;
+      }
+
+      #home .hero-form-price strong {
+        font-size: 9px;
+        line-height: 1.3;
+      }
+
+      #home .hero-form-price span {
+        font-size: 9px;
+        line-height: 1.25;
+      }
+
+
+      /* ================================
+         SUBMIT BUTTON
+      ================================= */
+
+      #home .hero-quote-submit {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 42px;
+
+        margin-top: 9px;
+
+        padding: 9px 12px;
+
+        font-size: 12px;
+
+        border-radius: 9px;
+
+        box-sizing: border-box;
+      }
+
+
+      /* =====================================================
+         BOTTOM SCROLLING CITIES
+         MOBILE ONLY
+         BELOW FORM
+      ===================================================== */
+
+      #home .mobile-bottom-city-scroll {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+      }
+
+      #home .mobile-bottom-city-track {
+        width: max-content;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 8px 0;
+
+        white-space: nowrap;
+
+        animation:
+          bottomMobileCityScroll
+          25s
+          linear
+          infinite;
+      }
+
+      #home .mobile-bottom-city-pill {
+        flex-shrink: 0;
+
+        padding: 6px 11px;
+
+        border-radius: 20px;
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        white-space: nowrap;
+      }
+
+      @keyframes bottomMobileCityScroll {
+
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 420px) {
+
+      #home.hero {
+        padding-top: 66px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 14px;
+      }
+
+      #home .hero-content h1 {
+        font-size: 28px;
+
+        line-height: 1.04;
+
+        margin-top: 8px;
+      }
+
+      #home .hero-main-matter {
+        font-size: 11px;
+
+        line-height: 1.4;
+      }
+
+      #home .hero-extra-intro {
+        padding: 10px;
+      }
+
+      #home .hero-extra-intro h3 {
+        font-size: 15px;
+      }
+
+      #home .hero-extra-intro p {
+        font-size: 10px;
+
+        line-height: 1.4;
+      }
+
+      #home .hero-animation-card,
+      #home .kiran-about-animation {
+        height: 165px;
+        min-height: 165px;
+      }
+
+      #home .kiran-truck {
+        transform:
+          translateX(-42%)
+          scale(0.88);
+      }
+
+      #home .hero-quote-card {
+        padding: 14px 10px;
+      }
+
+      #home .hero-quote-card h2 {
+        font-size: 21px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 360px) {
+
+      #home.hero {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      #home .hero-content h1 {
+        font-size: 26px;
+      }
+
+      #home .hero-badge {
+        font-size: 8px;
+      }
+
+      #home .hero-main-matter {
+        font-size: 10.5px;
+      }
+
+      #home .hero-quote-card h2 {
+        font-size: 20px;
+      }
+
+    }
+
+
+    /* =====================================================
+       BOTTOM MOBILE SCROLL HIDDEN ON DESKTOP
+    ===================================================== */
+
+    .mobile-bottom-city-scroll {
+      display: none;
+    }
+
+  `}</style>
+
+
+  {/* =====================================================
+      HERO LAYOUT
+  ===================================================== */}
+
   <div className="hero-layout">
 
+
+    {/* =====================================================
+        LEFT HERO CONTENT
+    ===================================================== */}
+
     <div className="hero-content reveal show">
+
+
+      {/* BADGE */}
 
       <div className="hero-badge blink-text">
         🚚 PACKING • MOVING • RELOCATION
       </div>
 
+
+      {/* MAIN HEADING */}
+
       <h1 className="blink-text">
+
         Move with{" "}
-        <span>confidence.</span>{" "}
+
+        <span>
+          confidence.
+        </span>{" "}
+
         Settle with ease.
+
       </h1>
 
+
+      {/* MAIN DESCRIPTION */}
+
       <p className="blink-text hero-main-matter">
-        Professional packing and moving support. Careful handling for homes and offices. Reliable relocation assistance across Karimnagar and beyond.
+
+        Professional packing and moving support.
+        Careful handling for homes and offices.
+        Reliable relocation assistance across
+        Karimnagar and beyond.
+
       </p>
+
+
+      {/* =====================================================
+          EXTRA CONTENT
+      ===================================================== */}
 
       <div className="hero-extra-matter">
 
         <div className="hero-extra-intro">
 
+
           <div className="hero-extra-label">
             YOUR MOVE, PLANNED BETTER
           </div>
+
 
           <h3>
             Complete Packing &amp; Moving Support
           </h3>
 
-          <p>
-            Moving to a new home or office becomes easier when every stage is properly planned. Kiran Packers And Movers helps coordinate packing, loading, transportation, unloading and delivery according to your moving requirement.
-          </p>
 
           <p>
-            Whether you are shifting within Karimnagar, moving to a nearby city or planning an intercity relocation, our team provides practical moving assistance from pickup to destination.
+
+            Moving to a new home or office becomes easier
+            when every stage is properly planned.
+            Kiran Packers And Movers helps coordinate
+            packing, loading, transportation, unloading
+            and delivery according to your moving
+            requirement.
+
           </p>
+
+
+          <p>
+
+            Whether you are shifting within Karimnagar,
+            moving to a nearby city or planning an
+            intercity relocation, our team provides
+            practical moving assistance from pickup
+            to destination.
+
+          </p>
+
 
         </div>
 
       </div>
+
+
+      {/* =====================================================
+          TRUCK ANIMATION
+      ===================================================== */}
 
       <div className="hero-animation-card">
 
         <div className="kiran-about-animation">
 
+
           <div className="kiran-about-title">
             Kiran Packers And Movers
           </div>
+
 
           <div className="kiran-about-subtitle">
             Packing • Moving • Relocation
           </div>
 
+
           <div className="kiran-speed-line one" />
+
           <div className="kiran-speed-line two" />
+
           <div className="kiran-speed-line three" />
+
 
           <div className="kiran-road" />
 
-          <div className="kiran-truck">
-            <div className="kiran-truck-body">
-              <div className="kiran-truck-name">KIRAN PACKERS</div>
 
-              <div className="kiran-truck-cabin">
-                <div className="kiran-truck-window" />
+          <div className="kiran-truck">
+
+            <div className="kiran-truck-body">
+
+
+              <div className="kiran-truck-name">
+                KIRAN PACKERS
               </div>
 
+
+              <div className="kiran-truck-cabin">
+
+                <div className="kiran-truck-window" />
+
+              </div>
+
+
               <div className="kiran-wheel one" />
+
               <div className="kiran-wheel two" />
+
+
             </div>
+
           </div>
+
 
         </div>
 
       </div>
 
+
+      {/* =====================================================
+          LOCATION MESSAGE
+      ===================================================== */}
+
       {locationMessage && (
+
         <div className="home-location-message">
+
           {locationMessage}
 
           {userLocation && (
+
             <span>
-              {" "}({userLocation.latitude.toFixed(5)}, {" "}
-              {userLocation.longitude.toFixed(5)})
+
+              {" "}
+
+              (
+              {userLocation.latitude.toFixed(5)},
+              {" "}
+              {userLocation.longitude.toFixed(5)}
+              )
+
             </span>
+
           )}
+
         </div>
+
       )}
+
+
+      {/* =====================================================
+          CITY STRIP
+      ===================================================== */}
 
       <div className="home-city-strip">
 
         <div className="home-city-track">
 
+
           {[
-            "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
-            "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
-            "Warangal", "Hyderabad", "Nizamabad", "Adilabad",
-            "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
-            "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
-            "Warangal", "Hyderabad", "Nizamabad", "Adilabad"
+            "Karimnagar",
+            "Peddapalli",
+            "Jagtial",
+            "Sircilla",
+            "Vemulawada",
+            "Ramagundam",
+            "Mancherial",
+            "Siddipet",
+            "Warangal",
+            "Hyderabad",
+            "Nizamabad",
+            "Adilabad",
+
+            "Karimnagar",
+            "Peddapalli",
+            "Jagtial",
+            "Sircilla",
+            "Vemulawada",
+            "Ramagundam",
+            "Mancherial",
+            "Siddipet",
+            "Warangal",
+            "Hyderabad",
+            "Nizamabad",
+            "Adilabad"
+
           ].map((city, index) => (
+
             <span
               className="home-city-pill"
               key={`${city}-${index}`}
             >
+
               {city}
+
             </span>
+
           ))}
+
 
         </div>
 
       </div>
 
+
     </div>
 
+
+    {/* =====================================================
+        FREE QUOTE CARD
+    ===================================================== */}
+
     <div className="hero-quote-card reveal show">
+
 
       <div className="hero-quote-kicker">
         FREE MOVING ESTIMATE
       </div>
 
+
       <h2>
         Get Your Free Quote
       </h2>
 
+
       <p className="hero-quote-intro">
+
         Tell us a few details about your moving requirement.
+
       </p>
+
+
+      {/* =====================================================
+          STARTING PRICE
+      ===================================================== */}
 
       <div className="hero-price-box">
 
@@ -6380,12 +6783,19 @@ export default function App() {
 
       </div>
 
+
+      {/* =====================================================
+          QUOTE FORM
+      ===================================================== */}
+
       <form
         onSubmit={submitQuote}
         className="hero-quote-form"
       >
 
+
         <div className="hero-quote-fields">
+
 
           {/* NAME */}
 
@@ -6455,7 +6865,7 @@ export default function App() {
           </div>
 
 
-          {/* SERVICE */}
+          {/* MOVING TYPE */}
 
           <div className="hero-form-group">
 
@@ -6468,7 +6878,10 @@ export default function App() {
               defaultValue=""
             >
 
-              <option value="" disabled>
+              <option
+                value=""
+                disabled
+              >
                 Select service
               </option>
 
@@ -6514,7 +6927,10 @@ export default function App() {
               defaultValue=""
             >
 
-              <option value="" disabled>
+              <option
+                value=""
+                disabled
+              >
                 Select move size
               </option>
 
@@ -6552,7 +6968,10 @@ export default function App() {
               defaultValue=""
             >
 
-              <option value="" disabled>
+              <option
+                value=""
+                disabled
+              >
                 Select distance
               </option>
 
@@ -6589,7 +7008,9 @@ export default function App() {
           </div>
 
 
-          {/* PRICING */}
+          {/* =====================================================
+              PRICING
+          ===================================================== */}
 
           <div className="hero-form-price">
 
@@ -6627,7 +7048,11 @@ export default function App() {
 
           </div>
 
+
         </div>
+
+
+        {/* SUBMIT BUTTON */}
 
         <button
           type="submit"
@@ -6636,14 +7061,73 @@ export default function App() {
           Submit Enquiry →
         </button>
 
+
       </form>
 
+
     </div>
+
+
+    {/* =====================================================
+        MOBILE BOTTOM CITY SCROLL
+        BELOW THE COMPLETE FORM
+        HIDDEN ON DESKTOP
+    ===================================================== */}
+
+    <div className="mobile-bottom-city-scroll">
+
+      <div className="mobile-bottom-city-track">
+
+
+        {[
+          "Karimnagar",
+          "Peddapalli",
+          "Jagtial",
+          "Sircilla",
+          "Vemulawada",
+          "Ramagundam",
+          "Mancherial",
+          "Siddipet",
+          "Warangal",
+          "Hyderabad",
+          "Nizamabad",
+          "Adilabad",
+
+          "Karimnagar",
+          "Peddapalli",
+          "Jagtial",
+          "Sircilla",
+          "Vemulawada",
+          "Ramagundam",
+          "Mancherial",
+          "Siddipet",
+          "Warangal",
+          "Hyderabad",
+          "Nizamabad",
+          "Adilabad"
+
+        ].map((city, index) => (
+
+          <span
+            className="mobile-bottom-city-pill"
+            key={`mobile-bottom-${city}-${index}`}
+          >
+
+            {city}
+
+          </span>
+
+        ))}
+
+
+      </div>
+
+    </div>
+
 
   </div>
 
 </section>
-       
 {/* =====================================================
     ABOUT SECTION
 ===================================================== */}
@@ -6669,63 +7153,79 @@ export default function App() {
     }
 
     /* =================================================
-       TWO IMAGE AREA
+       TWO FULL IMAGES
     ================================================= */
 
     #about .about-image {
       width: 100%;
+      height: 350px;
+
+      margin: 0;
+      padding: 0;
+
       overflow: hidden;
+
+      border-radius: 16px;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     #about .about-photo-grid {
       width: 100%;
-      height: 350px;
+      height: 100%;
+
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 0;
+
+      margin: 0;
+      padding: 0;
+
       overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+      line-height: 0;
     }
 
     #about .about-photo-card {
       position: relative;
+
       width: 100%;
-      height: 350px;
-      overflow: hidden;
+      height: 100%;
+
       margin: 0;
       padding: 0;
+
+      overflow: hidden;
+
       border: 0;
       border-radius: 0;
-      background: transparent;
+
+      background: #061A30;
     }
 
     /* =================================================
-       IMAGE ITSELF
+       IMAGES
     ================================================= */
 
     #about .about-photo-card img {
       position: absolute;
-      inset: 0;
+
+      top: 0;
+      left: 0;
 
       width: 100%;
       height: 100%;
 
       display: block;
+
       margin: 0;
       padding: 0;
+
       border: 0;
 
-      /*
-        FORCE IMAGE TO FILL
-        THE COMPLETE CARD
-      */
-      object-fit: fill;
+      object-fit: cover;
       object-position: center;
-
-      max-width: none;
-      min-width: 100%;
-      min-height: 100%;
 
       transform: none;
 
@@ -6739,6 +7239,14 @@ export default function App() {
     /* =================================================
        IMAGE LABELS
     ================================================= */
+
+    #about .about-photo-card:first-child::after {
+      content: "HOME RELOCATION";
+    }
+
+    #about .about-photo-card:last-child::after {
+      content: "PACKING & MOVING";
+    }
 
     #about .about-photo-card::after {
       position: absolute;
@@ -6755,20 +7263,14 @@ export default function App() {
       color: #ffffff;
 
       font-size: 8px;
+
       font-weight: 800;
+
       letter-spacing: 1px;
 
       line-height: normal;
 
       z-index: 5;
-    }
-
-    #about .about-photo-card:first-child::after {
-      content: "HOME RELOCATION";
-    }
-
-    #about .about-photo-card:last-child::after {
-      content: "PACKING & MOVING";
     }
 
     /* =================================================
@@ -6859,11 +7361,7 @@ export default function App() {
         gap: 20px;
       }
 
-      #about .about-photo-grid {
-        height: 280px;
-      }
-
-      #about .about-photo-card {
+      #about .about-image {
         height: 280px;
       }
 
@@ -6883,19 +7381,19 @@ export default function App() {
         gap: 17px;
       }
 
-      #about .about-photo-grid {
+      #about .about-image {
         height: 210px;
 
         border-radius: 12px;
       }
 
-      #about .about-photo-card {
-        height: 210px;
+      #about .about-photo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
       }
 
       #about .about-photo-card::after {
         left: 7px;
-
         bottom: 7px;
 
         padding: 5px 7px;
@@ -6937,11 +7435,7 @@ export default function App() {
 
     @media (max-width: 420px) {
 
-      #about .about-photo-grid {
-        height: 190px;
-      }
-
-      #about .about-photo-card {
+      #about .about-image {
         height: 190px;
       }
 
@@ -6969,19 +7463,19 @@ export default function App() {
           <div className="about-photo-card">
 
             <img
-              src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=1200&q=90"
+              src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=1600&q=90"
               alt="Home relocation"
             />
 
           </div>
 
 
-          {/* IMAGE 2 */}
+          {/* IMAGE 2 — ADDED ONLY */}
 
           <div className="about-photo-card">
 
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=90"
               alt="Packing and moving"
             />
 
