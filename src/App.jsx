@@ -5799,10 +5799,10 @@ export default function App() {
   </nav>
 
 </header>
-  {/* =========================================================
+{/* =========================================================
     HOME SECTION
     DESKTOP VERSION UNCHANGED
-    MOBILE VERSION ONLY
+    MOBILE ONLY TIGHTENING
 ========================================================= */}
 
 <style>{`
@@ -5814,7 +5814,7 @@ export default function App() {
 @media (max-width: 768px) {
 
   /* =======================================================
-     HOME
+     HOME - TIGHT PAGE TO PAGE
   ======================================================= */
 
   #home.hero {
@@ -5834,10 +5834,6 @@ export default function App() {
   }
 
 
-  /* =======================================================
-     HERO LAYOUT
-  ======================================================= */
-
   #home .hero-layout {
     width: 100%;
     max-width: 100%;
@@ -5853,10 +5849,6 @@ export default function App() {
     box-sizing: border-box;
   }
 
-
-  /* =======================================================
-     HERO CONTENT
-  ======================================================= */
 
   #home .hero-content {
     width: 100%;
@@ -5882,10 +5874,10 @@ export default function App() {
 
     padding: 7px 10px !important;
 
-    box-sizing: border-box;
-
     font-size: 9px !important;
     line-height: 1.25 !important;
+
+    box-sizing: border-box;
   }
 
 
@@ -5899,8 +5891,6 @@ export default function App() {
 
     margin: 0 0 7px !important;
 
-    box-sizing: border-box;
-
     font-size: 30px !important;
     line-height: 1.05 !important;
 
@@ -5909,7 +5899,10 @@ export default function App() {
     text-align: left;
 
     overflow-wrap: break-word;
+
+    box-sizing: border-box;
   }
+
 
   #home .hero-content h1 span {
     display: inline;
@@ -5926,10 +5919,10 @@ export default function App() {
 
     margin: 0 !important;
 
-    box-sizing: border-box;
-
     font-size: 12px !important;
     line-height: 1.45 !important;
+
+    box-sizing: border-box;
   }
 
 
@@ -5947,6 +5940,7 @@ export default function App() {
     box-sizing: border-box;
   }
 
+
   #home .hero-extra-intro {
     width: 100%;
     max-width: 100%;
@@ -5955,15 +5949,17 @@ export default function App() {
 
     margin: 0 !important;
 
-    box-sizing: border-box;
-
     border-radius: 12px;
+
+    box-sizing: border-box;
   }
+
 
   #home .hero-extra-label {
     font-size: 8px !important;
     line-height: 1.2 !important;
   }
+
 
   #home .hero-extra-intro h3 {
     margin: 5px 0 !important;
@@ -5972,6 +5968,7 @@ export default function App() {
     line-height: 1.15 !important;
   }
 
+
   #home .hero-extra-intro p {
     margin: 0 0 6px !important;
 
@@ -5979,17 +5976,18 @@ export default function App() {
     line-height: 1.4 !important;
   }
 
+
   #home .hero-extra-intro p:last-child {
     margin-bottom: 0 !important;
   }
 
 
   /* =======================================================
-     TRUCK ANIMATION CARD
+     TRUCK CARD
   ======================================================= */
 
   #home .hero-animation-card {
-    position: relative;
+    position: relative !important;
 
     width: 100%;
     max-width: 100%;
@@ -6001,15 +5999,11 @@ export default function App() {
 
     box-sizing: border-box;
 
-    overflow: hidden;
+    overflow: hidden !important;
 
     border-radius: 13px;
   }
 
-
-  /* =======================================================
-     ANIMATION AREA
-  ======================================================= */
 
   #home .kiran-about-animation {
     position: relative !important;
@@ -6022,14 +6016,14 @@ export default function App() {
     margin: 0 !important;
     padding: 0 !important;
 
-    box-sizing: border-box;
-
     overflow: hidden !important;
+
+    box-sizing: border-box;
   }
 
 
   /* =======================================================
-     ANIMATION TITLE
+     TRUCK TITLE
   ======================================================= */
 
   #home .kiran-about-title {
@@ -6042,13 +6036,11 @@ export default function App() {
     padding-top: 9px !important;
 
     font-size: 15px !important;
-
     line-height: 1.2 !important;
 
     text-align: center;
 
     visibility: visible !important;
-
     opacity: 1 !important;
   }
 
@@ -6061,13 +6053,11 @@ export default function App() {
     display: block !important;
 
     font-size: 9px !important;
-
     line-height: 1.2 !important;
 
     text-align: center;
 
     visibility: visible !important;
-
     opacity: 1 !important;
   }
 
@@ -6084,7 +6074,6 @@ export default function App() {
     display: block !important;
 
     visibility: visible !important;
-
     opacity: 1 !important;
   }
 
@@ -6108,13 +6097,12 @@ export default function App() {
     display: block !important;
 
     visibility: visible !important;
-
     opacity: 1 !important;
   }
 
 
   /* =======================================================
-     TRUCK — FORCE VISIBLE
+     TRUCK - MOBILE VISIBLE + ANIMATED
   ======================================================= */
 
   #home .kiran-truck {
@@ -6125,7 +6113,6 @@ export default function App() {
     display: block !important;
 
     visibility: visible !important;
-
     opacity: 1 !important;
 
     left: 50% !important;
@@ -6133,17 +6120,12 @@ export default function App() {
     bottom: 17px !important;
 
     width: 170px !important;
+    max-width: none !important;
 
     height: auto !important;
 
-    max-width: none !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
-    transform:
-      translateX(-50%)
-      scale(0.82) !important;
 
     transform-origin: center bottom !important;
 
@@ -6155,28 +6137,24 @@ export default function App() {
   }
 
 
-  /* =======================================================
-     TRUCK ANIMATION
-  ======================================================= */
-
   @keyframes mobileKiranTruck {
 
     0% {
       transform:
         translateX(-72px)
-        scale(0.82);
+        scale(.82);
     }
 
     50% {
       transform:
         translateX(72px)
-        scale(0.82);
+        scale(.82);
     }
 
     100% {
       transform:
         translateX(-72px)
-        scale(0.82);
+        scale(.82);
     }
 
   }
@@ -6186,46 +6164,34 @@ export default function App() {
      TRUCK PARTS
   ======================================================= */
 
-  #home .kiran-truck-body {
-    position: relative !important;
-
-    display: block !important;
-
+  #home .kiran-truck-body,
+  #home .kiran-truck-name,
+  #home .kiran-truck-cabin,
+  #home .kiran-truck-window,
+  #home .kiran-wheel {
     visibility: visible !important;
-
     opacity: 1 !important;
+  }
+
+
+  #home .kiran-truck-body {
+    display: block !important;
   }
 
   #home .kiran-truck-name {
     display: block !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
   }
 
   #home .kiran-truck-cabin {
     display: block !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
   }
 
   #home .kiran-truck-window {
     display: block !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
   }
 
   #home .kiran-wheel {
     display: block !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
   }
 
 
@@ -6241,21 +6207,19 @@ export default function App() {
 
     padding: 6px 8px !important;
 
-    box-sizing: border-box;
-
     font-size: 9px !important;
-
     line-height: 1.35 !important;
 
     text-align: center;
 
     overflow-wrap: anywhere;
+
+    box-sizing: border-box;
   }
 
 
   /* =======================================================
-     DESKTOP CITY BAR
-     MOBILE HIDDEN
+     DESKTOP CITY BAR HIDDEN ON MOBILE
   ======================================================= */
 
   #home .hero-content > .home-city-strip {
@@ -6276,17 +6240,16 @@ export default function App() {
 
     padding: 13px 11px !important;
 
-    box-sizing: border-box;
-
     border-radius: 14px;
 
     overflow: hidden;
+
+    box-sizing: border-box;
   }
 
 
   #home .hero-quote-kicker {
     font-size: 8px !important;
-
     line-height: 1.2 !important;
   }
 
@@ -6295,7 +6258,6 @@ export default function App() {
     margin: 4px 0 5px !important;
 
     font-size: 21px !important;
-
     line-height: 1.1 !important;
 
     text-align: left;
@@ -6306,7 +6268,6 @@ export default function App() {
     margin: 0 0 8px !important;
 
     font-size: 10px !important;
-
     line-height: 1.35 !important;
   }
 
@@ -6323,9 +6284,9 @@ export default function App() {
 
     padding: 8px !important;
 
-    box-sizing: border-box;
-
     border-radius: 8px;
+
+    box-sizing: border-box;
   }
 
 
@@ -6333,7 +6294,6 @@ export default function App() {
     display: block;
 
     font-size: 9px !important;
-
     line-height: 1.25 !important;
   }
 
@@ -6344,7 +6304,6 @@ export default function App() {
     margin-top: 2px !important;
 
     font-size: 8px !important;
-
     line-height: 1.25 !important;
   }
 
@@ -6358,7 +6317,6 @@ export default function App() {
     max-width: 100%;
 
     margin: 0 !important;
-
     padding: 0 !important;
 
     box-sizing: border-box;
@@ -6370,7 +6328,6 @@ export default function App() {
     max-width: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     gap: 6px !important;
@@ -6395,7 +6352,6 @@ export default function App() {
     margin-bottom: 2px !important;
 
     font-size: 8px !important;
-
     line-height: 1.2 !important;
   }
 
@@ -6411,11 +6367,11 @@ export default function App() {
 
     padding: 0 9px !important;
 
-    box-sizing: border-box;
-
     font-size: 11px !important;
 
     border-radius: 7px;
+
+    box-sizing: border-box;
   }
 
 
@@ -6436,28 +6392,25 @@ export default function App() {
 
     margin: 1px 0 0 !important;
 
-    box-sizing: border-box;
-
     display: flex;
-
     flex-direction: column;
 
     gap: 2px !important;
 
     border-radius: 8px;
+
+    box-sizing: border-box;
   }
 
 
   #home .hero-form-price strong {
     font-size: 8px !important;
-
     line-height: 1.25 !important;
   }
 
 
   #home .hero-form-price span {
     font-size: 8px !important;
-
     line-height: 1.2 !important;
   }
 
@@ -6470,25 +6423,24 @@ export default function App() {
     width: 100%;
     max-width: 100%;
 
-    min-height: 40px !important;
-
     height: 40px !important;
+    min-height: 40px !important;
 
     margin: 7px 0 0 !important;
 
     padding: 8px 12px !important;
 
-    box-sizing: border-box;
-
     font-size: 11px !important;
 
     border-radius: 8px;
+
+    box-sizing: border-box;
   }
 
 
   /* =======================================================
      MOBILE CITY SCROLL
-     AFTER SUBMIT
+     BELOW SUBMIT
   ======================================================= */
 
   #home .mobile-home-city-strip {
@@ -6498,12 +6450,11 @@ export default function App() {
     max-width: 100%;
 
     margin: 4px 0 0 !important;
-
     padding: 0 !important;
 
-    box-sizing: border-box;
-
     overflow: hidden;
+
+    box-sizing: border-box;
   }
 
 
@@ -6515,7 +6466,6 @@ export default function App() {
     gap: 6px;
 
     margin: 0 !important;
-
     padding: 4px 0 !important;
 
     white-space: nowrap;
@@ -6534,7 +6484,6 @@ export default function App() {
     padding: 5px 8px !important;
 
     font-size: 8px !important;
-
     line-height: 1.1 !important;
 
     border-radius: 15px;
@@ -6557,143 +6506,424 @@ export default function App() {
 
 
   /* =======================================================
-     BOTTOM = SAME COMPACT FEEL AS TOP
+     HOME BOTTOM = HOME TOP
   ======================================================= */
 
-  #home .mobile-home-city-strip {
-    margin-bottom: 0 !important;
-  }
-
-  #home .mobile-home-city-track {
-    margin-bottom: 0 !important;
-  }
-
+  #home .mobile-home-city-strip,
+  #home .mobile-home-city-track,
   #home .hero-quote-card {
     margin-bottom: 0 !important;
+  }
+
+
+  /* =======================================================
+     ABOUT - SAME PAGE TIGHTENING
+  ======================================================= */
+
+  #about {
+    width: 100%;
+
+    margin: 0 !important;
+
+    padding: 18px 0 18px !important;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+
+  #about .container {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  #about .about-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =======================================================
+     ABOUT IMAGE
+  ======================================================= */
+
+  #about .about-image {
+    width: 100%;
+
+    height: 210px !important;
+
+    margin: 0 !important;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+  }
+
+
+  #about .about-photo-grid {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+
+  #about .about-photo-card {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+
+  #about .about-photo-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  #about .about-photo-card::after {
+    left: 7px !important;
+    bottom: 7px !important;
+
+    padding: 5px 7px !important;
+
+    font-size: 6.5px !important;
+
+    border-radius: 14px;
+  }
+
+
+  /* =======================================================
+     ABOUT CONTENT
+  ======================================================= */
+
+  #about .about-content {
+    width: 100%;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box;
+  }
+
+
+  #about .about-content .eyebrow {
+    margin: 0 0 5px !important;
+  }
+
+
+  #about .about-content h3 {
+    margin: 0 0 8px !important;
+
+    font-size: 27px !important;
+    line-height: 1.08 !important;
+  }
+
+
+  #about .about-content p {
+    margin: 0 0 7px !important;
+
+    font-size: 12.5px !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  /* =======================================================
+     ABOUT POINTS
+  ======================================================= */
+
+  #about .about-points {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px 7px !important;
+
+    margin: 10px 0 0 !important;
+
+    box-sizing: border-box;
+  }
+
+
+  #about .point {
+    padding: 7px 8px !important;
+
+    font-size: 9.5px !important;
+
+    line-height: 1.3 !important;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
   }
 
 }
 
 
 /* =========================================================
-   420px
+   SMALL MOBILE 420px
 ========================================================= */
 
 @media (max-width: 420px) {
+
+  /* HOME */
 
   #home.hero {
     padding: 17px 10px 17px !important;
   }
 
+
   #home .hero-content h1 {
     font-size: 28px !important;
   }
+
 
   #home .hero-main-matter {
     font-size: 11px !important;
   }
 
+
   #home .hero-extra-intro {
     padding: 10px !important;
   }
+
 
   #home .hero-extra-intro h3 {
     font-size: 16px !important;
   }
 
+
   #home .hero-extra-intro p {
     font-size: 10px !important;
   }
 
+
   #home .hero-animation-card {
     height: 155px !important;
   }
+
 
   #home .kiran-about-animation {
     height: 155px !important;
     min-height: 155px !important;
   }
 
+
   #home .kiran-truck {
     width: 165px !important;
 
     bottom: 15px !important;
-
-    transform:
-      translateX(-50%)
-      scale(.76) !important;
   }
+
 
   #home .hero-quote-card {
     padding: 12px 10px !important;
   }
 
+
   #home .hero-quote-card h2 {
     font-size: 20px !important;
+  }
+
+
+  /* ABOUT */
+
+  #about {
+    padding: 17px 0 17px !important;
+  }
+
+
+  #about .about-grid {
+    gap: 13px !important;
+  }
+
+
+  #about .about-image {
+    height: 190px !important;
+  }
+
+
+  #about .about-content h3 {
+    font-size: 25px !important;
+
+    margin-bottom: 7px !important;
+  }
+
+
+  #about .about-content p {
+    font-size: 11.5px !important;
+
+    line-height: 1.45 !important;
+
+    margin-bottom: 6px !important;
+  }
+
+
+  #about .about-points {
+    margin-top: 8px !important;
+  }
+
+
+  #about .point {
+    padding: 6px 7px !important;
+
+    font-size: 9px !important;
   }
 
 }
 
 
 /* =========================================================
-   360px
+   VERY SMALL MOBILE 360px
 ========================================================= */
 
 @media (max-width: 360px) {
+
+  /* HOME */
 
   #home.hero {
     padding: 16px 8px 16px !important;
   }
 
+
   #home .hero-content h1 {
     font-size: 26px !important;
   }
+
 
   #home .hero-badge {
     font-size: 8px !important;
   }
 
+
   #home .hero-main-matter {
     font-size: 10px !important;
   }
+
 
   #home .hero-extra-intro h3 {
     font-size: 15px !important;
   }
 
+
   #home .hero-extra-intro p {
     font-size: 9.5px !important;
   }
 
+
   #home .hero-animation-card {
     height: 145px !important;
   }
+
 
   #home .kiran-about-animation {
     height: 145px !important;
     min-height: 145px !important;
   }
 
+
   #home .kiran-truck {
     width: 155px !important;
 
     bottom: 13px !important;
-
-    transform:
-      translateX(-50%)
-      scale(.70) !important;
   }
+
 
   #home .hero-quote-card {
     padding: 11px 9px !important;
   }
 
+
   #home .hero-quote-card h2 {
     font-size: 19px !important;
   }
 
+
   #home .hero-quote-intro {
     font-size: 9px !important;
+  }
+
+
+  /* ABOUT */
+
+  #about {
+    padding: 16px 0 16px !important;
+  }
+
+
+  #about .about-grid {
+    gap: 12px !important;
+  }
+
+
+  #about .about-image {
+    height: 180px !important;
+  }
+
+
+  #about .about-content h3 {
+    font-size: 24px !important;
+
+    margin-bottom: 6px !important;
+  }
+
+
+  #about .about-content p {
+    font-size: 10.5px !important;
+
+    line-height: 1.4 !important;
+
+    margin-bottom: 5px !important;
+  }
+
+
+  #about .about-points {
+    margin-top: 7px !important;
+
+    gap: 4px 6px !important;
+  }
+
+
+  #about .point {
+    padding: 6px !important;
+
+    font-size: 8.5px !important;
   }
 
 }
@@ -6738,24 +6968,18 @@ export default function App() {
 
 
       <h1 className="blink-text">
-
         Move with{" "}
-
         <span>
           confidence.
         </span>{" "}
-
         Settle with ease.
-
       </h1>
 
 
       <p className="blink-text hero-main-matter">
-
         Professional packing and moving support. Careful handling
         for homes and offices. Reliable relocation assistance across
         Karimnagar and beyond.
-
       </p>
 
 
@@ -6914,7 +7138,9 @@ export default function App() {
     </div>
 
 
-    {/* QUOTE CARD */}
+    {/* =====================================================
+        QUOTE CARD
+    ===================================================== */}
 
     <div className="hero-quote-card reveal show">
 
@@ -6931,8 +7157,6 @@ export default function App() {
       </p>
 
 
-      {/* STARTING PRICE */}
-
       <div className="hero-price-box">
 
         <strong>
@@ -6946,8 +7170,6 @@ export default function App() {
       </div>
 
 
-      {/* FORM */}
-
       <form
         onSubmit={submitQuote}
         className="hero-quote-form"
@@ -6957,9 +7179,7 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              Your Name
-            </label>
+            <label>Your Name</label>
 
             <input
               type="text"
@@ -6972,9 +7192,7 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              Phone Number
-            </label>
+            <label>Phone Number</label>
 
             <input
               type="tel"
@@ -6987,9 +7205,7 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              From Location
-            </label>
+            <label>From Location</label>
 
             <input
               type="text"
@@ -7002,9 +7218,7 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              To Location
-            </label>
+            <label>To Location</label>
 
             <input
               type="text"
@@ -7017,45 +7231,23 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              Moving Type
-            </label>
+            <label>Moving Type</label>
 
             <select
               required
               defaultValue=""
             >
 
-              <option
-                value=""
-                disabled
-              >
+              <option value="" disabled>
                 Select service
               </option>
 
-              <option>
-                House Shifting
-              </option>
-
-              <option>
-                Office Relocation
-              </option>
-
-              <option>
-                Local Shifting
-              </option>
-
-              <option>
-                Intercity Relocation
-              </option>
-
-              <option>
-                Vehicle Transportation
-              </option>
-
-              <option>
-                Packing &amp; Unpacking
-              </option>
+              <option>House Shifting</option>
+              <option>Office Relocation</option>
+              <option>Local Shifting</option>
+              <option>Intercity Relocation</option>
+              <option>Vehicle Transportation</option>
+              <option>Packing &amp; Unpacking</option>
 
             </select>
 
@@ -7064,34 +7256,20 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              Move Size
-            </label>
+            <label>Move Size</label>
 
             <select
               required
               defaultValue=""
             >
 
-              <option
-                value=""
-                disabled
-              >
+              <option value="" disabled>
                 Select move size
               </option>
 
-              <option value="1bhk">
-                1 BHK
-              </option>
-
-              <option value="2bhk">
-                2 BHK
-              </option>
-
-              <option value="3bhk">
-                3 BHK
-              </option>
-
+              <option value="1bhk">1 BHK</option>
+              <option value="2bhk">2 BHK</option>
+              <option value="3bhk">3 BHK</option>
               <option value="office">
                 Office / Commercial
               </option>
@@ -7103,56 +7281,29 @@ export default function App() {
 
           <div className="hero-form-group">
 
-            <label>
-              Approx. Distance
-            </label>
+            <label>Approx. Distance</label>
 
             <select
               required
               defaultValue=""
             >
 
-              <option
-                value=""
-                disabled
-              >
+              <option value="" disabled>
                 Select distance
               </option>
 
-              <option value="0-10">
-                0 – 10 KM
-              </option>
-
-              <option value="10-25">
-                10 – 25 KM
-              </option>
-
-              <option value="25-50">
-                25 – 50 KM
-              </option>
-
-              <option value="50-100">
-                50 – 100 KM
-              </option>
-
-              <option value="100-250">
-                100 – 250 KM
-              </option>
-
-              <option value="250-500">
-                250 – 500 KM
-              </option>
-
-              <option value="500+">
-                500+ KM
-              </option>
+              <option value="0-10">0 – 10 KM</option>
+              <option value="10-25">10 – 25 KM</option>
+              <option value="25-50">25 – 50 KM</option>
+              <option value="50-100">50 – 100 KM</option>
+              <option value="100-250">100 – 250 KM</option>
+              <option value="250-500">250 – 500 KM</option>
+              <option value="500+">500+ KM</option>
 
             </select>
 
           </div>
 
-
-          {/* PRICING */}
 
           <div className="hero-form-price">
 
@@ -7160,40 +7311,18 @@ export default function App() {
               PRICING BASED ON DISTANCE
             </strong>
 
-            <span>
-              0–10 KM: ₹8,999+
-            </span>
-
-            <span>
-              10–25 KM: ₹10,999+
-            </span>
-
-            <span>
-              25–50 KM: ₹13,999+
-            </span>
-
-            <span>
-              50–100 KM: ₹17,999+
-            </span>
-
-            <span>
-              100–250 KM: ₹22,999+
-            </span>
-
-            <span>
-              250–500 KM: ₹29,999+
-            </span>
-
-            <span>
-              500+ KM: ₹35,999+
-            </span>
+            <span>0–10 KM: ₹8,999+</span>
+            <span>10–25 KM: ₹10,999+</span>
+            <span>25–50 KM: ₹13,999+</span>
+            <span>50–100 KM: ₹17,999+</span>
+            <span>100–250 KM: ₹22,999+</span>
+            <span>250–500 KM: ₹29,999+</span>
+            <span>500+ KM: ₹35,999+</span>
 
           </div>
 
         </div>
 
-
-        {/* SUBMIT */}
 
         <button
           type="submit"
@@ -7256,6 +7385,8 @@ export default function App() {
   </div>
 
 </section>
+
+
 {/* =====================================================
     ABOUT SECTION
 ===================================================== */}
@@ -7266,6 +7397,10 @@ export default function App() {
 >
 
   <style>{`
+
+    /* =================================================
+       DESKTOP — ORIGINAL UNCHANGED
+    ================================================= */
 
     #about {
       position: relative;
@@ -7279,10 +7414,6 @@ export default function App() {
       gap: 28px;
       align-items: center;
     }
-
-    /* =================================================
-       TWO FULL IMAGES
-    ================================================= */
 
     #about .about-image {
       width: 100%;
@@ -7332,10 +7463,6 @@ export default function App() {
       background: #061A30;
     }
 
-    /* =================================================
-       IMAGES
-    ================================================= */
-
     #about .about-photo-card img {
       position: absolute;
 
@@ -7363,10 +7490,6 @@ export default function App() {
     #about .about-photo-card:hover img {
       transform: scale(1.04);
     }
-
-    /* =================================================
-       IMAGE LABELS
-    ================================================= */
 
     #about .about-photo-card:first-child::after {
       content: "HOME RELOCATION";
@@ -7401,10 +7524,6 @@ export default function App() {
       z-index: 5;
     }
 
-    /* =================================================
-       ABOUT CONTENT
-    ================================================= */
-
     #about .about-content {
       width: 100%;
     }
@@ -7434,10 +7553,6 @@ export default function App() {
 
       line-height: 1.55;
     }
-
-    /* =================================================
-       ABOUT POINTS
-    ================================================= */
 
     #about .about-points {
       display: grid;
@@ -7473,6 +7588,7 @@ export default function App() {
       transform: translateY(-2px);
     }
 
+
     /* =================================================
        TABLET
     ================================================= */
@@ -7485,7 +7601,6 @@ export default function App() {
 
       #about .about-grid {
         grid-template-columns: 1fr;
-
         gap: 20px;
       }
 
@@ -7495,6 +7610,7 @@ export default function App() {
 
     }
 
+
     /* =================================================
        MOBILE
     ================================================= */
@@ -7502,16 +7618,15 @@ export default function App() {
     @media (max-width: 620px) {
 
       #about {
-        padding: 20px 0 22px;
+        padding: 18px 0 18px !important;
       }
 
       #about .about-grid {
-        gap: 17px;
+        gap: 14px !important;
       }
 
       #about .about-image {
-        height: 210px;
-
+        height: 210px !important;
         border-radius: 12px;
       }
 
@@ -7521,41 +7636,42 @@ export default function App() {
       }
 
       #about .about-photo-card::after {
-        left: 7px;
-        bottom: 7px;
+        left: 7px !important;
+        bottom: 7px !important;
 
-        padding: 5px 7px;
+        padding: 5px 7px !important;
 
-        font-size: 6.5px;
+        font-size: 6.5px !important;
       }
 
       #about .about-content h3 {
-        font-size: 27px;
+        font-size: 27px !important;
 
-        margin-bottom: 8px;
+        margin-bottom: 8px !important;
       }
 
       #about .about-content p {
-        font-size: 12.5px;
+        font-size: 12.5px !important;
 
-        line-height: 1.5;
+        line-height: 1.5 !important;
 
-        margin-bottom: 7px;
+        margin-bottom: 7px !important;
       }
 
       #about .about-points {
-        margin-top: 10px;
+        margin-top: 10px !important;
 
-        gap: 5px 7px;
+        gap: 5px 7px !important;
       }
 
       #about .point {
-        padding: 7px 8px;
+        padding: 7px 8px !important;
 
-        font-size: 9.5px;
+        font-size: 9.5px !important;
       }
 
     }
+
 
     /* =================================================
        SMALL MOBILE
@@ -7563,8 +7679,65 @@ export default function App() {
 
     @media (max-width: 420px) {
 
+      #about {
+        padding: 17px 0 17px !important;
+      }
+
+      #about .about-grid {
+        gap: 13px !important;
+      }
+
       #about .about-image {
-        height: 190px;
+        height: 190px !important;
+      }
+
+      #about .about-content h3 {
+        font-size: 25px !important;
+      }
+
+      #about .about-content p {
+        font-size: 11.5px !important;
+        line-height: 1.45 !important;
+      }
+
+    }
+
+
+    /* =================================================
+       VERY SMALL MOBILE
+    ================================================= */
+
+    @media (max-width: 360px) {
+
+      #about {
+        padding: 16px 0 16px !important;
+      }
+
+      #about .about-grid {
+        gap: 12px !important;
+      }
+
+      #about .about-image {
+        height: 180px !important;
+      }
+
+      #about .about-content h3 {
+        font-size: 24px !important;
+      }
+
+      #about .about-content p {
+        font-size: 10.5px !important;
+        line-height: 1.4 !important;
+      }
+
+      #about .about-points {
+        margin-top: 7px !important;
+        gap: 4px 6px !important;
+      }
+
+      #about .point {
+        padding: 6px !important;
+        font-size: 8.5px !important;
       }
 
     }
@@ -7598,7 +7771,7 @@ export default function App() {
           </div>
 
 
-          {/* IMAGE 2 — ADDED ONLY */}
+          {/* IMAGE 2 */}
 
           <div className="about-photo-card">
 
@@ -7608,7 +7781,6 @@ export default function App() {
             />
 
           </div>
-
 
         </div>
 
@@ -7678,7 +7850,6 @@ export default function App() {
   </div>
 
 </section>
-   
 {/* =====================================================
     SERVICES + ADVANTAGES + PROCESS
 ===================================================== */}
