@@ -3855,6 +3855,148 @@ export default function App() {
           }
         }
 
+        /* =========================
+           LATEST HOME UPDATES
+        ========================= */
+
+        .hero-main-matter {
+          font-size: 14px !important;
+          line-height: 1.55 !important;
+        }
+
+        .hero-extra-matter {
+          margin-top: 10px !important;
+        }
+
+        .hero-extra-intro {
+          padding: 14px !important;
+        }
+
+        .hero-extra-intro h3 {
+          font-size: 18px !important;
+          margin: 5px 0 7px !important;
+        }
+
+        .hero-extra-intro p {
+          font-size: 12px !important;
+          line-height: 1.5 !important;
+          margin: 5px 0 !important;
+        }
+
+        .hero-animation-card {
+          position: relative;
+          min-height: 230px;
+          margin: 16px 0 18px;
+          border-radius: 18px;
+          overflow: hidden;
+          background: linear-gradient(135deg, #061A30 0%, #0B2A4A 55%, #122f4f 100%);
+          border: 1px solid rgba(255,255,255,.12);
+          box-shadow: 0 18px 40px rgba(0,0,0,.20);
+        }
+
+        .hero-animation-card .kiran-about-animation {
+          position: absolute;
+          inset: 0;
+        }
+
+        .hero-animation-card .kiran-about-title {
+          top: 18px;
+          font-size: clamp(20px, 3vw, 30px);
+        }
+
+        .hero-animation-card .kiran-about-subtitle {
+          top: 58px;
+        }
+
+        .home-city-strip {
+          width: 100%;
+          overflow: hidden;
+          margin: 18px 0 2px;
+          padding: 9px 0;
+          border-top: 1px solid rgba(255,255,255,.16);
+          border-bottom: 1px solid rgba(255,255,255,.16);
+        }
+
+        .home-city-track {
+          display: flex;
+          width: max-content;
+          gap: 10px;
+          animation: homeCityScroll 28s linear infinite;
+        }
+
+        .home-city-pill {
+          flex: 0 0 auto;
+          padding: 7px 13px;
+          border-radius: 999px;
+          background: rgba(255,255,255,.10);
+          border: 1px solid rgba(255,255,255,.18);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 800;
+          white-space: nowrap;
+        }
+
+        @keyframes homeCityScroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
+        .about-photo-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
+          width: 100%;
+        }
+
+        .about-photo-card {
+          min-height: 190px;
+          border-radius: 16px;
+          overflow: hidden;
+          background: #dfe8f2;
+          box-shadow: 0 15px 35px rgba(11,42,74,.16);
+        }
+
+        .about-photo-card img {
+          width: 100%;
+          height: 100%;
+          min-height: 190px;
+          display: block;
+          object-fit: cover;
+        }
+
+        .hero-form-price {
+          grid-column: 1 / -1;
+          padding: 10px 12px;
+          border-radius: 9px;
+          background: #fff3e9;
+          border: 1px solid #f0c4a4;
+          color: #a94e1e;
+          font-size: 12px;
+          font-weight: 900;
+        }
+
+        .hero-form-price span {
+          color: #657486;
+          font-weight: 600;
+          margin-left: 5px;
+        }
+
+        @media (max-width: 700px) {
+          .hero-animation-card { min-height: 205px; }
+          .about-photo-grid { grid-template-columns: 1fr; }
+          .about-photo-card, .about-photo-card img { min-height: 210px; }
+          .home-city-track { animation-duration: 24s; }
+        }
+
+
+        .hero h1 {
+          font-size: clamp(34px, 4vw, 56px) !important;
+          line-height: 1.05 !important;
+        }
+
+        .hero-badge {
+          font-size: 10px !important;
+        }
         @media (prefers-reduced-motion: reduce) {
 
           html {
@@ -5055,133 +5197,644 @@ export default function App() {
 
         </div>
 
-        {/* HEADER */}
+    {/* =====================================================
+    HEADER + SERVICES DROPDOWN CSS
+===================================================== */}
 
-        <header className="header">
+<style>{`
 
-          <nav className="nav">
+  /* ================================
+     HEADER
+  ================================= */
 
-            <div
-              className="logo"
-              onClick={() =>
-                scrollToSection("home")
-              }
-            >
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+  }
 
-              <div className="logo-icon">
-                K
-              </div>
+  .nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
 
-              <div className="logo-text">
 
-                <strong>
-                  Kiran Packers
-                </strong>
+  /* ================================
+     LOGO
+  ================================= */
 
-                <span>
-                  Packers & Movers
-                </span>
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
 
-              </div>
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            </div>
+    background: #E18443;
+    color: #ffffff;
 
-            <button
-              className="menu-button"
-              onClick={() =>
-                setMobileMenu(!mobileMenu)
-              }
-            >
-              {mobileMenu ? "✕" : "☰"}
-            </button>
+    border-radius: 10px;
 
-            <div
-              className={`nav-links ${
-                mobileMenu
-                  ? "mobile-open"
-                  : ""
-              }`}
-            >
+    font-size: 23px;
+    font-weight: 900;
+  }
 
-              <button
-                onClick={() =>
-                  scrollToSection("home")
-                }
-              >
-                Home
-              </button>
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
 
-              <button
-                onClick={() =>
-                  scrollToSection("about")
-                }
-              >
-                About
-              </button>
+  .logo-text strong {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+  }
 
-              <button
-                onClick={() =>
-                  scrollToSection("services")
-                }
-              >
-                Services
-              </button>
+  .logo-text span {
+    margin-top: 3px;
+    color: rgba(255,255,255,.70);
+    font-size: 10px;
+  }
 
-              <button
-                onClick={() =>
-                  scrollToSection("process")
-                }
-              >
-                Process
-              </button>
 
-              <button
-                onClick={() =>
-                  scrollToSection("areas")
-                }
-              >
-                Areas
-              </button>
+  /* ================================
+     NAV LINKS
+  ================================= */
 
-              <button
-                onClick={() =>
-                  scrollToSection("journal")
-                }
-              >
-                Journal
-              </button>
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+  }
 
-              <button
-                onClick={() =>
-                  scrollToSection("contact")
-                }
-              >
-                Contact
-              </button>
+  .nav-links > button,
+  .nav-services-button {
+    border: 0;
+    background: transparent;
 
-              <button
-                className="admin-nav-button"
-                type="button"
-                onClick={openAdminPortal}
-              >
-                Admin Login
-              </button>
+    color: #ffffff;
 
-              <button
-                className="nav-quote"
-                onClick={() =>
-                  setShowQuote(true)
-                }
-              >
-                Get Free Quote
-              </button>
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
 
-            </div>
+    padding: 9px 11px;
 
-          </nav>
+    border-radius: 7px;
 
-        </header>
+    cursor: pointer;
 
+    white-space: nowrap;
+
+    transition:
+      background .2s ease,
+      color .2s ease;
+  }
+
+  .nav-links > button:hover,
+  .nav-services-button:hover {
+    background: rgba(255,255,255,.10);
+  }
+
+
+  /* ================================
+     SERVICES DROPDOWN
+  ================================= */
+
+  .nav-services-dropdown {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 100%;
+  }
+
+  .nav-services-button {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+  }
+
+  .nav-chevron {
+    font-size: 10px;
+    line-height: 1;
+  }
+
+
+  /* ================================
+     DROPDOWN MENU
+  ================================= */
+
+  .nav-services-menu {
+    position: absolute;
+
+    top: calc(100% + 5px);
+    left: 50%;
+
+    width: 220px;
+
+    padding: 7px;
+
+    background: #061A30;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 10px;
+
+    box-shadow:
+      0 15px 35px rgba(0,0,0,.35);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, 8px);
+
+    transition:
+      opacity .2s ease,
+      transform .2s ease,
+      visibility .2s ease;
+
+    z-index: 99999;
+  }
+
+
+  /* SHOW DROPDOWN */
+
+  .nav-services-dropdown:hover
+  .nav-services-menu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translate(-50%, 0);
+  }
+
+
+  /* ================================
+     DROPDOWN ITEMS
+  ================================= */
+
+  .nav-services-menu button {
+
+    width: 100% !important;
+
+    display: block !important;
+
+    padding: 10px 12px !important;
+
+    margin: 0 !important;
+
+    text-align: left;
+
+    border: 0 !important;
+
+    border-radius: 7px;
+
+    background: transparent !important;
+
+    color: #ffffff !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+      background .2s ease,
+      color .2s ease;
+  }
+
+  .nav-services-menu button:hover {
+
+    background: #E18443 !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* ================================
+     ADMIN LOGIN
+  ================================= */
+
+  .admin-nav-button {
+    border: 1px solid rgba(255,255,255,.25) !important;
+  }
+
+
+  /* ================================
+     QUOTE BUTTON
+  ================================= */
+
+  .nav-quote {
+    background: #E18443 !important;
+    color: #ffffff !important;
+
+    border: 0 !important;
+
+    padding: 9px 14px !important;
+
+    border-radius: 7px !important;
+
+    font-weight: 800 !important;
+  }
+
+  .nav-quote:hover {
+    background: #F09A5A !important;
+  }
+
+
+  /* ================================
+     MOBILE MENU BUTTON
+  ================================= */
+
+  .menu-button {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    cursor: pointer;
+  }
+
+
+  /* ================================
+     MOBILE
+  ================================= */
+
+  @media (max-width: 1050px) {
+
+    .menu-button {
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+
+      top: calc(100% + 10px);
+      left: 0;
+      right: 0;
+
+      display: none;
+
+      flex-direction: column;
+
+      align-items: stretch;
+
+      gap: 4px;
+
+      padding: 12px;
+
+      background: #061A30;
+
+      border: 1px solid rgba(255,255,255,.15);
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.30);
+    }
+
+    .nav-links.mobile-open {
+      display: flex;
+    }
+
+    .nav-links > button,
+    .nav-services-button {
+      width: 100% !important;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+
+    /* Mobile Services */
+
+    .nav-services-dropdown {
+      display: block;
+      width: 100%;
+    }
+
+    .nav-services-menu {
+      position: static;
+
+      width: 100%;
+
+      margin-top: 4px;
+
+      transform: none;
+
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      display: none;
+
+      box-shadow: none;
+
+      border: 0;
+
+      background: rgba(255,255,255,.05);
+    }
+
+    .nav-services-dropdown:hover
+    .nav-services-menu {
+      transform: none;
+    }
+
+    .nav-services-dropdown:hover
+    .nav-services-menu {
+      display: block;
+    }
+
+    .nav-services-menu button {
+      padding-left: 22px !important;
+    }
+
+  }
+
+`}</style>
+
+
+{/* =====================================================
+    HEADER
+===================================================== */}
+
+<header className="header">
+
+  <nav className="nav">
+
+
+    {/* LOGO */}
+
+    <div
+      className="logo"
+      onClick={() =>
+        scrollToSection("home")
+      }
+    >
+
+      <div className="logo-icon">
+        K
+      </div>
+
+      <div className="logo-text">
+
+        <strong>
+          Kiran Packers
+        </strong>
+
+        <span>
+          Packers & Movers
+        </span>
+
+      </div>
+
+    </div>
+
+
+    {/* MOBILE MENU */}
+
+    <button
+      className="menu-button"
+      type="button"
+      onClick={() =>
+        setMobileMenu(!mobileMenu)
+      }
+    >
+      {mobileMenu ? "✕" : "☰"}
+    </button>
+
+
+    {/* NAVIGATION */}
+
+    <div
+      className={`nav-links ${
+        mobileMenu
+          ? "mobile-open"
+          : ""
+      }`}
+    >
+
+
+      {/* HOME */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("home")
+        }
+      >
+        Home
+      </button>
+
+
+      {/* ABOUT */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("about")
+        }
+      >
+        About
+      </button>
+
+
+      {/* SERVICES */}
+
+      <div className="nav-services-dropdown">
+
+        <button
+          type="button"
+          className="nav-services-button"
+          onClick={() =>
+            scrollToSection("services")
+          }
+        >
+          Services
+          <span className="nav-chevron">
+            ▾
+          </span>
+        </button>
+
+
+        {/* SERVICES MENU */}
+
+        <div className="nav-services-menu">
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            House Shifting
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Office Shifting
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Bike Transport
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Car Transport
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Packing &amp; Unpacking
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Loading &amp; Unloading
+          </button>
+
+          <button
+            type="button"
+            onClick={() =>
+              scrollToSection("services")
+            }
+          >
+            Storage &amp; Warehousing
+          </button>
+
+        </div>
+
+      </div>
+
+
+      {/* PROCESS */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("process")
+        }
+      >
+        Process
+      </button>
+
+
+      {/* AREAS */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("areas")
+        }
+      >
+        Areas
+      </button>
+
+
+      {/* JOURNAL */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("journal")
+        }
+      >
+        Journal
+      </button>
+
+
+      {/* CONTACT */}
+
+      <button
+        type="button"
+        onClick={() =>
+          scrollToSection("contact")
+        }
+      >
+        Contact
+      </button>
+
+
+      {/* ADMIN LOGIN */}
+
+      <button
+        className="admin-nav-button"
+        type="button"
+        onClick={openAdminPortal}
+      >
+        Admin Login
+      </button>
+
+
+      {/* GET FREE QUOTE */}
+
+      <button
+        className="nav-quote"
+        type="button"
+        onClick={() =>
+          setShowQuote(true)
+        }
+      >
+        Get Free Quote
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
         {/* HERO */}
 
         <section
@@ -5231,276 +5884,7 @@ export default function App() {
 
               </div>
 
-              <div className="hero-actions">
-
-                <button
-                  className="btn btn-primary"
-                  onClick={() => setShowQuote(true)}
-                >
-                  📦 Get Free Quote
-                </button>
-
-                <button
-                  className="btn btn-light"
-                  onClick={openWhatsApp}
-                >
-                  💬 WhatsApp Us
-                </button>
-
-                <button
-                  className="btn btn-light home-location-button"
-                  onClick={getUserLocation}
-                >
-                  📍 Use My Location
-                </button>
-
-              </div>
-
-              {locationMessage && (
-                <div className="home-location-message">
-                  {locationMessage}
-                  {userLocation && (
-                    <span>
-                      {" "}({userLocation.latitude.toFixed(5)}, {" "}
-                      {userLocation.longitude.toFixed(5)})
-                    </span>
-                  )}
-                </div>
-              )}
-
-              <div className="hero-contact">
-
-                <div className="hero-contact-item">
-                  <strong>Location</strong>
-                  Mukarampura, Karimnagar
-                </div>
-
-                <div className="hero-contact-item">
-                  <strong>Call</strong>
-                  {company.phone}
-                </div>
-
-                <div className="hero-contact-item">
-                  <strong>Support</strong>
-                  Local &amp; Intercity Moves
-                </div>
-
-              </div>
-
-            </div>
-
-            <div className="hero-quote-card reveal show">
-
-              <div className="hero-quote-kicker">
-                FREE MOVING ESTIMATE
-              </div>
-
-              <h2>
-                Get Your Free Quote
-              </h2>
-
-              <p className="hero-quote-intro">
-                Tell us a few details about your moving requirement.
-              </p>
-
-              <div className="hero-price-box">
-                <strong>
-                  INDICATIVE STARTING PRICE — ₹8,999+
-                </strong>
-                <span>
-                  Final amount confirmed after move assessment.
-                </span>
-              </div>
-
-              <form
-                onSubmit={submitQuote}
-                className="hero-quote-form"
-              >
-
-                <div className="hero-quote-fields">
-
-                  <div className="hero-form-group">
-                    <label>Your Name</label>
-                    <input
-                      type="text"
-                      placeholder="Enter your name"
-                      required
-                    />
-                  </div>
-
-                  <div className="hero-form-group">
-                    <label>Phone Number</label>
-                    <input
-                      type="tel"
-                      placeholder="Enter phone number"
-                      required
-                    />
-                  </div>
-
-                  <div className="hero-form-group">
-                    <label>From Location</label>
-                    <input
-                      type="text"
-                      placeholder="Pickup location"
-                      required
-                    />
-                  </div>
-
-                  <div className="hero-form-group">
-                    <label>To Location</label>
-                    <input
-                      type="text"
-                      placeholder="Destination"
-                      required
-                    />
-                  </div>
-
-                  <div className="hero-form-group">
-                    <label>Moving Type</label>
-                    <select required defaultValue="">
-                      <option value="" disabled>
-                        Select service
-                      </option>
-                      <option>House Shifting</option>
-                      <option>Office Relocation</option>
-                      <option>Local Shifting</option>
-                      <option>Intercity Relocation</option>
-                      <option>Vehicle Transportation</option>
-                      <option>Packing &amp; Unpacking</option>
-                    </select>
-                  </div>
-
-                  <div className="hero-form-group">
-                    <label>Preferred Date</label>
-                    <input type="date" />
-                  </div>
-
-                  <div className="hero-form-group hero-form-full">
-                    <label>Additional Details</label>
-                    <textarea
-                      placeholder="Tell us about your moving requirement..."
-                    />
-                  </div>
-
-                </div>
-
-                <button
-                  type="submit"
-                  className="hero-quote-submit"
-                >
-                  Submit Enquiry →
-                </button>
-
-              </form>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* TRUST */}
-
-        <section className="trust-strip">
-
-          <div className="container trust-grid">
-
-            <div className="trust-item">
-
-              <div className="trust-icon">
-                📦
-              </div>
-
-              <div>
-
-                <strong>
-                  Safe Packing
-                </strong>
-
-                <span>
-                  Organised handling
-                </span>
-
-              </div>
-
-            </div>
-
-            <div className="trust-item">
-
-              <div className="trust-icon">
-                🚚
-              </div>
-
-              <div>
-
-                <strong>
-                  Moving Support
-                </strong>
-
-                <span>
-                  Planned transportation
-                </span>
-
-              </div>
-
-            </div>
-
-            <div className="trust-item">
-
-              <div className="trust-icon">
-                📍
-              </div>
-
-              <div>
-
-                <strong>
-                  Door-to-Door
-                </strong>
-
-                <span>
-                  Pickup to delivery
-                </span>
-
-              </div>
-
-            </div>
-
-            <div className="trust-item">
-
-              <div className="trust-icon">
-                📞
-              </div>
-
-              <div>
-
-                <strong>
-                  Easy Contact
-                </strong>
-
-                <span>
-                  Call or WhatsApp
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* ABOUT */}
-
-        <section
-          id="about"
-          className="section"
-        >
-
-          <div className="container">
-
-            <div className="about-grid">
-
-              <div className="about-image reveal">
+              <div className="hero-animation-card">
 
                 <div className="kiran-about-animation">
 
@@ -5533,780 +5917,3836 @@ export default function App() {
 
               </div>
 
-              <div className="about-content reveal">
 
-                <div className="eyebrow">
-                  ABOUT US
+             
+
+              {locationMessage && (
+                <div className="home-location-message">
+                  {locationMessage}
+                  {userLocation && (
+                    <span>
+                      {" "}({userLocation.latitude.toFixed(5)}, {" "}
+                      {userLocation.longitude.toFixed(5)})
+                    </span>
+                  )}
                 </div>
+              )}
 
-                <h3 className="blink-text">
-                  A smoother way to
-                  handle your move.
-                </h3>
-
-                <p>
-                  Moving home or shifting
-                  a workplace involves many
-                  small details. Kiran Packers
-                  And Movers is focused on
-                  making those steps easier
-                  through organised packing,
-                  loading, transportation and
-                  unloading support.
-                </p>
-
-                <p>
-                  Based in Mukarampura,
-                  Karimnagar, we provide
-                  moving assistance for local
-                  requirements as well as
-                  relocation needs beyond
-                  the city.
-                </p>
-
-                <div className="about-points">
-
-                  <div className="point">
-                    ✓ Household Relocation
-                  </div>
-
-                  <div className="point">
-                    ✓ Office Shifting
-                  </div>
-
-                  <div className="point">
-                    ✓ Packing Assistance
-                  </div>
-
-                  <div className="point">
-                    ✓ Loading & Unloading
-                  </div>
-
-                  <div className="point">
-                    ✓ Local Moving
-                  </div>
-
-                  <div className="point">
-                    ✓ Intercity Moving
-                  </div>
-
+             
+              <div className="home-city-strip">
+                <div className="home-city-track">
+                  {[
+                    "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
+                    "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
+                    "Warangal", "Hyderabad", "Nizamabad", "Adilabad",
+                    "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
+                    "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
+                    "Warangal", "Hyderabad", "Nizamabad", "Adilabad"
+                  ].map((city, index) => (
+                    <span className="home-city-pill" key={`${city}-${index}`}>
+                      {city}
+                    </span>
+                  ))}
                 </div>
+              </div>
 
+            </div>
+
+           <div className="hero-quote-card reveal show">
+
+  <div className="hero-quote-kicker">
+    FREE MOVING ESTIMATE
+  </div>
+
+  <h2>
+    Get Your Free Quote
+  </h2>
+
+  <p className="hero-quote-intro">
+    Tell us a few details about your moving requirement.
+  </p>
+
+  <div className="hero-price-box">
+    <strong>
+      INDICATIVE STARTING PRICE — ₹8,999+
+    </strong>
+
+    <span>
+      Final amount depends on move size and distance.
+    </span>
+  </div>
+
+  <form
+    onSubmit={submitQuote}
+    className="hero-quote-form"
+  >
+
+    <div className="hero-quote-fields">
+
+      {/* NAME */}
+      <div className="hero-form-group">
+        <label>Your Name</label>
+
+        <input
+          type="text"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      {/* PHONE */}
+      <div className="hero-form-group">
+        <label>Phone Number</label>
+
+        <input
+          type="tel"
+          placeholder="Enter phone number"
+          required
+        />
+      </div>
+
+      {/* FROM */}
+      <div className="hero-form-group">
+        <label>From Location</label>
+
+        <input
+          type="text"
+          placeholder="Pickup location"
+          required
+        />
+      </div>
+
+      {/* TO */}
+      <div className="hero-form-group">
+        <label>To Location</label>
+
+        <input
+          type="text"
+          placeholder="Destination"
+          required
+        />
+      </div>
+
+      {/* SERVICE */}
+      <div className="hero-form-group">
+        <label>Moving Type</label>
+
+        <select
+          required
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select service
+          </option>
+
+          <option>
+            House Shifting
+          </option>
+
+          <option>
+            Office Relocation
+          </option>
+
+          <option>
+            Local Shifting
+          </option>
+
+          <option>
+            Intercity Relocation
+          </option>
+
+          <option>
+            Vehicle Transportation
+          </option>
+
+          <option>
+            Packing &amp; Unpacking
+          </option>
+        </select>
+      </div>
+
+      {/* MOVE SIZE */}
+      <div className="hero-form-group">
+        <label>Move Size</label>
+
+        <select
+          required
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select move size
+          </option>
+
+          <option value="1bhk">
+            1 BHK
+          </option>
+
+          <option value="2bhk">
+            2 BHK
+          </option>
+
+          <option value="3bhk">
+            3 BHK
+          </option>
+
+          <option value="office">
+            Office / Commercial
+          </option>
+        </select>
+      </div>
+
+      {/* DISTANCE */}
+      <div className="hero-form-group">
+        <label>Approx. Distance</label>
+
+        <select
+          required
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select distance
+          </option>
+
+          <option value="0-10">
+            0 – 10 KM
+          </option>
+
+          <option value="10-25">
+            10 – 25 KM
+          </option>
+
+          <option value="25-50">
+            25 – 50 KM
+          </option>
+
+          <option value="50-100">
+            50 – 100 KM
+          </option>
+
+          <option value="100-250">
+            100 – 250 KM
+          </option>
+
+          <option value="250-500">
+            250 – 500 KM
+          </option>
+
+          <option value="500+">
+            500+ KM
+          </option>
+        </select>
+      </div>
+
+      {/* PRICING */}
+      <div className="hero-form-price">
+
+        <strong>
+          PRICING BASED ON DISTANCE
+        </strong>
+
+        <span>
+          0–10 KM: ₹8,999+
+        </span>
+
+        <span>
+          10–25 KM: ₹10,999+
+        </span>
+
+        <span>
+          25–50 KM: ₹13,999+
+        </span>
+
+        <span>
+          50–100 KM: ₹17,999+
+        </span>
+
+        <span>
+          100–250 KM: ₹22,999+
+        </span>
+
+        <span>
+          250–500 KM: ₹29,999+
+        </span>
+
+        <span>
+          500+ KM: ₹35,999+
+        </span>
+
+      </div>
+
+    </div>
+
+    <button
+      type="submit"
+      className="hero-quote-submit"
+    >
+      Submit Enquiry →
+    </button>
+
+  </form>
+
+</div>
+          </div>
+
+        </section>
+
+       
+
+       {/* =====================================================
+    ABOUT SECTION
+===================================================== */}
+
+<section
+  id="about"
+  className="section"
+>
+
+  <style>{`
+
+    #about {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 0 30px;
+    }
+
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    /* ================================
+       ATTACHED IMAGE AREA
+    ================================= */
+
+    #about .about-image {
+      width: 100%;
+    }
+
+    #about .about-photo-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    #about .about-photo-card {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      background: #f2f2f2;
+    }
+
+    #about .about-photo-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    #about .about-photo-card:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ================================
+       IMAGE LABELS
+    ================================= */
+
+    #about .about-photo-card::after {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 18px;
+      background: rgba(6, 26, 48, 0.9);
+      color: #ffffff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    #about .about-photo-card:first-child::after {
+      content: "HOME RELOCATION";
+    }
+
+    #about .about-photo-card:last-child::after {
+      content: "PACKING & MOVING";
+    }
+
+    /* ================================
+       ABOUT CONTENT
+    ================================= */
+
+    #about .about-content {
+      width: 100%;
+    }
+
+    #about .about-content .eyebrow {
+      margin-bottom: 5px;
+    }
+
+    #about .about-content h3 {
+      margin: 0 0 10px;
+      color: #061A30;
+      font-size: clamp(27px, 3.2vw, 40px);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    #about .about-content p {
+      margin: 0 0 8px;
+      color: #526477;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* ================================
+       ABOUT POINTS
+    ================================= */
+
+    #about .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 9px;
+      margin-top: 12px;
+    }
+
+    #about .point {
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(225, 132, 67, 0.08);
+      border: 1px solid rgba(225, 132, 67, 0.13);
+      color: #17324d;
+      font-size: 10.5px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    #about .point:hover {
+      background: rgba(225, 132, 67, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* ================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 900px) {
+
+      #about {
+        padding: 24px 0 26px;
+      }
+
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      #about .about-photo-card {
+        height: 280px;
+      }
+
+    }
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 620px) {
+
+      #about {
+        padding: 20px 0 22px;
+      }
+
+      #about .about-grid {
+        gap: 17px;
+      }
+
+      #about .about-photo-card {
+        height: 210px;
+      }
+
+      #about .about-photo-grid {
+        border-radius: 12px;
+      }
+
+      #about .about-photo-card::after {
+        left: 7px;
+        bottom: 7px;
+        padding: 5px 7px;
+        font-size: 6.5px;
+      }
+
+      #about .about-content h3 {
+        font-size: 27px;
+        margin-bottom: 8px;
+      }
+
+      #about .about-content p {
+        font-size: 12.5px;
+        line-height: 1.5;
+        margin-bottom: 7px;
+      }
+
+      #about .about-points {
+        margin-top: 10px;
+        gap: 5px 7px;
+      }
+
+      #about .point {
+        padding: 7px 8px;
+        font-size: 9.5px;
+      }
+
+    }
+
+  `}</style>
+
+
+  <div className="container">
+
+    <div className="about-grid">
+
+
+      {/* ================================
+          ATTACHED IMAGES
+      ================================= */}
+
+      <div className="about-image reveal">
+
+        <div className="about-photo-grid">
+
+          <div className="about-photo-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=1200&q=90"
+              alt="Home relocation"
+            />
+
+          </div>
+
+
+          <div className="about-photo-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=90"
+              alt="Packing and moving"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* ================================
+          ABOUT CONTENT
+      ================================= */}
+
+      <div className="about-content reveal">
+
+        <div className="eyebrow">
+          ABOUT US
+        </div>
+
+        <h3 className="blink-text">
+          A smoother way to
+          handle your move.
+        </h3>
+
+        <p>
+          Moving home or shifting a workplace involves many
+          small details. Kiran Packers And Movers is focused
+          on making those steps easier through organised
+          packing, loading, transportation and unloading support.
+        </p>
+
+        <p>
+          Based in Mukarampura, Karimnagar, we provide
+          moving assistance for local requirements as well
+          as relocation needs beyond the city.
+        </p>
+
+        <div className="about-points">
+
+          <div className="point">
+            ✓ Household Relocation
+          </div>
+
+          <div className="point">
+            ✓ Office Shifting
+          </div>
+
+          <div className="point">
+            ✓ Packing Assistance
+          </div>
+
+          <div className="point">
+            ✓ Loading &amp; Unloading
+          </div>
+
+          <div className="point">
+            ✓ Local Moving
+          </div>
+
+          <div className="point">
+            ✓ Intercity Moving
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+   
+{/* =====================================================
+    SERVICES + ADVANTAGES + PROCESS
+===================================================== */}
+
+<style>{`
+
+  /* =====================================================
+     GLOBAL TIGHT LAYOUT
+  ===================================================== */
+
+  .services-section,
+  .section.dark,
+  #process {
+    padding-top: 25px !important;
+    padding-bottom: 28px !important;
+    overflow: hidden;
+  }
+
+  .services-section .section-heading,
+  .section.dark .section-heading,
+  #process .section-heading {
+    margin-bottom: 15px !important;
+  }
+
+  .services-section .section-heading p,
+  .section.dark .section-heading p,
+  #process .section-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+
+  /* =====================================================
+     SERVICES
+  ===================================================== */
+
+  .services-section {
+    background: #061A30 !important;
+  }
+
+  .services-section .section-heading .eyebrow {
+    color: #E18443;
+  }
+
+  .services-section .section-heading h2 {
+    color: #ffffff;
+    margin-bottom: 7px;
+    font-size: 25px;
+  }
+
+  .services-section .section-heading p {
+    color: rgba(255,255,255,0.72);
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .service-card {
+    position: relative;
+    height: 225px;
+    min-height: 225px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #0b2742;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+    isolation: isolate;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-size 0.7s ease;
+    background-position: center;
+  }
+
+
+  /* =====================================================
+     SERVICE BACKGROUND IMAGES
+  ===================================================== */
+
+  .service-card:nth-child(1) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.08),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card:nth-child(2) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.08),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.08),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card:nth-child(4) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.05),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card:nth-child(5) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.08),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card:nth-child(6) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.05),
+        rgba(6,26,48,0.94)
+      ),
+      url("https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?auto=format&fit=crop&w=1000&q=90")
+      center / cover no-repeat;
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.02) 15%,
+        rgba(6,26,48,0.30) 45%,
+        rgba(6,26,48,0.96) 100%
+      );
+    z-index: -1;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 15px 32px rgba(0,0,0,0.32);
+    background-size: 108%;
+  }
+
+  .service-icon {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(225,132,67,0.94);
+    color: #ffffff;
+    font-size: 19px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.22);
+  }
+
+  .service-card h3 {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 48px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.15;
+    font-weight: 900;
+  }
+
+  .service-card p {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 25px;
+    margin: 0;
+    color: rgba(255,255,255,0.82);
+    font-size: 10.5px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .service-link {
+    position: absolute;
+    left: 14px;
+    bottom: 9px;
+    color: #E18443;
+    font-size: 9px;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+
+  /* =====================================================
+     ADVANTAGES
+  ===================================================== */
+
+  .section.dark {
+    background: #041321 !important;
+  }
+
+  .section.dark .section-heading .eyebrow {
+    color: #E18443;
+  }
+
+  .section.dark .section-heading h2 {
+    color: #ffffff;
+    margin-bottom: 7px;
+    font-size: 25px;
+  }
+
+  .section.dark .section-heading p {
+    color: rgba(255,255,255,0.70);
+  }
+
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .advantage-card {
+    position: relative;
+    height: 145px;
+    min-height: 145px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0a233b;
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.18);
+    isolation: isolate;
+    transition: transform 0.3s ease;
+  }
+
+
+  /* ADVANTAGE IMAGES */
+
+  .advantage-card:nth-child(1) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.12),
+        rgba(6,26,48,0.92)
+      ),
+      url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=700&q=85")
+      center / cover no-repeat;
+  }
+
+  .advantage-card:nth-child(2) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.12),
+        rgba(6,26,48,0.92)
+      ),
+      url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&q=85")
+      center / cover no-repeat;
+  }
+
+  .advantage-card:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.12),
+        rgba(6,26,48,0.92)
+      ),
+      url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=700&q=85")
+      center / cover no-repeat;
+  }
+
+  .advantage-card:nth-child(4) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,26,48,0.12),
+        rgba(6,26,48,0.92)
+      ),
+      url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85")
+      center / cover no-repeat;
+  }
+
+  .advantage-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .advantage-icon {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(225,132,67,0.94);
+    color: #ffffff;
+    font-size: 17px;
+  }
+
+  .advantage-card h3 {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 32px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .advantage-card p {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 9px;
+    margin: 0;
+    color: rgba(255,255,255,0.78);
+    font-size: 9.5px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     PROCESS
+  ===================================================== */
+
+  #process {
+    background: #f4f6f8 !important;
+  }
+
+  #process .section-heading .eyebrow {
+    color: #E18443;
+  }
+
+  #process .section-heading h2 {
+    color: #061A30;
+    margin-bottom: 7px;
+    font-size: 25px;
+  }
+
+  #process .section-heading p {
+    color: #617080;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .process-card {
+    position: relative;
+    height: 150px;
+    min-height: 150px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e3e8ed;
+    box-shadow: 0 7px 18px rgba(6,26,48,0.07);
+    isolation: isolate;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+
+  /* =====================================================
+     PROCESS WORKING IMAGES
+  ===================================================== */
+
+  .process-card:nth-child(1)::before {
+    background:
+      url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=90")
+      center / cover no-repeat;
+  }
+
+  .process-card:nth-child(2)::before {
+    background:
+      url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=90")
+      center / cover no-repeat;
+  }
+
+  .process-card:nth-child(3)::before {
+    background:
+      url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=90")
+      center / cover no-repeat;
+  }
+
+  .process-card:nth-child(4)::before {
+    background:
+      url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=90")
+      center / cover no-repeat;
+  }
+
+
+  /* =====================================================
+     PROCESS IMAGE ANIMATION
+  ===================================================== */
+
+  .process-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.23;
+    transform: scale(1.05);
+    transition:
+      transform 1.2s ease,
+      opacity 0.4s ease;
+    animation:
+      processImageMove 6s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+  .process-card:hover::before {
+    opacity: 0.34;
+    transform: scale(1.10);
+  }
+
+  @keyframes processImageMove {
+
+    0% {
+      transform: scale(1.05) translateX(0);
+    }
+
+    50% {
+      transform: scale(1.08) translateX(-3px);
+    }
+
+    100% {
+      transform: scale(1.06) translateX(3px);
+    }
+
+  }
+
+
+  /* PROCESS IMAGE OVERLAY */
+
+  .process-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.76) 0%,
+        rgba(255,255,255,0.88) 45%,
+        rgba(255,255,255,0.97) 100%
+      );
+    z-index: 1;
+  }
+
+  .process-number,
+  .process-card h3,
+  .process-card p {
+    z-index: 2;
+  }
+
+  .process-number {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #061A30;
+    color: #E18443;
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .process-card h3 {
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    bottom: 36px;
+    margin: 0;
+    color: #061A30;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  .process-card p {
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    bottom: 10px;
+    margin: 0;
+    color: #617080;
+    font-size: 9px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     TABLET
+  ===================================================== */
+
+  @media (max-width: 950px) {
+
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantage-grid,
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+
+  /* =====================================================
+     MOBILE
+  ===================================================== */
+
+  @media (max-width: 620px) {
+
+    .services-section,
+    .section.dark,
+    #process {
+      padding-top: 21px !important;
+      padding-bottom: 23px !important;
+    }
+
+    .services-section .section-heading,
+    .section.dark .section-heading,
+    #process .section-heading {
+      margin-bottom: 12px !important;
+    }
+
+    .services-section .section-heading h2,
+    .section.dark .section-heading h2,
+    #process .section-heading h2 {
+      font-size: 20px;
+    }
+
+    .services-section .section-heading p,
+    .section.dark .section-heading p,
+    #process .section-heading p {
+      font-size: 10.5px;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .service-card {
+      height: 185px;
+      min-height: 185px;
+      border-radius: 10px;
+    }
+
+    .service-icon {
+      top: 9px;
+      left: 9px;
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+
+    .service-card h3 {
+      left: 10px;
+      right: 10px;
+      bottom: 42px;
+      font-size: 12px;
+    }
+
+    .service-card p {
+      left: 10px;
+      right: 10px;
+      bottom: 22px;
+      font-size: 8.5px;
+    }
+
+    .service-link {
+      left: 10px;
+      bottom: 7px;
+      font-size: 7.5px;
+    }
+
+    .advantage-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .advantage-card {
+      height: 125px;
+      min-height: 125px;
+      border-radius: 10px;
+    }
+
+    .advantage-icon {
+      top: 8px;
+      left: 8px;
+      width: 29px;
+      height: 29px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    .advantage-card h3 {
+      left: 9px;
+      right: 9px;
+      bottom: 29px;
+      font-size: 10px;
+    }
+
+    .advantage-card p {
+      left: 9px;
+      right: 9px;
+      bottom: 7px;
+      font-size: 7.8px;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .process-card {
+      height: 130px;
+      min-height: 130px;
+      border-radius: 10px;
+    }
+
+    .process-number {
+      top: 8px;
+      left: 8px;
+      width: 31px;
+      height: 31px;
+      border-radius: 8px;
+      font-size: 11px;
+    }
+
+    .process-card h3 {
+      left: 9px;
+      right: 9px;
+      bottom: 31px;
+      font-size: 10px;
+    }
+
+    .process-card p {
+      left: 9px;
+      right: 9px;
+      bottom: 7px;
+      font-size: 7.8px;
+    }
+
+  }
+
+
+  /* =====================================================
+     VERY SMALL PHONES
+  ===================================================== */
+
+  @media (max-width: 400px) {
+
+    .service-card {
+      height: 175px;
+      min-height: 175px;
+    }
+
+    .advantage-card {
+      height: 118px;
+      min-height: 118px;
+    }
+
+    .process-card {
+      height: 122px;
+      min-height: 122px;
+    }
+
+  }
+
+`}</style>
+
+
+{/* =====================================================
+    SERVICES
+===================================================== */}
+
+<section
+  id="services"
+  className="section alt services-section"
+>
+
+  <div className="container">
+
+    <div className="section-heading reveal">
+
+      <div className="eyebrow">
+        OUR SERVICES
+      </div>
+
+      <h2 className="blink-text">
+        Moving solutions for
+        different requirements.
+      </h2>
+
+      <p>
+        From household belongings to office equipment,
+        our services are designed around the practical
+        stages of relocation.
+      </p>
+
+    </div>
+
+
+    <div className="service-grid">
+
+      {services.map(
+        (service, index) => (
+
+          <div
+            className="service-card reveal"
+            key={service.title}
+            style={{
+              transitionDelay:
+                `${index * 70}ms`,
+            }}
+          >
+
+            <div className="service-icon">
+              {service.icon}
+            </div>
+
+            <h3 className="blink-text">
+              {service.title}
+            </h3>
+
+            <p>
+              {service.text}
+            </p>
+
+            <span
+              className="service-link"
+              onClick={() =>
+                setSelectedService(service)
+              }
+            >
+              Learn More →
+            </span>
+
+          </div>
+
+        )
+      )}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* =====================================================
+    ADVANTAGES
+===================================================== */}
+
+<section className="section dark">
+
+  <div className="container">
+
+    <div className="section-heading reveal">
+
+      <div className="eyebrow">
+        WHY CHOOSE US
+      </div>
+
+      <h2 className="blink-text">
+        Practical support at
+        every stage.
+      </h2>
+
+      <p>
+        A relocation becomes easier when packing,
+        loading, transportation and delivery
+        are planned properly.
+      </p>
+
+    </div>
+
+
+    <div className="advantage-grid">
+
+      {advantages.map(
+        (item, index) => (
+
+          <div
+            className="advantage-card reveal"
+            key={item.title}
+            style={{
+              transitionDelay:
+                `${index * 80}ms`,
+            }}
+          >
+
+            <div className="advantage-icon">
+              {item.icon}
+            </div>
+
+            <h3 className="blink-text">
+              {item.title}
+            </h3>
+
+            <p>
+              {item.text}
+            </p>
+
+          </div>
+
+        )
+      )}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* =====================================================
+    PROCESS
+===================================================== */}
+
+<section
+  id="process"
+  className="section"
+>
+
+  <div className="container">
+
+    <div className="section-heading reveal">
+
+      <div className="eyebrow">
+        OUR PROCESS
+      </div>
+
+      <h2 className="blink-text">
+        Simple steps from pickup
+        to delivery.
+      </h2>
+
+      <p>
+        We keep the moving process easy to understand
+        so you know what happens at each stage.
+      </p>
+
+    </div>
+
+
+    <div className="process-grid">
+
+      {process
+        .filter(
+          (item) =>
+            String(item.number) !== "05" &&
+            String(item.number) !== "5"
+        )
+        .map(
+          (item, index) => (
+
+            <div
+              className="process-card reveal"
+              key={item.number}
+              style={{
+                transitionDelay:
+                  `${index * 70}ms`,
+              }}
+            >
+
+              <div className="process-number blink-text">
+                {item.number}
+              </div>
+
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+                {item.text}
+              </p>
+
+            </div>
+
+          )
+        )}
+
+    </div>
+
+  </div>
+
+</section>
+{/* =====================================================
+    SERVICE AREAS
+===================================================== */}
+
+<section id="areas" className="section alt sa-areas-section">
+
+  <style>{`
+
+    /* =================================================
+       MAIN AREAS SECTION
+    ================================================= */
+
+    #areas.sa-areas-section {
+      background: #f4f6f8;
+      padding: 22px 0 25px !important;
+      overflow: hidden;
+    }
+
+    #areas .sa-services-page,
+    #areas .sa-location-page {
+      width: min(1200px, calc(100% - 24px));
+      margin: 0 auto;
+    }
+
+    #areas .sa-page-top {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    #areas .sa-eyebrow {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: #e18443;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    #areas .sa-page-top h2,
+    #areas .sa-location-header h1 {
+      margin: 0;
+      color: #061a30;
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    #areas .sa-page-top p,
+    #areas .sa-location-header p {
+      max-width: 720px;
+      margin: 6px auto 0;
+      color: #6e7a86;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+
+    /* =================================================
+       SEARCH
+    ================================================= */
+
+    #areas .sa-search-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    #areas .sa-search-box {
+      width: min(430px, 100%);
+      position: relative;
+    }
+
+    #areas .sa-search-box input {
+      width: 100%;
+      height: 40px;
+      padding: 0 14px;
+      border: 1px solid #dce3e8;
+      border-radius: 9px;
+      outline: none;
+      background: #ffffff;
+      color: #061a30;
+      font-size: 12px;
+      font-weight: 600;
+      box-sizing: border-box;
+      box-shadow: 0 4px 14px rgba(6,26,48,0.04);
+    }
+
+    #areas .sa-search-box input:focus {
+      border-color: #e18443;
+      box-shadow: 0 0 0 3px rgba(225,132,67,0.10);
+    }
+
+    #areas .sa-search-box input::placeholder {
+      color: #9aa5ae;
+    }
+
+
+    /* =================================================
+       STATE HEADINGS
+    ================================================= */
+
+    #areas .sa-state-block {
+      margin-bottom: 14px;
+    }
+
+    #areas .sa-state-heading {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 7px;
+    }
+
+    #areas .sa-state-heading-line {
+      width: 28px;
+      height: 2px;
+      background: #e18443;
+      border-radius: 10px;
+    }
+
+    #areas .sa-state-heading h3 {
+      margin: 0;
+      color: #061a30;
+      font-size: 16px;
+      font-weight: 950;
+    }
+
+
+    /* =================================================
+       CITY GRID
+    ================================================= */
+
+    #areas .sa-cities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    #areas .sa-city-card {
+      position: relative;
+      min-height: 70px;
+      display: flex;
+      align-items: flex-start;
+      padding: 11px 13px;
+      border: 1px solid #dfe6ec;
+      border-radius: 9px;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(6,26,48,0.05);
+      cursor: pointer;
+      box-sizing: border-box;
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+    }
+
+    #areas .sa-city-card:hover {
+      transform: translateY(-3px);
+      border-color: #e18443;
+      box-shadow: 0 9px 20px rgba(6,26,48,0.10);
+    }
+
+    #areas .sa-city-card:focus {
+      outline: 2px solid rgba(225,132,67,0.35);
+      outline-offset: 2px;
+    }
+
+    #areas .sa-city-card-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    #areas .sa-city-card-title {
+      color: #061a30;
+      font-size: 15px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    #areas .sa-city-card-subtitle {
+      color: #7b8794;
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    #areas .sa-city-card-coverage {
+      color: #e18443;
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    /* REMOVE ALL CITY ARROWS */
+    #areas .sa-city-arrow {
+      display: none !important;
+    }
+
+
+    /* =================================================
+       CUSTOM LOCATION DELETE
+    ================================================= */
+
+    #areas .sa-delete-location-button {
+      width: fit-content;
+      margin-top: 4px;
+      padding: 4px 7px;
+      border: 0;
+      border-radius: 5px;
+      background: #fff0f0;
+      color: #c0392b;
+      font-size: 7px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    #areas .sa-delete-location-button:hover {
+      background: #ffe1e1;
+    }
+
+
+    /* =================================================
+       ADD LOCATION
+    ================================================= */
+
+    #areas .sa-add-location-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 13px;
+    }
+
+    #areas .sa-add-location-button {
+      border: 0;
+      border-radius: 8px;
+      padding: 9px 15px;
+      background: #061a30;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    #areas .sa-add-location-button:hover {
+      background: #e18443;
+      transform: translateY(-2px);
+    }
+
+
+    /* =================================================
+       CITY DETAIL PAGE
+    ================================================= */
+
+    #areas .sa-location-page {
+      animation: saLocationIn .35s ease both;
+    }
+
+    @keyframes saLocationIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #areas .sa-location-header {
+      text-align: center;
+      margin-bottom: 13px;
+    }
+
+    #areas .sa-branch-badge {
+      display: inline-block;
+      margin-bottom: 7px;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: #fff1e6;
+      color: #e18443;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    #areas .sa-location-header h1 {
+      font-size: 30px;
+    }
+
+    #areas .sa-location-header p {
+      max-width: 760px;
+      margin-top: 6px;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+
+    /* =================================================
+       DETAIL ACTIONS
+    ================================================= */
+
+    #areas .sa-location-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 13px;
+    }
+
+    #areas .sa-location-action {
+      border: 0;
+      border-radius: 7px;
+      padding: 8px 13px;
+      font-size: 9px;
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    #areas .sa-location-action.primary {
+      background: #e18443;
+      color: #ffffff;
+    }
+
+    #areas .sa-location-action.dark {
+      background: #061a30;
+      color: #ffffff;
+    }
+
+    #areas .sa-location-action:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* =================================================
+       COVERAGE COUNT
+    ================================================= */
+
+    #areas .sa-covered-count-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 13px;
+      padding: 13px 15px;
+      border-radius: 11px;
+      background: #061a30;
+      box-shadow: 0 8px 22px rgba(6,26,48,0.10);
+    }
+
+    #areas .sa-covered-count-text {
+      min-width: 0;
+    }
+
+    #areas .sa-covered-count-text strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #ffffff;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    #areas .sa-covered-count-text span {
+      color: #b9c5d0;
+      font-size: 9px;
+      line-height: 1.4;
+    }
+
+    #areas .sa-covered-number-wrap {
+      flex: 0 0 auto;
+      min-width: 65px;
+      text-align: center;
+    }
+
+    #areas .sa-covered-number {
+      color: #e18443;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    #areas .sa-covered-number-label {
+      margin-top: 3px;
+      color: #ffffff;
+      font-size: 7px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+
+    /* =================================================
+       DETAIL INFORMATION
+    ================================================= */
+
+    #areas .sa-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      margin-bottom: 13px;
+    }
+
+    #areas .sa-detail-card {
+      padding: 11px;
+      border: 1px solid #e1e7ec;
+      border-radius: 9px;
+      background: #ffffff;
+      box-shadow: 0 4px 13px rgba(6,26,48,0.04);
+    }
+
+    #areas .sa-detail-card h4 {
+      margin: 0 0 4px;
+      color: #061a30;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    #areas .sa-detail-card p {
+      margin: 0;
+      color: #74808b;
+      font-size: 9px;
+      line-height: 1.4;
+    }
+
+
+    /* =================================================
+       ACTUAL AREA NAMES
+    ================================================= */
+
+    #areas .sa-covered-areas-section {
+      margin-bottom: 13px;
+    }
+
+    #areas .sa-covered-areas-heading {
+      margin-bottom: 8px;
+    }
+
+    #areas .sa-covered-areas-heading h2 {
+      margin: 0;
+      color: #061a30;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 950;
+    }
+
+    #areas .sa-covered-intro {
+      margin: 4px 0 8px;
+      color: #7b8794;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    #areas .sa-covered-areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+    #areas .sa-covered-area-card {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 32px;
+      padding: 6px 9px;
+      border: 1px solid #e1e7ec;
+      border-radius: 7px;
+      background: #ffffff;
+      color: #536272;
+      font-size: 9.5px;
+      line-height: 1.25;
+      font-weight: 700;
+      box-sizing: border-box;
+      transition: .2s ease;
+    }
+
+    #areas .sa-covered-area-card:hover {
+      border-color: #e18443;
+      background: #fffaf6;
+      transform: translateY(-1px);
+    }
+
+    #areas .sa-covered-area-bullet {
+      color: #e18443;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+
+    /* =================================================
+       PRICING
+    ================================================= */
+
+    #areas .sa-pricing-section {
+      margin-bottom: 13px;
+    }
+
+    #areas .sa-section-title {
+      margin: 0 0 7px;
+      color: #061a30;
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    #areas .sa-pricing-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #e0e6eb;
+      border-radius: 9px;
+      background: #ffffff;
+    }
+
+    #areas .sa-pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+
+    #areas .sa-pricing-table th {
+      padding: 7px 9px;
+      background: #061a30;
+      color: #ffffff;
+      font-size: 9px;
+      text-align: left;
+    }
+
+    #areas .sa-pricing-table td {
+      padding: 7px 9px;
+      border-top: 1px solid #edf0f2;
+      color: #66737f;
+      font-size: 9px;
+    }
+
+    #areas .sa-pricing-table td:last-child {
+      color: #e18443;
+      font-weight: 900;
+    }
+
+
+    /* =================================================
+       BACK BUTTON
+    ================================================= */
+
+    #areas .sa-back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border: 1px solid #dbe2e7;
+      border-radius: 7px;
+      padding: 7px 11px;
+      background: #ffffff;
+      color: #061a30;
+      font-size: 9px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    #areas .sa-back-button:hover {
+      border-color: #e18443;
+      color: #e18443;
+    }
+
+
+    /* =================================================
+       EMPTY SEARCH
+    ================================================= */
+
+    #areas .sa-empty {
+      padding: 25px 15px;
+      border: 1px dashed #d6dee4;
+      border-radius: 10px;
+      background: #ffffff;
+      text-align: center;
+      color: #7b8794;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+
+    /* =================================================
+       MOBILE
+    ================================================= */
+
+    @media (max-width: 900px) {
+
+      #areas .sa-cities-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      #areas .sa-covered-areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 620px) {
+
+      #areas.sa-areas-section {
+        padding: 18px 0 22px !important;
+      }
+
+      #areas .sa-services-page,
+      #areas .sa-location-page {
+        width: calc(100% - 18px);
+      }
+
+      #areas .sa-page-top {
+        margin-bottom: 11px;
+      }
+
+      #areas .sa-page-top h2 {
+        font-size: 23px;
+      }
+
+      #areas .sa-page-top p {
+        font-size: 9.5px;
+      }
+
+      #areas .sa-search-row {
+        margin-bottom: 11px;
+      }
+
+      #areas .sa-search-box input {
+        height: 37px;
+        font-size: 10px;
+      }
+
+      #areas .sa-state-block {
+        margin-bottom: 11px;
+      }
+
+      #areas .sa-state-heading {
+        margin-bottom: 6px;
+      }
+
+      #areas .sa-state-heading h3 {
+        font-size: 13px;
+      }
+
+      #areas .sa-cities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      #areas .sa-city-card {
+        min-height: 64px;
+        padding: 9px 10px;
+      }
+
+      #areas .sa-city-card-title {
+        font-size: 12px;
+      }
+
+      #areas .sa-city-card-subtitle,
+      #areas .sa-city-card-coverage {
+        font-size: 8px;
+      }
+
+      #areas .sa-location-header h1 {
+        font-size: 23px;
+      }
+
+      #areas .sa-location-header p {
+        font-size: 9px;
+      }
+
+      #areas .sa-covered-count-box {
+        padding: 11px;
+      }
+
+      #areas .sa-covered-count-text strong {
+        font-size: 10px;
+      }
+
+      #areas .sa-covered-count-text span {
+        font-size: 7.5px;
+      }
+
+      #areas .sa-covered-number {
+        font-size: 25px;
+      }
+
+      #areas .sa-covered-areas-heading h2 {
+        font-size: 16px;
+      }
+
+      #areas .sa-covered-intro {
+        font-size: 8px;
+      }
+
+      #areas .sa-covered-area-card {
+        min-height: 29px;
+        padding: 5px 7px;
+        font-size: 8px;
+      }
+
+      #areas .sa-section-title {
+        font-size: 16px;
+      }
+
+    }
+
+
+    @media (max-width: 390px) {
+
+      #areas .sa-covered-areas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #areas .sa-cities-grid {
+        gap: 6px;
+      }
+
+      #areas .sa-city-card {
+        min-height: 64px;
+        padding: 9px;
+      }
+
+    }
+
+  `}</style>
+
+
+  {/*
+  =====================================================
+  CITY DATA
+  =====================================================
+  */}
+
+  {(() => {
+
+    const cityCoverage = {
+      Karimnagar: 12,
+      Warangal: 14,
+      Hyderabad: 14,
+      Nizamabad: 11,
+      Khammam: 10,
+      Siddipet: 10,
+      Jagtial: 10,
+      Sircilla: 10,
+      Nalgonda: 10,
+      Suryapet: 10,
+      Mahabubnagar: 10,
+      Sangareddy: 10,
+      Nagarkurnool: 10,
+      Wanaparthy: 10,
+      Gadwal: 10,
+      Narayanpet: 10,
+      Vikarabad: 10,
+      Medak: 10,
+      Bhongir: 10,
+      Jangaon: 10,
+      Kamareddy: 10,
+      Mahabubabad: 10,
+      Mulugu: 10,
+      Bhupalpally: 10,
+      Kothagudem: 10,
+      Nirmal: 10,
+      Peddapalli: 10,
+      Mancherial: 10,
+      Adilabad: 10,
+      Asifabad: 10,
+      Vemulawada: 10,
+      Ramagundam: 10,
+
+      Vijayawada: 14,
+      Visakhapatnam: 14,
+      Guntur: 12,
+      Tirupati: 11,
+      Nellore: 10,
+      Rajahmundry: 11,
+      Kakinada: 11,
+
+      Bangalore: 10,
+      Pune: 10,
+      Chennai: 10
+    };
+
+
+    const cityAreaDetails = {
+
+      Karimnagar: [
+        "Mukarampura",
+        "Mukarampura Main Road",
+        "Karimnagar Bus Depot",
+        "Kothirampur",
+        "Kothirampur Main Road",
+        "Mankammathota",
+        "Mankammathota Main Road",
+        "Vidyanagar",
+        "Bhagathnagar",
+        "Vavilalapally",
+        "Jyothinagar",
+        "Ramnagar"
+      ],
+
+      Khammam: [
+        "Rotary Nagar",
+        "Ballepalli",
+        "Danavaigudem",
+        "Balaji Nagar",
+        "Sahakar Nagar",
+        "Bank Colony",
+        "Indiranagar Colony",
+        "Raghunadhapalem"
+      ],
+
+      Warangal: [
+        "Hanamkonda",
+        "Kazipet",
+        "Subedari",
+        "Nakkalagutta",
+        "Balasamudram",
+        "Vidyaranyapuri",
+        "Lashkar Bazar",
+        "Kakatiya Colony",
+        "Kothawada",
+        "Warangal Fort Area",
+        "Hunter Road",
+        "NIT Area",
+        "Mulugu Road",
+        "Kazipet Main Road"
+      ],
+
+      Hyderabad: [
+        "Kukatpally",
+        "Madhapur",
+        "Hitech City",
+        "Gachibowli",
+        "Kondapur",
+        "Miyapur",
+        "Banjara Hills",
+        "Jubilee Hills",
+        "Secunderabad",
+        "Begumpet",
+        "Ameerpet",
+        "Manikonda",
+        "Nanakramguda",
+        "Financial District"
+      ],
+
+      Nizamabad: [
+        "Vinayak Nagar",
+        "Dwaraka Nagar",
+        "Armoor Road",
+        "Khaleelwadi",
+        "Vidyut Nagar",
+        "Srinagar Colony",
+        "Mubarak Nagar",
+        "Housing Board Colony",
+        "Dichpally",
+        "Madhav Nagar",
+        "Nagaram"
+      ],
+
+      Siddipet: [
+        "Prashanth Nagar",
+        "Nehru Nagar",
+        "Vivekananda Nagar",
+        "Srinagar Colony",
+        "Housing Board Colony",
+        "Peddamma Gadda",
+        "Ranganayakapally",
+        "Medak Road",
+        "Dubbak Road",
+        "Karimnagar Road"
+      ],
+
+      Jagtial: [
+        "Gandhi Nagar",
+        "Housing Board Colony",
+        "Teachers Colony",
+        "Vidya Nagar",
+        "Dharur Camp",
+        "Old Bus Stand",
+        "New Bus Stand",
+        "Korutla Road",
+        "Metpally Road",
+        "Karimnagar Road"
+      ],
+
+      Sircilla: [
+        "Vidya Nagar",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Subhash Nagar",
+        "Gandhi Nagar",
+        "Old Sircilla",
+        "New Sircilla",
+        "Mustabad Road",
+        "Karimnagar Road",
+        "Vemulawada Road"
+      ],
+
+      Nalgonda: [
+        "Ramgiri",
+        "Devarakonda Road",
+        "Miryalaguda Road",
+        "Clock Tower Area",
+        "Housing Board Colony",
+        "Vivekananda Nagar",
+        "Sri Ram Nagar",
+        "Marriguda",
+        "Kothapet",
+        "Panagal"
+      ],
+
+      Suryapet: [
+        "Vijayawada Road",
+        "Kodad Road",
+        "MG Road",
+        "Housing Board Colony",
+        "Vidya Nagar",
+        "Ramalingapuram",
+        "Durajpally",
+        "Imampet",
+        "Kothapet",
+        "Srinagar Colony"
+      ],
+
+      Mahabubnagar: [
+        "New Town",
+        "Old Town",
+        "Christian Pally",
+        "Boyapally",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Nehru Nagar",
+        "Padmavathi Colony",
+        "Yenugonda",
+        "Appannapally"
+      ],
+
+      Sangareddy: [
+        "Pothireddypally",
+        "Teachers Colony",
+        "Housing Board Colony",
+        "Ramachandrapuram",
+        "Kandi",
+        "Ameenpur",
+        "Beeramguda",
+        "Patancheru",
+        "BHEL Area",
+        "Isnapur"
+      ],
+
+      Nagarkurnool: [
+        "Srinagar Colony",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Main Road",
+        "Telkapally Road",
+        "Kalwakurthy Road",
+        "Bijinepally",
+        "Tadoor",
+        "Thimmajipet"
+      ],
+
+      Wanaparthy: [
+        "Srinivasa Colony",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Shanti Nagar",
+        "New Town",
+        "Old Town",
+        "Pebbair Road",
+        "Kothakota Road",
+        "Atmakur Road",
+        "Kothakota"
+      ],
+
+      Gadwal: [
+        "Krishna Nagar",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Old Town",
+        "New Town",
+        "Rajoli Road",
+        "Ieeja Road",
+        "Alampur Road",
+        "Kurnool Road",
+        "Yemmiganur Road"
+      ],
+
+      Narayanpet: [
+        "Main Road",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Old Town",
+        "New Town",
+        "Makthal Road",
+        "Kosgi Road",
+        "Dhanwada Road",
+        "Utkoor Road"
+      ],
+
+      Vikarabad: [
+        "Shivaram Nagar",
+        "Srinagar Colony",
+        "Housing Board Colony",
+        "Ananthagiri Road",
+        "Tandur Road",
+        "Pargi Road",
+        "Burgul",
+        "Mominpet",
+        "Dharur",
+        "Kodangal Road"
+      ],
+
+      Medak: [
+        "Ramayampet Road",
+        "Shankar Nagar",
+        "Housing Board Colony",
+        "Main Road",
+        "Shivaji Nagar",
+        "Narsapur Road",
+        "Tekmal Road",
+        "Papannapet Road",
+        "Medak Fort Area",
+        "Ramnagar"
+      ],
+
+      Bhongir: [
+        "New Town",
+        "Old Town",
+        "Housing Board Colony",
+        "Bhongir Fort Road",
+        "Warangal Road",
+        "Hyderabad Road",
+        "Raigiri",
+        "Bibinagar",
+        "Yadagirigutta Road",
+        "Aler Road"
+      ],
+
+      Jangaon: [
+        "Nehru Nagar",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Main Road",
+        "Warangal Road",
+        "Hyderabad Road",
+        "Palakurthi Road",
+        "Ghanpur Road",
+        "Raghunathapally",
+        "Station Road"
+      ],
+
+      Kamareddy: [
+        "Ashok Nagar",
+        "Housing Board Colony",
+        "Vidya Nagar",
+        "Main Road",
+        "Nizamabad Road",
+        "Hyderabad Road",
+        "Banswada Road",
+        "Yellareddy Road",
+        "Rajampet",
+        "Machareddy"
+      ],
+
+      Mahabubabad: [
+        "Nehru Nagar",
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Main Road",
+        "Warangal Road",
+        "Khammam Road",
+        "Bayyaram Road",
+        "Kesamudram Road",
+        "Gudur Road",
+        "Kuravi"
+      ],
+
+      Mulugu: [
+        "Main Road",
+        "Housing Board Colony",
+        "Ramappa Road",
+        "Warangal Road",
+        "Eturnagaram Road",
+        "Venkatapur",
+        "Mangapet",
+        "Govindaraopet",
+        "Tadvai",
+        "Eturnagaram"
+      ],
+
+      Bhupalpally: [
+        "Main Road",
+        "Housing Board Colony",
+        "Shanti Nagar",
+        "Warangal Road",
+        "Manthani Road",
+        "Kataram Road",
+        "Chityala",
+        "Ghanpur",
+        "Regonda",
+        "Tekumatla"
+      ],
+
+      Kothagudem: [
+        "Palvoncha",
+        "Bhadradri Area",
+        "Housing Board Colony",
+        "New Palvoncha",
+        "Old Palvoncha",
+        "Burgampahad Road",
+        "Sujathanagar",
+        "Yellandu Road",
+        "Bhadrachalam Road",
+        "Kothagudem Main Road"
+      ],
+
+      Nirmal: [
+        "Shanti Nagar",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Main Road",
+        "Bhainsa Road",
+        "Adilabad Road",
+        "Mancherial Road",
+        "Soan",
+        "Dilawarpur",
+        "Khanapur"
+      ],
+
+      Peddapalli: [
+        "Ramagundam Road",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Main Road",
+        "Sultanabad Road",
+        "Manthani Road",
+        "Ramagiri",
+        "Godavarikhani Road",
+        "Julapalli",
+        "Odela"
+      ],
+
+      Mancherial: [
+        "Bellampalli Road",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Main Road",
+        "Ram Nagar",
+        "Naspur",
+        "Hitech Colony",
+        "Luxettipet Road",
+        "Chennur Road",
+        "Bellampalli"
+      ],
+
+      Adilabad: [
+        "Shivaji Chowk",
+        "Housing Board Colony",
+        "Ram Nagar",
+        "Gandhi Nagar",
+        "Main Road",
+        "Nirmal Road",
+        "Bela Road",
+        "Utnoor Road",
+        "Indira Nagar",
+        "Dasnapur"
+      ],
+
+      Asifabad: [
+        "Main Road",
+        "Housing Board Colony",
+        "Gandhi Nagar",
+        "Shanti Nagar",
+        "Kagaznagar Road",
+        "Sirpur Road",
+        "Rebbena",
+        "Kautala",
+        "Wankidi",
+        "Kerameri"
+      ],
+
+      Vemulawada: [
+        "Rajanna Temple Area",
+        "Housing Board Colony",
+        "Shanti Nagar",
+        "Main Road",
+        "Karimnagar Road",
+        "Sircilla Road",
+        "Choppadandi Road",
+        "Kodimial Road",
+        "Boinpalli",
+        "Rudrangi"
+      ],
+
+      Ramagundam: [
+        "Godavarikhani",
+        "Jyothi Nagar",
+        "NTPC Area",
+        "Housing Board Colony",
+        "Ramagundam Main Road",
+        "Peddapalli Road",
+        "Antargaon",
+        "Basanta Nagar",
+        "Kamanpur",
+        "Ramagiri"
+      ],
+
+      Vijayawada: [
+        "Benz Circle",
+        "Moghalrajpuram",
+        "Patamata",
+        "Labbipet",
+        "Governorpet",
+        "Poranki",
+        "Auto Nagar",
+        "Gunadala",
+        "Ramavarappadu",
+        "Madhura Nagar",
+        "Suryaraopet",
+        "Bhavanipuram",
+        "Ajit Singh Nagar",
+        "Kanuru"
+      ],
+
+      Visakhapatnam: [
+        "Madhurawada",
+        "Gajuwaka",
+        "MVP Colony",
+        "Seethammadhara",
+        "Dwaraka Nagar",
+        "Akkayyapalem",
+        "NAD Junction",
+        "Rushikonda",
+        "Maddilapalem",
+        "Siripuram",
+        "Dondaparthy",
+        "Kurmannapalem",
+        "Sheela Nagar",
+        "Yendada"
+      ],
+
+      Guntur: [
+        "Brodipet",
+        "Arundelpet",
+        "Lakshmipuram",
+        "Bharatpet",
+        "Nallapadu",
+        "Gorantla",
+        "Pattabhipuram",
+        "Auto Nagar",
+        "Brindavan Gardens",
+        "Syamala Nagar",
+        "AT Agraharam",
+        "Chandramouli Nagar"
+      ],
+
+      Tirupati: [
+        "Tiruchanoor",
+        "Renigunta Road",
+        "Alipiri",
+        "Tata Nagar",
+        "Mangalam",
+        "Padmavathi Nagar",
+        "SV Nagar",
+        "MR Palli",
+        "Korlagunta",
+        "KT Road",
+        "Bhavani Nagar"
+      ],
+
+      Nellore: [
+        "Magunta Layout",
+        "Dargamitta",
+        "Balaji Nagar",
+        "Stonehousepet",
+        "Vedayapalem",
+        "AC Nagar",
+        "Kondayapalem",
+        "Muthukur Road",
+        "Ramalingapuram",
+        "Trunk Road"
+      ],
+
+      Rajahmundry: [
+        "Danavaipeta",
+        "Morampudi",
+        "Aryapuram",
+        "Innespeta",
+        "Tilak Road",
+        "Bommuru",
+        "Alcot Gardens",
+        "Lalacheruvu",
+        "Dowleswaram",
+        "Prakash Nagar",
+        "AV Appa Rao Road"
+      ],
+
+      Kakinada: [
+        "Ramanayyapeta",
+        "Sarpavaram",
+        "Jagannaickpur",
+        "Bhanugudi",
+        "Suryaraopet",
+        "Ashok Nagar",
+        "Vakalapudi",
+        "Sambamurthy Nagar",
+        "Ramaraopeta",
+        "Indrapalem",
+        "Kovvada"
+      ],
+
+      Bangalore: [
+        "Whitefield",
+        "Electronic City",
+        "HSR Layout",
+        "Marathahalli",
+        "BTM Layout",
+        "Koramangala",
+        "Indiranagar",
+        "Yelahanka",
+        "Hebbal",
+        "Jayanagar"
+      ],
+
+      Pune: [
+        "Hinjewadi",
+        "Wakad",
+        "Baner",
+        "Kharadi",
+        "Viman Nagar",
+        "Hadapsar",
+        "Kothrud",
+        "Pimpri",
+        "Aundh",
+        "Wagholi"
+      ],
+
+      Chennai: [
+        "Anna Nagar",
+        "T Nagar",
+        "Velachery",
+        "Adyar",
+        "Tambaram",
+        "Porur",
+        "Guindy",
+        "Perungudi",
+        "OMR",
+        "Sholinganallur"
+      ]
+
+    };
+
+
+    /* =================================================
+       CITY LIST
+    ================================================= */
+
+    const allCities = [
+
+      /* TELANGANA */
+
+      {
+        city: "Karimnagar",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Warangal",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Hyderabad",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Nizamabad",
+        state: "Telangana"
+      },
+      {
+        city: "Khammam",
+        state: "Telangana"
+      },
+      {
+        city: "Siddipet",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Jagtial",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Sircilla",
+        state: "Telangana",
+        isBranch: true
+      },
+      {
+        city: "Nalgonda",
+        state: "Telangana"
+      },
+      {
+        city: "Suryapet",
+        state: "Telangana"
+      },
+      {
+        city: "Mahabubnagar",
+        state: "Telangana"
+      },
+      {
+        city: "Sangareddy",
+        state: "Telangana"
+      },
+      {
+        city: "Nagarkurnool",
+        state: "Telangana"
+      },
+      {
+        city: "Wanaparthy",
+        state: "Telangana"
+      },
+      {
+        city: "Gadwal",
+        state: "Telangana"
+      },
+      {
+        city: "Narayanpet",
+        state: "Telangana"
+      },
+      {
+        city: "Vikarabad",
+        state: "Telangana"
+      },
+      {
+        city: "Medak",
+        state: "Telangana"
+      },
+      {
+        city: "Bhongir",
+        state: "Telangana"
+      },
+      {
+        city: "Jangaon",
+        state: "Telangana"
+      },
+      {
+        city: "Kamareddy",
+        state: "Telangana"
+      },
+      {
+        city: "Mahabubabad",
+        state: "Telangana"
+      },
+      {
+        city: "Mulugu",
+        state: "Telangana"
+      },
+      {
+        city: "Bhupalpally",
+        state: "Telangana"
+      },
+      {
+        city: "Kothagudem",
+        state: "Telangana"
+      },
+      {
+        city: "Nirmal",
+        state: "Telangana"
+      },
+      {
+        city: "Peddapalli",
+        state: "Telangana"
+      },
+      {
+        city: "Mancherial",
+        state: "Telangana"
+      },
+      {
+        city: "Adilabad",
+        state: "Telangana"
+      },
+      {
+        city: "Asifabad",
+        state: "Telangana"
+      },
+      {
+        city: "Vemulawada",
+        state: "Telangana"
+      },
+      {
+        city: "Ramagundam",
+        state: "Telangana"
+      },
+
+      /* ANDHRA PRADESH */
+
+      {
+        city: "Vijayawada",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Visakhapatnam",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Guntur",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Tirupati",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Nellore",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Rajahmundry",
+        state: "Andhra Pradesh"
+      },
+      {
+        city: "Kakinada",
+        state: "Andhra Pradesh"
+      },
+
+      /* KARNATAKA */
+
+      {
+        city: "Bangalore",
+        state: "Karnataka"
+      },
+
+      /* MAHARASHTRA */
+
+      {
+        city: "Pune",
+        state: "Maharashtra"
+      },
+
+      /* TAMIL NADU */
+
+      {
+        city: "Chennai",
+        state: "Tamil Nadu"
+      }
+
+    ];
+
+
+    /* =================================================
+       HELPERS
+    ================================================= */
+
+    const getCoverageCount = (city) => {
+      return cityCoverage[city] ?? 5;
+    };
+
+    const getCityAreas = (city) => {
+      return cityAreaDetails[city] || [];
+    };
+
+
+    const searchValue =
+      String(searchCity || "")
+        .trim()
+        .toLowerCase();
+
+
+    const filteredCities =
+      allCities.filter((city) => {
+
+        if (!searchValue) {
+          return true;
+        }
+
+        return (
+          city.city
+            .toLowerCase()
+            .includes(searchValue) ||
+          city.state
+            .toLowerCase()
+            .includes(searchValue)
+        );
+
+      });
+
+
+    const customLocations =
+      Array.isArray(filteredCustomLocations)
+        ? filteredCustomLocations
+        : [];
+
+
+    const stateOrder = [
+      "Telangana",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Maharashtra",
+      "Tamil Nadu"
+    ];
+
+
+    /* =================================================
+       CITY DETAIL PAGE
+    ================================================= */
+
+    if (selectedCity) {
+
+      const cityName =
+        selectedCity.city || "City";
+
+      const coverage =
+        selectedCity.coverage ||
+        getCoverageCount(cityName);
+
+      const areas =
+        selectedCity.areas ||
+        getCityAreas(cityName);
+
+
+      return (
+        <div className="sa-location-page">
+
+          <button
+            type="button"
+            className="sa-back-button"
+            onClick={() => setSelectedCity(null)}
+          >
+            ← Back to Service Areas
+          </button>
+
+
+          <div className="sa-location-header">
+
+            {selectedCity.isBranch && (
+              <div className="sa-branch-badge">
+                Branch City
+              </div>
+            )}
+
+            <h1>
+              Packers and Movers in {cityName}
+            </h1>
+
+            <p>
+              Professional packing and moving services
+              for homes, offices and vehicles across{" "}
+              {cityName}. Our team provides careful
+              packing, loading, transportation and
+              unloading support.
+            </p>
+
+          </div>
+
+
+          {/* ACTION BUTTONS */}
+
+          <div className="sa-location-actions">
+
+            <button
+              type="button"
+              className="sa-location-action primary"
+              onClick={() => setShowQuote(true)}
+            >
+              Get Free Quote
+            </button>
+
+            <a
+              className="sa-location-action dark"
+              href={`https://wa.me/918128538551?text=${encodeURIComponent(
+                `Hello Kiran Packers And Movers, I need moving service in ${cityName}.`
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp Us
+            </a>
+
+            <a
+              className="sa-location-action dark"
+              href={`tel:${callNow}`}
+            >
+              Call Now
+            </a>
+
+          </div>
+
+
+          {/* COVERAGE COUNT */}
+
+          <div className="sa-covered-count-box">
+
+            <div className="sa-covered-count-text">
+
+              <strong>
+                Areas covered across {cityName}
+              </strong>
+
+              <span>
+                We move to and from these areas on
+                the same terms and the same rates.
+              </span>
+
+            </div>
+
+            <div className="sa-covered-number-wrap">
+
+              <div className="sa-covered-number">
+                {coverage}
+              </div>
+
+              <div className="sa-covered-number-label">
+                AREAS
               </div>
 
             </div>
 
           </div>
 
-        </section>
 
-        {/* SERVICES */}
+          {/* QUICK INFORMATION */}
 
-        <section
-          id="services"
-          className="section alt services-section"
-        >
+          <div className="sa-detail-grid">
 
-          <div className="container">
+            <div className="sa-detail-card">
 
-            <div className="section-heading reveal">
-
-              <div className="eyebrow">
-                OUR SERVICES
-              </div>
-
-              <h2 className="blink-text">
-                Moving solutions for
-                different requirements.
-              </h2>
+              <h4>
+                Stairs Included
+              </h4>
 
               <p>
-                From household belongings
-                to office equipment, our
-                services are designed around
-                the practical stages of
-                relocation.
+                Stairs are included in the moving
+                service. We do not charge separately
+                by floor for standard moves.
               </p>
 
             </div>
 
-            <div className="service-grid">
 
-              {services.map(
-                (service, index) => (
+            <div className="sa-detail-card">
+
+              <h4>
+                GST Invoice
+              </h4>
+
+              <p>
+                GST invoice support is available
+                for eligible moving services.
+              </p>
+
+            </div>
+
+
+            <div className="sa-detail-card">
+
+              <h4>
+                Open 24 Hours
+              </h4>
+
+              <p>
+                Moving support is available 24 hours
+                a day, all 7 days, subject to booking.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              ACTUAL AREAS
+          ================================================= */}
+
+          <div className="sa-covered-areas-section">
+
+            <div className="sa-covered-areas-heading">
+
+              <div className="sa-eyebrow">
+                LOCAL COVERAGE
+              </div>
+
+              <h2>
+                Areas Also Covered Across {cityName}
+              </h2>
+
+              <p className="sa-covered-intro">
+                We move to and from these areas on
+                the same terms and the same rates.
+              </p>
+
+            </div>
+
+
+            {areas.length > 0 ? (
+
+              <div className="sa-covered-areas-grid">
+
+                {areas.map((area) => (
 
                   <div
-                    className="service-card reveal"
-                    key={service.title}
-                    style={{
-                      transitionDelay:
-                        `${index * 70}ms`,
-                    }}
+                    key={area}
+                    className="sa-covered-area-card"
                   >
 
-                    <div className="service-icon">
-                      {service.icon}
-                    </div>
+                    <span className="sa-covered-area-bullet">
+                      •
+                    </span>
 
-                    <h3 className="blink-text">
-                      {service.title}
-                    </h3>
-
-                    <p>
-                      {service.text}
-                    </p>
-
-                    <span
-                      className="service-link"
-                      onClick={() =>
-                        setSelectedService(
-                          service
-                        )
-                      }
-                    >
-                      Learn More →
+                    <span>
+                      {area}
                     </span>
 
                   </div>
 
-                )
-              )}
+                ))}
+
+              </div>
+
+            ) : (
+
+              <div className="sa-empty">
+                Service coverage details for this
+                location are available through our
+                moving team.
+              </div>
+
+            )}
+
+          </div>
+
+
+          {/* =================================================
+              LOCAL CHARGES
+          ================================================= */}
+
+          <div className="sa-pricing-section">
+
+            <h2 className="sa-section-title">
+              Local Moving Charges
+            </h2>
+
+            <div className="sa-pricing-table-wrap">
+
+              <table className="sa-pricing-table">
+
+                <thead>
+
+                  <tr>
+                    <th>
+                      Move Type
+                    </th>
+
+                    <th>
+                      Estimated Price
+                    </th>
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>1RK</td>
+                    <td>₹3,200 – ₹4,300</td>
+                  </tr>
+
+                  <tr>
+                    <td>1BHK</td>
+                    <td>₹5,300 – ₹7,200</td>
+                  </tr>
+
+                  <tr>
+                    <td>2BHK</td>
+                    <td>₹8,500 – ₹11,500</td>
+                  </tr>
+
+                  <tr>
+                    <td>3BHK</td>
+                    <td>₹12,800 – ₹17,300</td>
+                  </tr>
+
+                  <tr>
+                    <td>4BHK+</td>
+                    <td>₹18,100 – ₹24,400</td>
+                  </tr>
+
+                  <tr>
+                    <td>Office</td>
+                    <td>₹14,900 – ₹20,100</td>
+                  </tr>
+
+                </tbody>
+
+              </table>
 
             </div>
 
           </div>
 
-        </section>
 
-        {/* ADVANTAGES */}
+          {/* =================================================
+              WHAT WE DO
+          ================================================= */}
 
-        <section className="section dark">
+          <div className="sa-detail-grid">
 
-          <div className="container">
+            <div className="sa-detail-card">
 
-            <div className="section-heading reveal">
-
-              <div className="eyebrow">
-                WHY CHOOSE US
-              </div>
-
-              <h2 className="blink-text">
-                Practical support at
-                every stage.
-              </h2>
+              <h4>
+                House Shifting
+              </h4>
 
               <p>
-                A relocation becomes easier
-                when packing, loading,
-                transportation and delivery
-                are planned properly.
+                Complete household packing,
+                loading, transportation, unloading
+                and placement support.
               </p>
 
             </div>
 
-            <div className="advantage-grid">
 
-              {advantages.map(
-                (item, index) => (
+            <div className="sa-detail-card">
 
-                  <div
-                    className="advantage-card reveal"
-                    key={item.title}
-                    style={{
-                      transitionDelay:
-                        `${index * 80}ms`,
-                    }}
-                  >
-
-                    <div className="advantage-icon">
-                      {item.icon}
-                    </div>
-
-                    <h3 className="blink-text">
-                      {item.title}
-                    </h3>
-
-                    <p>
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                )
-              )}
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* PROCESS */}
-
-        <section
-          id="process"
-          className="section"
-        >
-
-          <div className="container">
-
-            <div className="section-heading reveal">
-
-              <div className="eyebrow">
-                OUR PROCESS
-              </div>
-
-              <h2 className="blink-text">
-                Simple steps from pickup
-                to delivery.
-              </h2>
+              <h4>
+                Office Relocation
+              </h4>
 
               <p>
-                We keep the moving process
-                easy to understand so you know
-                what happens at each stage.
+                Organized office packing and
+                transportation for furniture,
+                equipment and documents.
               </p>
 
             </div>
 
-            <div className="process-grid">
 
-              {process.map(
-                (item, index) => (
+            <div className="sa-detail-card">
 
-                  <div
-                    className="process-card reveal"
-                    key={item.number}
-                    style={{
-                      transitionDelay:
-                        `${index * 70}ms`,
-                    }}
-                  >
+              <h4>
+                Intercity Relocation
+              </h4>
 
-                    <div className="process-number blink-text">
-                      {item.number}
-                    </div>
-
-                    <h3>
-                      {item.title}
-                    </h3>
-
-                    <p>
-                      {item.text}
-                    </p>
-
-                  </div>
-
-                )
-              )}
+              <p>
+                Door-to-door moving support from{" "}
+                {cityName} to destinations
+                across India.
+              </p>
 
             </div>
 
           </div>
 
-        </section>
 
-        {/* AREAS */}
+          {/* FINAL QUOTE */}
 
-        <section
-          id="areas"
-          className="section alt sa-areas-section"
-        >
+          <div className="sa-location-actions">
 
-          {!selectedCity ? (
-            <div className="sa-services-page">
+            <button
+              type="button"
+              className="sa-location-action primary"
+              onClick={() => setShowQuote(true)}
+            >
+              Get Your Free Moving Quote
+            </button>
 
-              <div className="sa-services-container">
+          </div>
 
-                <div className="sa-heading">
+        </div>
+      );
 
-                  <div className="sa-eyebrow">
-                    SERVICE AREAS
-                  </div>
+    }
 
-                  <h1>
-                    40+ cities. One truck away.
-                  </h1>
 
-                  <p>
-                    We provide organised packing and moving support across Telangana and major cities beyond. Select a city to view its moving details.
-                  </p>
+    /* =================================================
+       MAIN AREAS DIRECTORY
+    ================================================= */
 
-                </div>
+    return (
+      <div className="sa-services-page">
 
-                <div className="sa-search-area">
-                  <div className="sa-search-box">
-                    <span className="sa-search-icon">⌕</span>
-                    <input
-                      type="search"
-                      className="sa-search-input"
-                      value={searchCity}
-                      onChange={(event) =>
-                        setSearchCity(event.target.value)
-                      }
-                      placeholder="Search your city"
-                      aria-label="Search your city"
-                    />
-                  </div>
+        <div className="sa-page-top">
 
-                  <button
-                    type="button"
-                    className="sa-add-location-button"
-                    onClick={() => setShowAddLocation(true)}
-                  >
-                    + Add New Location
-                  </button>
-                </div>
+          <div className="sa-eyebrow">
+            SERVICE AREAS
+          </div>
 
-                <div className="sa-search-count">
-                  Showing {filteredScreenshotServiceAreas.length + filteredCustomLocations.length} locations
-                </div>
+          <h2>
+            40+ Cities. One Truck Away.
+          </h2>
 
-                <div className="sa-cities-grid">
+          <p>
+            Explore our moving service locations
+            across Telangana, Andhra Pradesh and
+            selected cities across South India.
+            Select a city to see the areas we cover.
+          </p>
 
-                  {[
-                    ...filteredScreenshotServiceAreas.map((area) => ({
-                      ...area,
-                      isCustom: false,
-                    })),
-                    ...filteredCustomLocations.map((area) => ({
-                      ...area,
-                      isCustom: true,
-                    })),
-                  ].map((area) => (
+        </div>
 
+
+        {/* SEARCH */}
+
+        <div className="sa-search-row">
+
+          <div className="sa-search-box">
+
+            <input
+              type="text"
+              value={searchCity}
+              onChange={(event) =>
+                setSearchCity(event.target.value)
+              }
+              placeholder="Search city..."
+            />
+
+          </div>
+
+        </div>
+
+
+        {/* STATE LIST */}
+
+        {stateOrder.map((stateName) => {
+
+          const cities =
+            filteredCities.filter(
+              (city) => city.state === stateName
+            );
+
+
+          if (!cities.length) {
+            return null;
+          }
+
+
+          return (
+            <div
+              key={stateName}
+              className="sa-state-block"
+            >
+
+              <div className="sa-state-heading">
+
+                <span className="sa-state-heading-line" />
+
+                <h3>
+                  {stateName}
+                </h3>
+
+              </div>
+
+
+              <div className="sa-cities-grid">
+
+                {cities.map((area) => {
+
+                  const coverage =
+                    getCoverageCount(area.city);
+
+
+                  return (
                     <div
-                      key={`${area.city}-${area.isCustom ? "custom" : "default"}`}
+                      key={area.city}
                       className="sa-city-card"
                       role="button"
                       tabIndex={0}
-                      onClick={() =>
-                        setSelectedCity(getCityDetails(area))
-                      }
+                      onClick={() => {
+
+                        setSelectedCity({
+                          ...area,
+                          coverage,
+                          areas:
+                            getCityAreas(area.city)
+                        });
+
+                      }}
                       onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
+
+                        if (
+                          event.key === "Enter" ||
+                          event.key === " "
+                        ) {
+
                           event.preventDefault();
-                          setSelectedCity(getCityDetails(area));
+
+                          setSelectedCity({
+                            ...area,
+                            coverage,
+                            areas:
+                              getCityAreas(area.city)
+                          });
+
                         }
+
                       }}
                     >
 
-                      <span className="sa-city-icon">
-                        📍
-                      </span>
+                      <div className="sa-city-card-content">
 
-                      <span className="sa-city-card-content">
-                        <span className="sa-city-card-title">
+                        <div className="sa-city-card-title">
                           {area.city}
-                        </span>
+                        </div>
 
-                        <span className="sa-city-card-subtitle">
-                          Packers & Movers
-                        </span>
 
-                        {area.isCustom && (
-                          <button
-                            type="button"
-                            className="sa-delete-location-button"
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              handleDeleteCustomLocation(area.city);
-                            }}
-                          >
-                            🗑 Delete Location
-                          </button>
-                        )}
-                      </span>
-
-                      <span className="sa-city-arrow">
-                        ↗
-                      </span>
-
-                    </div>
-
-                  ))}
-
-                </div>
-
-                {filteredScreenshotServiceAreas.length === 0 &&
-                  filteredCustomLocations.length === 0 && (
-                    <div className="sa-no-results">
-                      No city found for <strong>{searchCity}</strong>. Try another city name or add a new location.
-                    </div>
-                  )}
-
-              </div>
-
-            </div>
-          ) : (
-            <div className="sa-location-page">
-
-              <div className="sa-location-container">
-
-                <button
-                  type="button"
-                  className="sa-back-button"
-                  onClick={() => setSelectedCity(null)}
-                >
-                  ← Back to Service Areas
-                </button>
-
-                <div className="sa-breadcrumb">
-                  Home <span>/</span> Locations <span>/</span> {selectedCity.city}
-                </div>
-
-                <div className="sa-location-hero">
-
-                  <div className="sa-location-hero-copy">
-
-                    <div className="sa-location-state">
-                      {selectedCity.district || "Telangana"}
-                    </div>
-
-                    <h1>
-                      Packers and Movers in {selectedCity.city}
-                    </h1>
-
-                    <p className="sa-location-lead">
-                      Starting from <strong>{selectedCity.startingPrice}</strong> for local shifting in {selectedCity.city} — {selectedCity.movingTime}. Licensed, insured, and focused on organised moving support.
-                    </p>
-
-                    <div className="sa-location-actions">
-
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => setShowQuote(true)}
-                      >
-                        Get Free Quote for {selectedCity.city} Move
-                      </button>
-
-                      <button
-                        type="button"
-                        className="btn btn-dark-outline"
-                        onClick={callNow}
-                      >
-                        📞 Call Now
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                  <div className="sa-location-summary">
-                    <div>
-                      <span>Starting price</span>
-                      <strong>{selectedCity.startingPrice}</strong>
-                    </div>
-                    <div>
-                      <span>Service distance</span>
-                      <strong>{selectedCity.distance}</strong>
-                    </div>
-                    <div>
-                      <span>Location</span>
-                      <strong>{selectedCity.location}</strong>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div className="sa-location-content-grid">
-
-                  <div>
-
-                    <div className="sa-location-section">
-                      <div className="sa-eyebrow">MOVING IN {selectedCity.city.toUpperCase()}</div>
-                      <h2>Moving in {selectedCity.city}, done right</h2>
-                      <p>{selectedCity.description}</p>
-                    </div>
-
-                    <div className="sa-location-section">
-                      <h3>Local landmarks</h3>
-                      <div className="sa-landmark-list">
-                        {selectedCity.landmarks.map((landmark) => (
-                          <div key={landmark} className="sa-landmark-item">
-                            <span>📍</span>
-                            {landmark}
+                        {area.isBranch && (
+                          <div className="sa-city-card-subtitle">
+                            Branch
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        )}
 
-                    <div className="sa-location-section sa-challenge-card">
-                      <h3>{selectedCity.city} moving challenges</h3>
-                      <p>{selectedCity.challenges}</p>
-                    </div>
 
-                    <div className="sa-testimonial">
-                      <div className="sa-quote-mark">“</div>
-                      <p>{selectedCity.testimonial}</p>
-                      <strong>— {selectedCity.testimonialBy}</strong>
-                    </div>
+                        <div className="sa-city-card-coverage">
+                          {coverage} areas covered
+                        </div>
 
-                  </div>
-
-                  <div className="sa-location-map-card">
-                    <div className="sa-map-card-heading">
-                      <div>
-                        <span>📍</span>
-                        <strong>{selectedCity.city}, Telangana</strong>
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedCity.location)}`,
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                      >
-                        Open in Google Maps ↗
-                      </button>
                     </div>
+                  );
 
-                    <div className="sa-map-visual" aria-label={`${selectedCity.city} location map`}>
-                      <div className="sa-map-area one" />
-                      <div className="sa-map-area two" />
-                      <div className="sa-map-road one" />
-                      <div className="sa-map-road two" />
-                      <div className="sa-map-road three" />
-                      <div className="sa-map-road four" />
-                      <div className="sa-map-marker" aria-hidden="true" />
-                      <div className="sa-map-label">
-                        {selectedCity.city}, Telangana
-                      </div>
-                    </div>
-
-                    <p>
-                      Serving all of {selectedCity.city}, Telangana from our Karimnagar head office.
-                    </p>
-                  </div>
-
-                </div>
-
-                <div className="sa-services-list-section">
-                  <div className="sa-eyebrow">OUR SERVICES IN {selectedCity.city.toUpperCase()}</div>
-                  <h2>Our services in {selectedCity.city}</h2>
-                  <div className="sa-service-price-grid">
-                    {selectedCity.services.map(([name, price]) => (
-                      <div className="sa-service-price-card" key={name}>
-                        <span>{name}</span>
-                        <strong>{price}</strong>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="sa-location-bottom-cta">
-                  <div>
-                    <div className="sa-eyebrow">READY TO MOVE?</div>
-                    <h2>Plan your {selectedCity.city} move with Kiran Packers And Movers.</h2>
-                    <p>Share your requirement and we can discuss packing, loading, transportation and delivery support.</p>
-                  </div>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => setShowQuote(true)}
-                  >
-                    Get Free Quote
-                  </button>
-                </div>
+                })}
 
               </div>
 
             </div>
+          );
+
+        })}
+
+
+        {/* CUSTOM LOCATIONS */}
+
+        {customLocations.length > 0 && (
+
+          <div className="sa-state-block">
+
+            <div className="sa-state-heading">
+
+              <span className="sa-state-heading-line" />
+
+              <h3>
+                Added Locations
+              </h3>
+
+            </div>
+
+
+            <div className="sa-cities-grid">
+
+              {customLocations.map((area) => {
+
+                const cityName =
+                  area.city ||
+                  area.name ||
+                  "Location";
+
+                const coverage =
+                  getCoverageCount(cityName);
+
+
+                return (
+                  <div
+                    key={`custom-${cityName}`}
+                    className="sa-city-card"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+
+                      setSelectedCity({
+                        ...area,
+                        city: cityName,
+                        coverage,
+                        areas:
+                          getCityAreas(cityName)
+                      });
+
+                    }}
+                    onKeyDown={(event) => {
+
+                      if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                      ) {
+
+                        event.preventDefault();
+
+                        setSelectedCity({
+                          ...area,
+                          city: cityName,
+                          coverage,
+                          areas:
+                            getCityAreas(cityName)
+                        });
+
+                      }
+
+                    }}
+                  >
+
+                    <div className="sa-city-card-content">
+
+                      <div className="sa-city-card-title">
+                        {cityName}
+                      </div>
+
+                      <div className="sa-city-card-coverage">
+                        {coverage} areas covered
+                      </div>
+
+
+                      <button
+                        type="button"
+                        className="sa-delete-location-button"
+                        onClick={(event) => {
+
+                          event.stopPropagation();
+
+                          handleDeleteCustomLocation(
+                            cityName
+                          );
+
+                        }}
+                      >
+                        🗑 Delete Location
+                      </button>
+
+                    </div>
+
+                  </div>
+                );
+
+              })}
+
+            </div>
+
+          </div>
+
+        )}
+
+
+        {/* EMPTY SEARCH */}
+
+        {filteredCities.length === 0 &&
+          customLocations.length === 0 && (
+
+            <div className="sa-empty">
+              No service area found for "{searchCity}".
+            </div>
+
           )}
 
-        </section>
 
-        {/* MOVING JOURNAL */}
+        {/* ADD LOCATION */}
 
-        <section
-          id="journal"
-          className="section journal-section"
-        >
+        <div className="sa-add-location-row">
 
-          <div className="container">
+          <button
+            type="button"
+            className="sa-add-location-button"
+            onClick={() => setShowAddLocation(true)}
+          >
+            + Add Service Location
+          </button>
 
-            <div className="section-heading reveal">
+        </div>
 
-              <div className="eyebrow">
-                THE MOVING JOURNAL
-              </div>
+      </div>
+    );
 
-              <h2 className="blink-text">
-                Guides worth packing.
-              </h2>
+  })()}
 
-              <p>
-                Helpful moving guides,
-                checklists and packing tips
-                to make your next relocation
-                more organised.
-              </p>
+</section>
 
-            </div>
-
-            <div className="journal-grid">
-
-              {guides.map(
-                (guide, index) => (
-
-                  <article
-                    className="journal-card reveal"
-                    key={guide.title}
-                    style={{
-                      transitionDelay:
-                        `${index * 100}ms`,
-                    }}
-                  >
-
-                    <div className="journal-icon">
-                      {guide.icon}
-                    </div>
-
-                    <div className="journal-meta">
-                      {guide.category}
-                      {" "}•{" "}
-                      {guide.time}
-                    </div>
-
-                    <h3 className="blink-text">
-                      {guide.title}
-                    </h3>
-
-                    <p>
-                      {guide.text}
-                    </p>
-
-                    <button
-                      className="journal-read"
-                      onClick={() =>
-                        setSelectedGuide(
-                          guide
-                        )
-                      }
-                    >
-                      Read Guide →
-                    </button>
-
-                  </article>
-
-                )
-              )}
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* CTA */}
-
-        <section className="cta">
-
-          <div className="container cta-inner">
-
-            <div className="reveal">
-
-              <h2 className="blink-text">
-                Planning your next move?
-              </h2>
-
-              <p>
-                Share your shifting
-                requirement with Kiran
-                Packers And Movers and
-                let us discuss the right
-                moving support for you.
-              </p>
-
-            </div>
-
-            <div className="cta-actions reveal">
-
-              <button
-                className="btn btn-primary"
-                onClick={() =>
-                  setShowQuote(true)
-                }
-              >
-                Get Free Quote
-              </button>
-
-              <button
-                className="btn btn-light"
-                onClick={openWhatsApp}
-              >
-                WhatsApp
-              </button>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* FAQ */}
-
-        <section className="section faq-section">
-
-          <div className="container">
-
-            <div className="section-heading reveal">
-
-              <div className="eyebrow">
-                FAQ
-              </div>
-
-              <h2 className="blink-text">
-                Frequently asked
-                questions.
-              </h2>
-
-              <p>
-                A few common questions
-                about packing and moving
-                services.
-              </p>
-
-            </div>
-
-            <div className="faq-grid">
-
-              {faqs.map(
-                (faq, index) => (
-
-                  <div
-                    className="faq-item reveal"
-                    key={faq.q}
-                    style={{
-                      transitionDelay:
-                        `${index * 60}ms`,
-                    }}
-                  >
-
-                    <h3 className="blink-text">
-                      {faq.q}
-                    </h3>
-
-                    <p>
-                      {faq.a}
-                    </p>
-
-                  </div>
-
-                )
-              )}
-
-            </div>
-
-          </div>
-
-        </section>
-
+        
         {/* CONTACT */}
 
         <section
@@ -6504,14 +9944,6 @@ export default function App() {
                     }
                   >
                     Areas
-                  </button>
-
-                  <button
-                    onClick={() =>
-                      scrollToSection("journal")
-                    }
-                  >
-                    Journal
                   </button>
 
                   <button
