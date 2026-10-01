@@ -5819,45 +5819,32 @@ export default function App() {
 
   #home.hero {
     width: 100%;
-
     min-height: 0 !important;
     height: auto !important;
-
     padding: 18px 12px 0 !important;
-
     margin: 0 !important;
-
     box-sizing: border-box;
-
     overflow-x: hidden;
     overflow-y: visible;
   }
 
-
   #home .hero-layout {
     width: 100%;
     max-width: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 10px !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-content {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-
     margin: 0 !important;
     padding: 0 !important;
-
     box-sizing: border-box;
   }
 
@@ -5869,14 +5856,10 @@ export default function App() {
   #home .hero-badge {
     width: fit-content;
     max-width: 100%;
-
     margin: 0 0 7px !important;
-
     padding: 7px 10px !important;
-
     font-size: 9px !important;
     line-height: 1.25 !important;
-
     box-sizing: border-box;
   }
 
@@ -5888,21 +5871,14 @@ export default function App() {
   #home .hero-content h1 {
     width: 100%;
     max-width: 100%;
-
     margin: 0 0 7px !important;
-
     font-size: 30px !important;
     line-height: 1.05 !important;
-
     letter-spacing: -0.5px;
-
     text-align: left;
-
     overflow-wrap: break-word;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-content h1 span {
     display: inline;
@@ -5916,12 +5892,9 @@ export default function App() {
   #home .hero-main-matter {
     width: 100%;
     max-width: 100%;
-
     margin: 0 !important;
-
     font-size: 12px !important;
     line-height: 1.45 !important;
-
     box-sizing: border-box;
   }
 
@@ -5933,49 +5906,36 @@ export default function App() {
   #home .hero-extra-matter {
     width: 100%;
     max-width: 100%;
-
     margin: 9px 0 0 !important;
     padding: 0 !important;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-extra-intro {
     width: 100%;
     max-width: 100%;
-
     padding: 11px !important;
-
     margin: 0 !important;
-
     border-radius: 12px;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-extra-label {
     font-size: 8px !important;
     line-height: 1.2 !important;
   }
 
-
   #home .hero-extra-intro h3 {
     margin: 5px 0 !important;
-
     font-size: 17px !important;
     line-height: 1.15 !important;
   }
 
-
   #home .hero-extra-intro p {
     margin: 0 0 6px !important;
-
     font-size: 11px !important;
     line-height: 1.4 !important;
   }
-
 
   #home .hero-extra-intro p:last-child {
     margin-bottom: 0 !important;
@@ -5988,36 +5948,24 @@ export default function App() {
 
   #home .hero-animation-card {
     position: relative !important;
-
     width: 100%;
     max-width: 100%;
-
     height: 165px !important;
-
     margin: 10px 0 0 !important;
     padding: 0 !important;
-
     box-sizing: border-box;
-
     overflow: hidden !important;
-
     border-radius: 13px;
   }
 
-
   #home .kiran-about-animation {
     position: relative !important;
-
     width: 100% !important;
-
     height: 165px !important;
     min-height: 165px !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
     overflow: hidden !important;
-
     box-sizing: border-box;
   }
 
@@ -6028,35 +5976,23 @@ export default function App() {
 
   #home .kiran-about-title {
     position: relative !important;
-
     z-index: 30 !important;
-
     display: block !important;
-
     padding-top: 9px !important;
-
     font-size: 15px !important;
     line-height: 1.2 !important;
-
     text-align: center;
-
     visibility: visible !important;
     opacity: 1 !important;
   }
 
-
   #home .kiran-about-subtitle {
     position: relative !important;
-
     z-index: 30 !important;
-
     display: block !important;
-
     font-size: 9px !important;
     line-height: 1.2 !important;
-
     text-align: center;
-
     visibility: visible !important;
     opacity: 1 !important;
   }
@@ -6068,11 +6004,8 @@ export default function App() {
 
   #home .kiran-speed-line {
     position: absolute !important;
-
     z-index: 4 !important;
-
     display: block !important;
-
     visibility: visible !important;
     opacity: 1 !important;
   }
@@ -6084,18 +6017,12 @@ export default function App() {
 
   #home .kiran-road {
     position: absolute !important;
-
     z-index: 3 !important;
-
     left: 0 !important;
     right: 0 !important;
-
     bottom: 15px !important;
-
     width: 100% !important;
-
     display: block !important;
-
     visibility: visible !important;
     opacity: 1 !important;
   }
@@ -6107,26 +6034,17 @@ export default function App() {
 
   #home .kiran-truck {
     position: absolute !important;
-
     z-index: 20 !important;
-
     display: block !important;
-
     visibility: visible !important;
     opacity: 1 !important;
-
     left: 50% !important;
-
     bottom: 17px !important;
-
     width: 170px !important;
     max-width: none !important;
-
     height: auto !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
     transform-origin: center bottom !important;
 
     animation:
@@ -6135,7 +6053,6 @@ export default function App() {
       ease-in-out
       infinite !important;
   }
-
 
   @keyframes mobileKiranTruck {
 
@@ -6173,7 +6090,6 @@ export default function App() {
     opacity: 1 !important;
   }
 
-
   #home .kiran-truck-body {
     display: block !important;
   }
@@ -6202,18 +6118,12 @@ export default function App() {
   #home .home-location-message {
     width: 100%;
     max-width: 100%;
-
     margin: 6px 0 0 !important;
-
     padding: 6px 8px !important;
-
     font-size: 9px !important;
     line-height: 1.35 !important;
-
     text-align: center;
-
     overflow-wrap: anywhere;
-
     box-sizing: border-box;
   }
 
@@ -6235,38 +6145,27 @@ export default function App() {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-
     margin: 0 !important;
-
     padding: 13px 11px 0 !important;
-
     border-radius: 14px;
-
     overflow: hidden;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-quote-kicker {
     font-size: 8px !important;
     line-height: 1.2 !important;
   }
 
-
   #home .hero-quote-card h2 {
     margin: 4px 0 5px !important;
-
     font-size: 21px !important;
     line-height: 1.1 !important;
-
     text-align: left;
   }
 
-
   #home .hero-quote-intro {
     margin: 0 0 8px !important;
-
     font-size: 10px !important;
     line-height: 1.35 !important;
   }
@@ -6279,30 +6178,21 @@ export default function App() {
   #home .hero-price-box {
     width: 100%;
     max-width: 100%;
-
     margin: 0 0 8px !important;
-
     padding: 8px !important;
-
     border-radius: 8px;
-
     box-sizing: border-box;
   }
 
-
   #home .hero-price-box strong {
     display: block;
-
     font-size: 9px !important;
     line-height: 1.25 !important;
   }
 
-
   #home .hero-price-box span {
     display: block;
-
     margin-top: 2px !important;
-
     font-size: 8px !important;
     line-height: 1.25 !important;
   }
@@ -6315,65 +6205,46 @@ export default function App() {
   #home .hero-quote-form {
     width: 100%;
     max-width: 100%;
-
     margin: 0 !important;
     padding: 0 !important;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-quote-fields {
     width: 100%;
     max-width: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 6px !important;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-form-group {
     width: 100%;
     min-width: 0;
-
     margin: 0 !important;
-
     box-sizing: border-box;
   }
 
-
   #home .hero-form-group label {
     display: block;
-
     margin-bottom: 2px !important;
-
     font-size: 8px !important;
     line-height: 1.2 !important;
   }
-
 
   #home .hero-form-group input,
   #home .hero-form-group select {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-
     height: 37px !important;
     min-height: 37px !important;
-
     padding: 0 9px !important;
-
     font-size: 11px !important;
-
     border-radius: 7px;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-form-group input::placeholder {
     font-size: 10px !important;
@@ -6387,27 +6258,19 @@ export default function App() {
   #home .hero-form-price {
     width: 100%;
     max-width: 100%;
-
     padding: 8px !important;
-
     margin: 1px 0 0 !important;
-
     display: flex;
     flex-direction: column;
-
     gap: 2px !important;
-
     border-radius: 8px;
-
     box-sizing: border-box;
   }
-
 
   #home .hero-form-price strong {
     font-size: 8px !important;
     line-height: 1.25 !important;
   }
-
 
   #home .hero-form-price span {
     font-size: 8px !important;
@@ -6422,18 +6285,12 @@ export default function App() {
   #home .hero-quote-submit {
     width: 100%;
     max-width: 100%;
-
     height: 40px !important;
     min-height: 40px !important;
-
     margin: 7px 0 0 !important;
-
     padding: 8px 12px !important;
-
     font-size: 11px !important;
-
     border-radius: 8px;
-
     box-sizing: border-box;
   }
 
@@ -6446,34 +6303,37 @@ export default function App() {
   #home .mobile-home-city-strip {
     display: block !important;
 
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 18px !important;
+    min-height: 18px !important;
+    max-height: 18px !important;
 
     margin: 2px 0 0 !important;
     padding: 0 !important;
 
-    height: 20px !important;
+    overflow: hidden !important;
 
     line-height: 0 !important;
 
-    overflow: hidden;
-
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 
-
   #home .mobile-home-city-track {
-    width: max-content;
+    width: max-content !important;
 
-    display: flex;
+    height: 18px !important;
 
-    gap: 6px;
+    display: flex !important;
+
+    gap: 6px !important;
 
     margin: 0 !important;
 
-    padding: 2px 0 0 !important;
+    padding: 1px 0 0 !important;
 
-    white-space: nowrap;
+    white-space: nowrap !important;
 
     line-height: 1 !important;
 
@@ -6481,9 +6341,8 @@ export default function App() {
       mobileCityScroll
       18s
       linear
-      infinite;
+      infinite !important;
   }
-
 
   #home .mobile-home-city-pill {
     flex: 0 0 auto;
@@ -6497,7 +6356,6 @@ export default function App() {
 
     white-space: nowrap;
   }
-
 
   @keyframes mobileCityScroll {
 
@@ -6513,60 +6371,74 @@ export default function App() {
 
 
   /* =======================================================
-     IMPORTANT:
-     REMOVE ALL EXTRA SPACE AFTER HOME
+     HOME MUST END EXACTLY HERE
   ======================================================= */
 
-  #home .mobile-home-city-strip,
-  #home .mobile-home-city-track,
-  #home .hero-quote-card,
-  #home .hero-quote-form {
-    margin-bottom: 0 !important;
-  }
-
-
-  #home .mobile-home-city-strip {
-    border: 0 !important;
-  }
-
-
   #home.hero {
+    margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+  }
+
+  #home.hero::before,
+  #home.hero::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  #home .hero-quote-card,
+  #home .hero-quote-form,
+  #home .mobile-home-city-strip,
+  #home .mobile-home-city-track {
     margin-bottom: 0 !important;
   }
 
 
   /* =======================================================
-     ABOUT STARTS IMMEDIATELY AFTER HOME
+     ABOUT MUST START IMMEDIATELY AFTER HOME
   ======================================================= */
 
   #about {
-    width: 100%;
+    display: block !important;
 
-    margin-top: 0 !important;
+    position: relative !important;
 
-    padding-top: 4px !important;
-    padding-bottom: 12px !important;
+    width: 100% !important;
 
-    box-sizing: border-box;
+    margin: 0 !important;
 
-    overflow: hidden;
+    padding: 0 0 12px !important;
+
+    top: 0 !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
   }
 
+  #about::before,
+  #about::after {
+    display: none !important;
+    content: none !important;
+  }
 
   #about .container {
-    width: 100%;
+    width: 100% !important;
 
-    box-sizing: border-box;
+    margin: 0 !important;
+
+    padding-top: 0 !important;
+
+    box-sizing: border-box !important;
   }
 
-
   #about .about-grid {
-    width: 100%;
+    width: 100% !important;
 
-    display: grid;
+    display: grid !important;
 
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
 
     gap: 12px !important;
 
@@ -6574,152 +6446,29 @@ export default function App() {
 
     padding: 0 !important;
 
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
-
-
-  /* =======================================================
-     ABOUT IMAGE
-  ======================================================= */
 
   #about .about-image {
-    width: 100%;
-
-    height: 210px !important;
-
     margin: 0 !important;
-
-    border-radius: 12px;
-
-    box-sizing: border-box;
-  }
-
-
-  #about .about-photo-grid {
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 0;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow: hidden;
-  }
-
-
-  #about .about-photo-card {
-    width: 100%;
-    height: 100%;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow: hidden;
-  }
-
-
-  #about .about-photo-card img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-  #about .about-photo-card::after {
-    left: 7px !important;
-    bottom: 7px !important;
-
-    padding: 5px 7px !important;
-
-    font-size: 6.5px !important;
-
-    border-radius: 14px;
   }
 
 
   /* =======================================================
-     ABOUT CONTENT
+     GLOBAL SECTION OVERRIDE - MOBILE ONLY
   ======================================================= */
 
-  #about .about-content {
-    width: 100%;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    box-sizing: border-box;
+  section#about.section {
+    margin-top: 0 !important;
   }
 
-
-  #about .about-content .eyebrow {
-    margin: 0 0 5px !important;
-  }
-
-
-  #about .about-content h3 {
-    margin: 0 0 8px !important;
-
-    font-size: 27px !important;
-    line-height: 1.08 !important;
-  }
-
-
-  #about .about-content p {
-    margin: 0 0 7px !important;
-
-    font-size: 12.5px !important;
-
-    line-height: 1.5 !important;
+  section#about {
+    margin-top: 0 !important;
   }
 
 
   /* =======================================================
-     ABOUT POINTS
-  ======================================================= */
-
-  #about .about-points {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 5px 7px !important;
-
-    margin: 10px 0 0 !important;
-
-    box-sizing: border-box;
-  }
-
-
-  #about .point {
-    padding: 7px 8px !important;
-
-    font-size: 9.5px !important;
-
-    line-height: 1.3 !important;
-
-    border-radius: 8px;
-
-    box-sizing: border-box;
-  }
-
-
-  /* =======================================================
-     STOP MOBILE SMOOTH SCROLL
-     DOES NOT CHANGE DESKTOP
+     STOP SMOOTH ANCHOR SCROLL ON MOBILE
   ======================================================= */
 
   html {
@@ -6735,107 +6484,94 @@ export default function App() {
 
 @media (max-width: 420px) {
 
-  /* HOME */
-
   #home.hero {
     padding: 17px 10px 0 !important;
+    padding-bottom: 0 !important;
   }
-
 
   #home .hero-content h1 {
     font-size: 28px !important;
   }
 
-
   #home .hero-main-matter {
     font-size: 11px !important;
   }
-
 
   #home .hero-extra-intro {
     padding: 10px !important;
   }
 
-
   #home .hero-extra-intro h3 {
     font-size: 16px !important;
   }
-
 
   #home .hero-extra-intro p {
     font-size: 10px !important;
   }
 
-
   #home .hero-animation-card {
     height: 155px !important;
   }
-
 
   #home .kiran-about-animation {
     height: 155px !important;
     min-height: 155px !important;
   }
 
-
   #home .kiran-truck {
     width: 165px !important;
-
     bottom: 15px !important;
   }
-
 
   #home .hero-quote-card {
     padding: 12px 10px 0 !important;
   }
 
-
   #home .hero-quote-card h2 {
     font-size: 20px !important;
+  }
+
+  #home .mobile-home-city-strip {
+    height: 18px !important;
+    min-height: 18px !important;
+    max-height: 18px !important;
+    margin-top: 1px !important;
   }
 
 
   /* ABOUT */
 
   #about {
-    padding: 4px 0 10px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
   }
-
 
   #about .about-grid {
     gap: 11px !important;
   }
 
-
   #about .about-image {
     height: 190px !important;
   }
 
-
   #about .about-content h3 {
     font-size: 25px !important;
-
     margin-bottom: 7px !important;
   }
 
-
   #about .about-content p {
     font-size: 11.5px !important;
-
     line-height: 1.45 !important;
-
     margin-bottom: 6px !important;
   }
-
 
   #about .about-points {
     margin-top: 8px !important;
   }
 
-
   #about .point {
     padding: 6px 7px !important;
-
     font-size: 9px !important;
   }
 
@@ -6848,114 +6584,98 @@ export default function App() {
 
 @media (max-width: 360px) {
 
-  /* HOME */
-
   #home.hero {
     padding: 16px 8px 0 !important;
+    padding-bottom: 0 !important;
   }
-
 
   #home .hero-content h1 {
     font-size: 26px !important;
   }
 
-
   #home .hero-badge {
     font-size: 8px !important;
   }
-
 
   #home .hero-main-matter {
     font-size: 10px !important;
   }
 
-
   #home .hero-extra-intro h3 {
     font-size: 15px !important;
   }
-
 
   #home .hero-extra-intro p {
     font-size: 9.5px !important;
   }
 
-
   #home .hero-animation-card {
     height: 145px !important;
   }
-
 
   #home .kiran-about-animation {
     height: 145px !important;
     min-height: 145px !important;
   }
 
-
   #home .kiran-truck {
     width: 155px !important;
-
     bottom: 13px !important;
   }
-
 
   #home .hero-quote-card {
     padding: 11px 9px 0 !important;
   }
 
-
   #home .hero-quote-card h2 {
     font-size: 19px !important;
   }
 
-
   #home .hero-quote-intro {
     font-size: 9px !important;
+  }
+
+  #home .mobile-home-city-strip {
+    height: 17px !important;
+    min-height: 17px !important;
+    max-height: 17px !important;
   }
 
 
   /* ABOUT */
 
   #about {
-    padding: 4px 0 9px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 9px !important;
   }
-
 
   #about .about-grid {
     gap: 10px !important;
   }
 
-
   #about .about-image {
     height: 180px !important;
   }
 
-
   #about .about-content h3 {
     font-size: 24px !important;
-
     margin-bottom: 6px !important;
   }
 
-
   #about .about-content p {
     font-size: 10.5px !important;
-
     line-height: 1.4 !important;
-
     margin-bottom: 5px !important;
   }
 
-
   #about .about-points {
     margin-top: 7px !important;
-
     gap: 4px 6px !important;
   }
 
-
   #about .point {
     padding: 6px !important;
-
     font-size: 8.5px !important;
   }
 
@@ -6989,16 +6709,11 @@ export default function App() {
 
   <div className="hero-layout">
 
-    {/* =====================================================
-        LEFT HERO CONTENT
-    ===================================================== */}
-
     <div className="hero-content reveal show">
 
       <div className="hero-badge blink-text">
         🚚 PACKING • MOVING • RELOCATION
       </div>
-
 
       <h1 className="blink-text">
         Move with{" "}
@@ -7008,15 +6723,11 @@ export default function App() {
         Settle with ease.
       </h1>
 
-
       <p className="blink-text hero-main-matter">
         Professional packing and moving support. Careful handling
         for homes and offices. Reliable relocation assistance across
         Karimnagar and beyond.
       </p>
-
-
-      {/* EXTRA CONTENT */}
 
       <div className="hero-extra-matter">
 
@@ -7171,9 +6882,7 @@ export default function App() {
     </div>
 
 
-    {/* =====================================================
-        QUOTE CARD
-    ===================================================== */}
+    {/* QUOTE CARD */}
 
     <div className="hero-quote-card reveal show">
 
@@ -7189,7 +6898,6 @@ export default function App() {
         Tell us a few details about your moving requirement.
       </p>
 
-
       <div className="hero-price-box">
 
         <strong>
@@ -7201,7 +6909,6 @@ export default function App() {
         </span>
 
       </div>
-
 
       <form
         onSubmit={submitQuote}
@@ -7222,7 +6929,6 @@ export default function App() {
 
           </div>
 
-
           <div className="hero-form-group">
 
             <label>Phone Number</label>
@@ -7234,7 +6940,6 @@ export default function App() {
             />
 
           </div>
-
 
           <div className="hero-form-group">
 
@@ -7248,7 +6953,6 @@ export default function App() {
 
           </div>
 
-
           <div className="hero-form-group">
 
             <label>To Location</label>
@@ -7260,7 +6964,6 @@ export default function App() {
             />
 
           </div>
-
 
           <div className="hero-form-group">
 
@@ -7286,7 +6989,6 @@ export default function App() {
 
           </div>
 
-
           <div className="hero-form-group">
 
             <label>Move Size</label>
@@ -7310,7 +7012,6 @@ export default function App() {
             </select>
 
           </div>
-
 
           <div className="hero-form-group">
 
@@ -7337,7 +7038,6 @@ export default function App() {
 
           </div>
 
-
           <div className="hero-form-price">
 
             <strong>
@@ -7356,7 +7056,6 @@ export default function App() {
 
         </div>
 
-
         <button
           type="submit"
           className="hero-quote-submit"
@@ -7365,10 +7064,7 @@ export default function App() {
         </button>
 
 
-        {/* =================================================
-            MOBILE CITY SCROLL
-            ALWAYS AFTER SUBMIT
-        ================================================= */}
+        {/* MOBILE CITY SCROLL */}
 
         <div className="mobile-home-city-strip">
 
@@ -7620,7 +7316,6 @@ export default function App() {
 
     #about .point:hover {
       background: rgba(225, 132, 67, 0.15);
-
       transform: translateY(-2px);
     }
 
@@ -7675,35 +7370,28 @@ export default function App() {
       #about .about-photo-card::after {
         left: 7px !important;
         bottom: 7px !important;
-
         padding: 5px 7px !important;
-
         font-size: 6.5px !important;
       }
 
       #about .about-content h3 {
         font-size: 27px !important;
-
         margin-bottom: 8px !important;
       }
 
       #about .about-content p {
         font-size: 12.5px !important;
-
         line-height: 1.5 !important;
-
         margin-bottom: 7px !important;
       }
 
       #about .about-points {
         margin-top: 10px !important;
-
         gap: 5px 7px !important;
       }
 
       #about .point {
         padding: 7px 8px !important;
-
         font-size: 9.5px !important;
       }
 
@@ -7717,7 +7405,7 @@ export default function App() {
     @media (max-width: 420px) {
 
       #about {
-        padding: 4px 0 10px !important;
+        padding: 0 0 10px !important;
         margin-top: 0 !important;
       }
 
@@ -7748,7 +7436,7 @@ export default function App() {
     @media (max-width: 360px) {
 
       #about {
-        padding: 4px 0 9px !important;
+        padding: 0 0 9px !important;
         margin-top: 0 !important;
       }
 
@@ -7788,17 +7476,9 @@ export default function App() {
 
     <div className="about-grid">
 
-
-      {/* =================================================
-          TWO IMAGES
-      ================================================= */}
-
       <div className="about-image reveal">
 
         <div className="about-photo-grid">
-
-
-          {/* IMAGE 1 */}
 
           <div className="about-photo-card">
 
@@ -7808,9 +7488,6 @@ export default function App() {
             />
 
           </div>
-
-
-          {/* IMAGE 2 */}
 
           <div className="about-photo-card">
 
@@ -7825,10 +7502,6 @@ export default function App() {
 
       </div>
 
-
-      {/* =================================================
-          ABOUT CONTENT
-      ================================================= */}
 
       <div className="about-content reveal">
 
