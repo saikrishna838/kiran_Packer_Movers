@@ -5799,364 +5799,852 @@ export default function App() {
   </nav>
 
 </header>
-        {/* HERO */}
+        <style>{`
 
-        <section
-          id="home"
-          className="hero"
-        >
+/* =========================================================
+   MOBILE VERSION ONLY — DO NOT CHANGE DESKTOP
+========================================================= */
 
-          <div className="hero-layout">
+@media (max-width: 768px) {
 
-            <div className="hero-content reveal show">
+  /* HERO */
+  #home.hero {
+    width: 100%;
+    min-height: auto;
+    padding: 85px 14px 35px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
 
-              <div className="hero-badge blink-text">
-                🚚 PACKING • MOVING • RELOCATION
+  /* LAYOUT */
+  #home .hero-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+  }
+
+  /* =====================================================
+     LEFT HERO CONTENT
+  ===================================================== */
+
+  #home .hero-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  #home .hero-badge {
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 1.35;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  #home .hero-content h1 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0 12px;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  #home .hero-content h1 span {
+    display: inline;
+  }
+
+  #home .hero-main-matter {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* =====================================================
+     EXTRA MATTER
+  ===================================================== */
+
+  #home .hero-extra-matter {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+
+  #home .hero-extra-intro {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    text-align: left;
+    border-radius: 16px;
+  }
+
+  #home .hero-extra-label {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  #home .hero-extra-intro h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    margin: 8px 0 10px;
+  }
+
+  #home .hero-extra-intro p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 0 9px;
+  }
+
+  /* =====================================================
+     ANIMATION
+  ===================================================== */
+
+  #home .hero-animation-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 18px;
+    border-radius: 16px;
+  }
+
+  #home .kiran-about-animation {
+    width: 100%;
+    height: 185px;
+    min-height: 185px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  #home .kiran-about-title {
+    font-size: 16px;
+    padding-top: 13px;
+    text-align: center;
+  }
+
+  #home .kiran-about-subtitle {
+    font-size: 9px;
+    text-align: center;
+  }
+
+  #home .kiran-truck {
+    transform: translateX(-50%) scale(0.72);
+    transform-origin: center bottom;
+  }
+
+  /* Keep existing animation but scale truck on mobile */
+  @keyframes kiranTruckMoveMobile {
+    0% {
+      transform: translateX(-55%) scale(0.72);
+    }
+
+    50% {
+      transform: translateX(-45%) scale(0.72);
+    }
+
+    100% {
+      transform: translateX(-55%) scale(0.72);
+    }
+  }
+
+  #home .kiran-truck {
+    animation-name: kiranTruckMoveMobile;
+  }
+
+  /* =====================================================
+     LOCATION MESSAGE
+  ===================================================== */
+
+  #home .home-location-message {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 9px 10px;
+    font-size: 10px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  /* =====================================================
+     CITY STRIP
+  ===================================================== */
+
+  #home .home-city-strip {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 18px;
+  }
+
+  #home .home-city-track {
+    width: max-content;
+    display: flex;
+    gap: 7px;
+    padding: 7px 0;
+    white-space: nowrap;
+  }
+
+  #home .home-city-pill {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    font-size: 10px;
+    border-radius: 20px;
+  }
+
+  /* =====================================================
+     QUOTE CARD
+  ===================================================== */
+
+  #home .hero-quote-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 18px 14px;
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  #home .hero-quote-kicker {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  #home .hero-quote-card h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 6px 0 7px;
+  }
+
+  #home .hero-quote-intro {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 13px;
+  }
+
+  /* =====================================================
+     PRICE BOX
+  ===================================================== */
+
+  #home .hero-price-box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    margin-bottom: 14px;
+    border-radius: 11px;
+  }
+
+  #home .hero-price-box strong {
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  #home .hero-price-box span {
+    display: block;
+    font-size: 9px;
+    line-height: 1.45;
+    margin-top: 3px;
+  }
+
+  /* =====================================================
+     FORM
+  ===================================================== */
+
+  #home .hero-quote-form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #home .hero-quote-fields {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  #home .hero-form-group {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  #home .hero-form-group label {
+    display: block;
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  #home .hero-form-group input,
+  #home .hero-form-group select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 43px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    border-radius: 9px;
+  }
+
+  #home .hero-form-group input::placeholder {
+    font-size: 11px;
+  }
+
+  /* =====================================================
+     PRICING
+  ===================================================== */
+
+  #home .hero-form-price {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 2px;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #home .hero-form-price strong {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  #home .hero-form-price span {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  /* =====================================================
+     SUBMIT BUTTON
+  ===================================================== */
+
+  #home .hero-quote-submit {
+    width: 100%;
+    max-width: 100%;
+    min-height: 46px;
+    box-sizing: border-box;
+    margin-top: 13px;
+    padding: 11px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 420px
+========================================================= */
+
+@media (max-width: 420px) {
+
+  #home.hero {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #home .hero-content h1 {
+    font-size: 31px;
+  }
+
+  #home .hero-main-matter {
+    font-size: 12px;
+  }
+
+  #home .hero-extra-intro {
+    padding: 14px;
+  }
+
+  #home .hero-extra-intro h3 {
+    font-size: 18px;
+  }
+
+  #home .hero-extra-intro p {
+    font-size: 11px;
+  }
+
+  #home .kiran-about-animation {
+    height: 175px;
+    min-height: 175px;
+  }
+
+  #home .hero-quote-card {
+    padding: 16px 12px;
+  }
+
+  #home .hero-quote-card h2 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE — 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  #home.hero {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #home .hero-content h1 {
+    font-size: 28px;
+  }
+
+  #home .hero-badge {
+    font-size: 9px;
+  }
+
+  #home .hero-quote-card h2 {
+    font-size: 21px;
+  }
+
+  #home .hero-quote-intro {
+    font-size: 11px;
+  }
+
+}
+
+`}</style>
+
+
+<section
+  id="home"
+  className="hero"
+>
+
+  <div className="hero-layout">
+
+    <div className="hero-content reveal show">
+
+      <div className="hero-badge blink-text">
+        🚚 PACKING • MOVING • RELOCATION
+      </div>
+
+      <h1 className="blink-text">
+        Move with{" "}
+        <span>confidence.</span>{" "}
+        Settle with ease.
+      </h1>
+
+      <p className="blink-text hero-main-matter">
+        Professional packing and moving support. Careful handling for homes and offices. Reliable relocation assistance across Karimnagar and beyond.
+      </p>
+
+      <div className="hero-extra-matter">
+
+        <div className="hero-extra-intro">
+
+          <div className="hero-extra-label">
+            YOUR MOVE, PLANNED BETTER
+          </div>
+
+          <h3>
+            Complete Packing &amp; Moving Support
+          </h3>
+
+          <p>
+            Moving to a new home or office becomes easier when every stage is properly planned. Kiran Packers And Movers helps coordinate packing, loading, transportation, unloading and delivery according to your moving requirement.
+          </p>
+
+          <p>
+            Whether you are shifting within Karimnagar, moving to a nearby city or planning an intercity relocation, our team provides practical moving assistance from pickup to destination.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div className="hero-animation-card">
+
+        <div className="kiran-about-animation">
+
+          <div className="kiran-about-title">
+            Kiran Packers And Movers
+          </div>
+
+          <div className="kiran-about-subtitle">
+            Packing • Moving • Relocation
+          </div>
+
+          <div className="kiran-speed-line one" />
+          <div className="kiran-speed-line two" />
+          <div className="kiran-speed-line three" />
+
+          <div className="kiran-road" />
+
+          <div className="kiran-truck">
+            <div className="kiran-truck-body">
+              <div className="kiran-truck-name">KIRAN PACKERS</div>
+
+              <div className="kiran-truck-cabin">
+                <div className="kiran-truck-window" />
               </div>
 
-              <h1 className="blink-text">
-                Move with{" "}
-                <span>confidence.</span>{" "}
-                Settle with ease.
-              </h1>
-
-              <p className="blink-text hero-main-matter">
-                Professional packing and moving support. Careful handling for homes and offices. Reliable relocation assistance across Karimnagar and beyond.
-              </p>
-
-              <div className="hero-extra-matter">
-
-                <div className="hero-extra-intro">
-
-                  <div className="hero-extra-label">
-                    YOUR MOVE, PLANNED BETTER
-                  </div>
-
-                  <h3>
-                    Complete Packing &amp; Moving Support
-                  </h3>
-
-                  <p>
-                    Moving to a new home or office becomes easier when every stage is properly planned. Kiran Packers And Movers helps coordinate packing, loading, transportation, unloading and delivery according to your moving requirement.
-                  </p>
-
-                  <p>
-                    Whether you are shifting within Karimnagar, moving to a nearby city or planning an intercity relocation, our team provides practical moving assistance from pickup to destination.
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="hero-animation-card">
-
-                <div className="kiran-about-animation">
-
-                  <div className="kiran-about-title">
-                    Kiran Packers And Movers
-                  </div>
-
-                  <div className="kiran-about-subtitle">
-                    Packing • Moving • Relocation
-                  </div>
-
-                  <div className="kiran-speed-line one" />
-                  <div className="kiran-speed-line two" />
-                  <div className="kiran-speed-line three" />
-
-                  <div className="kiran-road" />
-
-                  <div className="kiran-truck">
-                    <div className="kiran-truck-body">
-                      <div className="kiran-truck-name">KIRAN PACKERS</div>
-                      <div className="kiran-truck-cabin">
-                        <div className="kiran-truck-window" />
-                      </div>
-                      <div className="kiran-wheel one" />
-                      <div className="kiran-wheel two" />
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-             
-
-              {locationMessage && (
-                <div className="home-location-message">
-                  {locationMessage}
-                  {userLocation && (
-                    <span>
-                      {" "}({userLocation.latitude.toFixed(5)}, {" "}
-                      {userLocation.longitude.toFixed(5)})
-                    </span>
-                  )}
-                </div>
-              )}
-
-             
-              <div className="home-city-strip">
-                <div className="home-city-track">
-                  {[
-                    "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
-                    "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
-                    "Warangal", "Hyderabad", "Nizamabad", "Adilabad",
-                    "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
-                    "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
-                    "Warangal", "Hyderabad", "Nizamabad", "Adilabad"
-                  ].map((city, index) => (
-                    <span className="home-city-pill" key={`${city}-${index}`}>
-                      {city}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
+              <div className="kiran-wheel one" />
+              <div className="kiran-wheel two" />
             </div>
+          </div>
 
-           <div className="hero-quote-card reveal show">
+        </div>
 
-  <div className="hero-quote-kicker">
-    FREE MOVING ESTIMATE
-  </div>
-
-  <h2>
-    Get Your Free Quote
-  </h2>
-
-  <p className="hero-quote-intro">
-    Tell us a few details about your moving requirement.
-  </p>
-
-  <div className="hero-price-box">
-    <strong>
-      INDICATIVE STARTING PRICE — ₹8,999+
-    </strong>
-
-    <span>
-      Final amount depends on move size and distance.
-    </span>
-  </div>
-
-  <form
-    onSubmit={submitQuote}
-    className="hero-quote-form"
-  >
-
-    <div className="hero-quote-fields">
-
-      {/* NAME */}
-      <div className="hero-form-group">
-        <label>Your Name</label>
-
-        <input
-          type="text"
-          placeholder="Enter your name"
-          required
-        />
       </div>
 
-      {/* PHONE */}
-      <div className="hero-form-group">
-        <label>Phone Number</label>
+      {locationMessage && (
+        <div className="home-location-message">
+          {locationMessage}
 
-        <input
-          type="tel"
-          placeholder="Enter phone number"
-          required
-        />
-      </div>
+          {userLocation && (
+            <span>
+              {" "}({userLocation.latitude.toFixed(5)}, {" "}
+              {userLocation.longitude.toFixed(5)})
+            </span>
+          )}
+        </div>
+      )}
 
-      {/* FROM */}
-      <div className="hero-form-group">
-        <label>From Location</label>
+      <div className="home-city-strip">
 
-        <input
-          type="text"
-          placeholder="Pickup location"
-          required
-        />
-      </div>
+        <div className="home-city-track">
 
-      {/* TO */}
-      <div className="hero-form-group">
-        <label>To Location</label>
+          {[
+            "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
+            "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
+            "Warangal", "Hyderabad", "Nizamabad", "Adilabad",
+            "Karimnagar", "Peddapalli", "Jagtial", "Sircilla",
+            "Vemulawada", "Ramagundam", "Mancherial", "Siddipet",
+            "Warangal", "Hyderabad", "Nizamabad", "Adilabad"
+          ].map((city, index) => (
+            <span
+              className="home-city-pill"
+              key={`${city}-${index}`}
+            >
+              {city}
+            </span>
+          ))}
 
-        <input
-          type="text"
-          placeholder="Destination"
-          required
-        />
-      </div>
-
-      {/* SERVICE */}
-      <div className="hero-form-group">
-        <label>Moving Type</label>
-
-        <select
-          required
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select service
-          </option>
-
-          <option>
-            House Shifting
-          </option>
-
-          <option>
-            Office Relocation
-          </option>
-
-          <option>
-            Local Shifting
-          </option>
-
-          <option>
-            Intercity Relocation
-          </option>
-
-          <option>
-            Vehicle Transportation
-          </option>
-
-          <option>
-            Packing &amp; Unpacking
-          </option>
-        </select>
-      </div>
-
-      {/* MOVE SIZE */}
-      <div className="hero-form-group">
-        <label>Move Size</label>
-
-        <select
-          required
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select move size
-          </option>
-
-          <option value="1bhk">
-            1 BHK
-          </option>
-
-          <option value="2bhk">
-            2 BHK
-          </option>
-
-          <option value="3bhk">
-            3 BHK
-          </option>
-
-          <option value="office">
-            Office / Commercial
-          </option>
-        </select>
-      </div>
-
-      {/* DISTANCE */}
-      <div className="hero-form-group">
-        <label>Approx. Distance</label>
-
-        <select
-          required
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select distance
-          </option>
-
-          <option value="0-10">
-            0 – 10 KM
-          </option>
-
-          <option value="10-25">
-            10 – 25 KM
-          </option>
-
-          <option value="25-50">
-            25 – 50 KM
-          </option>
-
-          <option value="50-100">
-            50 – 100 KM
-          </option>
-
-          <option value="100-250">
-            100 – 250 KM
-          </option>
-
-          <option value="250-500">
-            250 – 500 KM
-          </option>
-
-          <option value="500+">
-            500+ KM
-          </option>
-        </select>
-      </div>
-
-      {/* PRICING */}
-      <div className="hero-form-price">
-
-        <strong>
-          PRICING BASED ON DISTANCE
-        </strong>
-
-        <span>
-          0–10 KM: ₹8,999+
-        </span>
-
-        <span>
-          10–25 KM: ₹10,999+
-        </span>
-
-        <span>
-          25–50 KM: ₹13,999+
-        </span>
-
-        <span>
-          50–100 KM: ₹17,999+
-        </span>
-
-        <span>
-          100–250 KM: ₹22,999+
-        </span>
-
-        <span>
-          250–500 KM: ₹29,999+
-        </span>
-
-        <span>
-          500+ KM: ₹35,999+
-        </span>
+        </div>
 
       </div>
 
     </div>
 
-    <button
-      type="submit"
-      className="hero-quote-submit"
-    >
-      Submit Enquiry →
-    </button>
+    <div className="hero-quote-card reveal show">
 
-  </form>
+      <div className="hero-quote-kicker">
+        FREE MOVING ESTIMATE
+      </div>
 
-</div>
+      <h2>
+        Get Your Free Quote
+      </h2>
+
+      <p className="hero-quote-intro">
+        Tell us a few details about your moving requirement.
+      </p>
+
+      <div className="hero-price-box">
+
+        <strong>
+          INDICATIVE STARTING PRICE — ₹8,999+
+        </strong>
+
+        <span>
+          Final amount depends on move size and distance.
+        </span>
+
+      </div>
+
+      <form
+        onSubmit={submitQuote}
+        className="hero-quote-form"
+      >
+
+        <div className="hero-quote-fields">
+
+          {/* NAME */}
+
+          <div className="hero-form-group">
+
+            <label>
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+
           </div>
 
-        </section>
 
+          {/* PHONE */}
+
+          <div className="hero-form-group">
+
+            <label>
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              placeholder="Enter phone number"
+              required
+            />
+
+          </div>
+
+
+          {/* FROM */}
+
+          <div className="hero-form-group">
+
+            <label>
+              From Location
+            </label>
+
+            <input
+              type="text"
+              placeholder="Pickup location"
+              required
+            />
+
+          </div>
+
+
+          {/* TO */}
+
+          <div className="hero-form-group">
+
+            <label>
+              To Location
+            </label>
+
+            <input
+              type="text"
+              placeholder="Destination"
+              required
+            />
+
+          </div>
+
+
+          {/* SERVICE */}
+
+          <div className="hero-form-group">
+
+            <label>
+              Moving Type
+            </label>
+
+            <select
+              required
+              defaultValue=""
+            >
+
+              <option value="" disabled>
+                Select service
+              </option>
+
+              <option>
+                House Shifting
+              </option>
+
+              <option>
+                Office Relocation
+              </option>
+
+              <option>
+                Local Shifting
+              </option>
+
+              <option>
+                Intercity Relocation
+              </option>
+
+              <option>
+                Vehicle Transportation
+              </option>
+
+              <option>
+                Packing &amp; Unpacking
+              </option>
+
+            </select>
+
+          </div>
+
+
+          {/* MOVE SIZE */}
+
+          <div className="hero-form-group">
+
+            <label>
+              Move Size
+            </label>
+
+            <select
+              required
+              defaultValue=""
+            >
+
+              <option value="" disabled>
+                Select move size
+              </option>
+
+              <option value="1bhk">
+                1 BHK
+              </option>
+
+              <option value="2bhk">
+                2 BHK
+              </option>
+
+              <option value="3bhk">
+                3 BHK
+              </option>
+
+              <option value="office">
+                Office / Commercial
+              </option>
+
+            </select>
+
+          </div>
+
+
+          {/* DISTANCE */}
+
+          <div className="hero-form-group">
+
+            <label>
+              Approx. Distance
+            </label>
+
+            <select
+              required
+              defaultValue=""
+            >
+
+              <option value="" disabled>
+                Select distance
+              </option>
+
+              <option value="0-10">
+                0 – 10 KM
+              </option>
+
+              <option value="10-25">
+                10 – 25 KM
+              </option>
+
+              <option value="25-50">
+                25 – 50 KM
+              </option>
+
+              <option value="50-100">
+                50 – 100 KM
+              </option>
+
+              <option value="100-250">
+                100 – 250 KM
+              </option>
+
+              <option value="250-500">
+                250 – 500 KM
+              </option>
+
+              <option value="500+">
+                500+ KM
+              </option>
+
+            </select>
+
+          </div>
+
+
+          {/* PRICING */}
+
+          <div className="hero-form-price">
+
+            <strong>
+              PRICING BASED ON DISTANCE
+            </strong>
+
+            <span>
+              0–10 KM: ₹8,999+
+            </span>
+
+            <span>
+              10–25 KM: ₹10,999+
+            </span>
+
+            <span>
+              25–50 KM: ₹13,999+
+            </span>
+
+            <span>
+              50–100 KM: ₹17,999+
+            </span>
+
+            <span>
+              100–250 KM: ₹22,999+
+            </span>
+
+            <span>
+              250–500 KM: ₹29,999+
+            </span>
+
+            <span>
+              500+ KM: ₹35,999+
+            </span>
+
+          </div>
+
+        </div>
+
+        <button
+          type="submit"
+          className="hero-quote-submit"
+        >
+          Submit Enquiry →
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
        
-
-       {/* =====================================================
+{/* =====================================================
     ABOUT SECTION
 ===================================================== */}
 
@@ -6180,16 +6668,18 @@ export default function App() {
       align-items: center;
     }
 
-    /* ================================
-       ATTACHED IMAGE AREA
-    ================================= */
+    /* =================================================
+       TWO IMAGE AREA
+    ================================================= */
 
     #about .about-image {
       width: 100%;
+      overflow: hidden;
     }
 
     #about .about-photo-grid {
       width: 100%;
+      height: 350px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
@@ -6205,18 +6695,40 @@ export default function App() {
       overflow: hidden;
       margin: 0;
       padding: 0;
+      border: 0;
       border-radius: 0;
-      background: #f2f2f2;
+      background: transparent;
     }
 
+    /* =================================================
+       IMAGE ITSELF
+    ================================================= */
+
     #about .about-photo-card img {
+      position: absolute;
+      inset: 0;
+
       width: 100%;
       height: 100%;
+
       display: block;
       margin: 0;
       padding: 0;
-      object-fit: cover;
+      border: 0;
+
+      /*
+        FORCE IMAGE TO FILL
+        THE COMPLETE CARD
+      */
+      object-fit: fill;
       object-position: center;
+
+      max-width: none;
+      min-width: 100%;
+      min-height: 100%;
+
+      transform: none;
+
       transition: transform 0.5s ease;
     }
 
@@ -6224,21 +6736,31 @@ export default function App() {
       transform: scale(1.04);
     }
 
-    /* ================================
+    /* =================================================
        IMAGE LABELS
-    ================================= */
+    ================================================= */
 
     #about .about-photo-card::after {
       position: absolute;
+
       left: 12px;
       bottom: 12px;
+
       padding: 7px 11px;
+
       border-radius: 18px;
+
       background: rgba(6, 26, 48, 0.9);
+
       color: #ffffff;
+
       font-size: 8px;
       font-weight: 800;
       letter-spacing: 1px;
+
+      line-height: normal;
+
+      z-index: 5;
     }
 
     #about .about-photo-card:first-child::after {
@@ -6249,9 +6771,9 @@ export default function App() {
       content: "PACKING & MOVING";
     }
 
-    /* ================================
+    /* =================================================
        ABOUT CONTENT
-    ================================= */
+    ================================================= */
 
     #about .about-content {
       width: 100%;
@@ -6263,49 +6785,67 @@ export default function App() {
 
     #about .about-content h3 {
       margin: 0 0 10px;
+
       color: #061A30;
+
       font-size: clamp(27px, 3.2vw, 40px);
+
       line-height: 1.08;
+
       font-weight: 900;
     }
 
     #about .about-content p {
       margin: 0 0 8px;
+
       color: #526477;
+
       font-size: 13px;
+
       line-height: 1.55;
     }
 
-    /* ================================
+    /* =================================================
        ABOUT POINTS
-    ================================= */
+    ================================================= */
 
     #about .about-points {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 6px 9px;
+
       margin-top: 12px;
     }
 
     #about .point {
       padding: 8px 10px;
+
       border-radius: 8px;
+
       background: rgba(225, 132, 67, 0.08);
+
       border: 1px solid rgba(225, 132, 67, 0.13);
+
       color: #17324d;
+
       font-size: 10.5px;
+
       font-weight: 700;
+
       line-height: 1.3;
     }
 
     #about .point:hover {
       background: rgba(225, 132, 67, 0.15);
+
       transform: translateY(-2px);
     }
 
-    /* ================================
+    /* =================================================
        TABLET
-    ================================= */
+    ================================================= */
 
     @media (max-width: 900px) {
 
@@ -6315,7 +6855,12 @@ export default function App() {
 
       #about .about-grid {
         grid-template-columns: 1fr;
+
         gap: 20px;
+      }
+
+      #about .about-photo-grid {
+        height: 280px;
       }
 
       #about .about-photo-card {
@@ -6324,9 +6869,9 @@ export default function App() {
 
     }
 
-    /* ================================
+    /* =================================================
        MOBILE
-    ================================= */
+    ================================================= */
 
     @media (max-width: 620px) {
 
@@ -6338,40 +6883,66 @@ export default function App() {
         gap: 17px;
       }
 
+      #about .about-photo-grid {
+        height: 210px;
+
+        border-radius: 12px;
+      }
+
       #about .about-photo-card {
         height: 210px;
       }
 
-      #about .about-photo-grid {
-        border-radius: 12px;
-      }
-
       #about .about-photo-card::after {
         left: 7px;
+
         bottom: 7px;
+
         padding: 5px 7px;
+
         font-size: 6.5px;
       }
 
       #about .about-content h3 {
         font-size: 27px;
+
         margin-bottom: 8px;
       }
 
       #about .about-content p {
         font-size: 12.5px;
+
         line-height: 1.5;
+
         margin-bottom: 7px;
       }
 
       #about .about-points {
         margin-top: 10px;
+
         gap: 5px 7px;
       }
 
       #about .point {
         padding: 7px 8px;
+
         font-size: 9.5px;
+      }
+
+    }
+
+    /* =================================================
+       SMALL MOBILE
+    ================================================= */
+
+    @media (max-width: 420px) {
+
+      #about .about-photo-grid {
+        height: 190px;
+      }
+
+      #about .about-photo-card {
+        height: 190px;
       }
 
     }
@@ -6384,13 +6955,16 @@ export default function App() {
     <div className="about-grid">
 
 
-      {/* ================================
-          ATTACHED IMAGES
-      ================================= */}
+      {/* =================================================
+          TWO IMAGES
+      ================================================= */}
 
       <div className="about-image reveal">
 
         <div className="about-photo-grid">
+
+
+          {/* IMAGE 1 */}
 
           <div className="about-photo-card">
 
@@ -6402,6 +6976,8 @@ export default function App() {
           </div>
 
 
+          {/* IMAGE 2 */}
+
           <div className="about-photo-card">
 
             <img
@@ -6411,14 +6987,15 @@ export default function App() {
 
           </div>
 
+
         </div>
 
       </div>
 
 
-      {/* ================================
+      {/* =================================================
           ABOUT CONTENT
-      ================================= */}
+      ================================================= */}
 
       <div className="about-content reveal">
 
