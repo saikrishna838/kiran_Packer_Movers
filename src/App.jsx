@@ -5169,34 +5169,7 @@ export default function App() {
 
       <div className="app">
 
-        {/* TOP BAR */}
-
-        <div className="topbar">
-
-          <div className="topbar-inner">
-
-            <span>
-
-              <strong>
-                Kiran Packers And Movers
-              </strong>{" "}
-
-              — Moving made organised and simple.
-
-            </span>
-
-            <span>
-
-              📍 Mukarampura, Karimnagar
-              &nbsp; | &nbsp;
-              📞 {company.phone}
-
-            </span>
-
-          </div>
-
-        </div>
-
+    
     {/* =====================================================
     HEADER + SERVICES DROPDOWN CSS
 ===================================================== */}
@@ -5783,16 +5756,7 @@ export default function App() {
       </button>
 
 
-      {/* JOURNAL */}
-
-      <button
-        type="button"
-        onClick={() =>
-          scrollToSection("journal")
-        }
-      >
-        Journal
-      </button>
+  
 
 
       {/* CONTACT */}
