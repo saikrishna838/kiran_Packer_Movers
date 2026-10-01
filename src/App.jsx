@@ -5799,7 +5799,7 @@ export default function App() {
   </nav>
 
 </header>
-       {/* =========================================================
+  {/* =========================================================
     HOME SECTION
     DESKTOP VERSION UNCHANGED
     MOBILE VERSION ONLY MODIFIED
@@ -5814,14 +5814,17 @@ export default function App() {
 
 @media (max-width: 768px) {
 
-  /* HOME */
+  /* =======================================================
+     HOME — TIGHT MOBILE FIT
+  ======================================================= */
 
   #home.hero {
     width: 100%;
+    min-width: 0;
     min-height: 100vh;
     height: auto;
 
-    padding: 90px 16px 45px;
+    padding: 76px 10px 24px;
 
     box-sizing: border-box;
 
@@ -5829,21 +5832,33 @@ export default function App() {
     overflow-y: visible;
   }
 
-  /* HERO LAYOUT */
+  #home,
+  #home * {
+    box-sizing: border-box;
+  }
+
+
+  /* =======================================================
+     HERO LAYOUT
+  ======================================================= */
 
   #home .hero-layout {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
 
-    gap: 28px;
+    gap: 14px;
 
     box-sizing: border-box;
   }
 
-  /* HERO CONTENT */
+
+  /* =======================================================
+     HERO CONTENT
+  ======================================================= */
 
   #home .hero-content {
     width: 100%;
@@ -5853,7 +5868,10 @@ export default function App() {
     box-sizing: border-box;
   }
 
-  /* BADGE */
+
+  /* =======================================================
+     BADGE
+  ======================================================= */
 
   #home .hero-badge {
     width: fit-content;
@@ -5861,40 +5879,48 @@ export default function App() {
 
     margin: 0;
 
-    padding: 9px 13px;
+    padding: 6px 9px;
 
     box-sizing: border-box;
 
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 8px;
+    line-height: 1.25;
 
     text-align: left;
+
+    white-space: normal;
   }
 
-  /* HEADING */
+
+  /* =======================================================
+     HEADING
+  ======================================================= */
 
   #home .hero-content h1 {
     width: 100%;
     max-width: 100%;
 
-    margin: 16px 0 13px;
+    margin: 10px 0 8px;
 
     box-sizing: border-box;
 
-    font-size: 34px;
-    line-height: 1.1;
-    letter-spacing: -0.8px;
+    font-size: 28px;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
 
     text-align: left;
 
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   #home .hero-content h1 span {
     display: inline;
   }
 
-  /* MAIN TEXT */
+
+  /* =======================================================
+     MAIN TEXT
+  ======================================================= */
 
   #home .hero-main-matter {
     width: 100%;
@@ -5904,19 +5930,22 @@ export default function App() {
 
     box-sizing: border-box;
 
-    font-size: 13px;
-    line-height: 1.65;
+    font-size: 11px;
+    line-height: 1.45;
 
     text-align: left;
   }
 
-  /* EXTRA CONTENT */
+
+  /* =======================================================
+     EXTRA CONTENT
+  ======================================================= */
 
   #home .hero-extra-matter {
     width: 100%;
     max-width: 100%;
 
-    margin-top: 20px;
+    margin-top: 10px;
 
     box-sizing: border-box;
   }
@@ -5925,32 +5954,34 @@ export default function App() {
     width: 100%;
     max-width: 100%;
 
-    padding: 16px;
+    padding: 11px;
 
     box-sizing: border-box;
 
-    border-radius: 16px;
+    border-radius: 12px;
 
     text-align: left;
+
+    overflow: hidden;
   }
 
   #home .hero-extra-label {
-    font-size: 9px;
-    line-height: 1.4;
+    font-size: 7.5px;
+    line-height: 1.25;
   }
 
   #home .hero-extra-intro h3 {
-    margin: 8px 0 10px;
+    margin: 5px 0 6px;
 
-    font-size: 19px;
-    line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.2;
   }
 
   #home .hero-extra-intro p {
-    margin: 0 0 10px;
+    margin: 0 0 6px;
 
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: 10px;
+    line-height: 1.42;
   }
 
   #home .hero-extra-intro p:last-child {
@@ -5958,30 +5989,32 @@ export default function App() {
   }
 
 
-  /* =====================================================
-     TRUCK ANIMATION
-  ===================================================== */
+  /* =======================================================
+     TRUCK ANIMATION CARD
+  ======================================================= */
 
   #home .hero-animation-card {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
-    margin-top: 20px;
+    margin-top: 10px;
 
     box-sizing: border-box;
 
     overflow: hidden;
 
-    border-radius: 16px;
+    border-radius: 12px;
   }
 
   #home .kiran-about-animation {
     position: relative;
 
     width: 100%;
+    max-width: 100%;
 
-    height: 210px;
-    min-height: 210px;
+    height: 168px;
+    min-height: 168px;
 
     box-sizing: border-box;
 
@@ -5992,10 +6025,10 @@ export default function App() {
     position: relative;
     z-index: 20;
 
-    padding-top: 14px;
+    padding-top: 10px;
 
-    font-size: 17px;
-    line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.2;
 
     text-align: center;
   }
@@ -6004,25 +6037,35 @@ export default function App() {
     position: relative;
     z-index: 20;
 
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 8px;
+    line-height: 1.25;
 
     text-align: center;
   }
 
+
+  /* =======================================================
+     ROAD
+  ======================================================= */
+
   #home .kiran-road {
     position: absolute;
+
     z-index: 2;
 
     left: 0;
     right: 0;
 
-    bottom: 20px;
+    bottom: 16px;
 
     width: 100%;
+    max-width: 100%;
   }
 
-  /* TRUCK */
+
+  /* =======================================================
+     TRUCK
+  ======================================================= */
 
   #home .kiran-truck {
     position: absolute !important;
@@ -6034,25 +6077,27 @@ export default function App() {
     opacity: 1 !important;
 
     left: 50%;
-    bottom: 25px;
+    bottom: 20px;
 
-    transform: translateX(-50%) scale(.75);
+    transform: translateX(-50%) scale(.64);
 
     transform-origin: center bottom;
+
+    max-width: none !important;
   }
 
   @keyframes mobileKiranTruck {
 
     0% {
-      transform: translateX(-58%) scale(.75);
+      transform: translateX(-58%) scale(.64);
     }
 
     50% {
-      transform: translateX(-42%) scale(.75);
+      transform: translateX(-42%) scale(.64);
     }
 
     100% {
-      transform: translateX(-58%) scale(.75);
+      transform: translateX(-58%) scale(.64);
     }
 
   }
@@ -6061,7 +6106,9 @@ export default function App() {
     animation-name: mobileKiranTruck !important;
 
     animation-duration: 5s;
+
     animation-timing-function: ease-in-out;
+
     animation-iteration-count: infinite;
   }
 
@@ -6074,30 +6121,42 @@ export default function App() {
   }
 
 
-  /* LOCATION MESSAGE */
+  /* =======================================================
+     LOCATION MESSAGE
+  ======================================================= */
 
   #home .home-location-message {
     width: 100%;
     max-width: 100%;
 
-    margin-top: 12px;
+    margin-top: 7px;
 
-    padding: 9px 10px;
+    padding: 6px 8px;
 
     box-sizing: border-box;
 
-    font-size: 10px;
-    line-height: 1.5;
+    font-size: 8px;
+    line-height: 1.35;
 
     text-align: center;
 
     overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
 
-  /* =====================================================
+  /* =======================================================
+     HIDE DESKTOP CITY BAR ONLY ON MOBILE
+  ======================================================= */
+
+  #home .hero-content > .home-city-strip {
+    display: none !important;
+  }
+
+
+  /* =======================================================
      QUOTE CARD
-  ===================================================== */
+  ======================================================= */
 
   #home .hero-quote-card {
     width: 100%;
@@ -6106,74 +6165,79 @@ export default function App() {
 
     margin: 0;
 
-    padding: 19px 14px;
+    padding: 14px 10px;
 
     box-sizing: border-box;
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     overflow: hidden;
   }
 
   #home .hero-quote-kicker {
-    font-size: 9px;
-    line-height: 1.4;
+    font-size: 8px;
+    line-height: 1.25;
   }
 
   #home .hero-quote-card h2 {
-    margin: 6px 0 8px;
+    margin: 4px 0 5px;
 
-    font-size: 24px;
-    line-height: 1.2;
+    font-size: 21px;
+    line-height: 1.15;
 
     text-align: left;
   }
 
   #home .hero-quote-intro {
-    margin: 0 0 13px;
+    margin: 0 0 8px;
 
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 1.35;
   }
 
 
-  /* STARTING PRICE */
+  /* =======================================================
+     STARTING PRICE
+  ======================================================= */
 
   #home .hero-price-box {
     width: 100%;
     max-width: 100%;
 
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 
-    padding: 11px;
+    padding: 8px;
 
     box-sizing: border-box;
 
-    border-radius: 11px;
+    border-radius: 8px;
   }
 
   #home .hero-price-box strong {
     display: block;
 
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 9px;
+    line-height: 1.25;
   }
 
   #home .hero-price-box span {
     display: block;
 
-    margin-top: 3px;
+    margin-top: 2px;
 
-    font-size: 9px;
-    line-height: 1.45;
+    font-size: 8px;
+    line-height: 1.25;
   }
 
 
-  /* FORM */
+  /* =======================================================
+     FORM
+  ======================================================= */
 
   #home .hero-quote-form {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
     box-sizing: border-box;
   }
@@ -6181,17 +6245,20 @@ export default function App() {
   #home .hero-quote-fields {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 10px;
+    gap: 7px;
 
     box-sizing: border-box;
   }
 
   #home .hero-form-group {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
 
     box-sizing: border-box;
@@ -6200,10 +6267,10 @@ export default function App() {
   #home .hero-form-group label {
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 
-    font-size: 10px;
-    line-height: 1.3;
+    font-size: 8px;
+    line-height: 1.2;
   }
 
   #home .hero-form-group input,
@@ -6212,87 +6279,82 @@ export default function App() {
     max-width: 100%;
     min-width: 0;
 
-    height: 43px;
+    height: 38px;
 
-    padding: 0 10px;
+    padding: 0 8px;
 
     box-sizing: border-box;
 
-    font-size: 12px;
+    font-size: 10px;
 
-    border-radius: 9px;
+    border-radius: 7px;
   }
 
   #home .hero-form-group input::placeholder {
-    font-size: 11px;
+    font-size: 9px;
   }
 
 
-  /* FORM PRICING */
+  /* =======================================================
+     FORM PRICING
+  ======================================================= */
 
   #home .hero-form-price {
     width: 100%;
     max-width: 100%;
 
-    padding: 12px;
+    padding: 8px;
 
-    margin-top: 2px;
+    margin-top: 1px;
 
     box-sizing: border-box;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 5px;
+    gap: 2px;
 
-    border-radius: 11px;
+    border-radius: 8px;
   }
 
   #home .hero-form-price strong {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 8px;
+    line-height: 1.25;
   }
 
   #home .hero-form-price span {
-    font-size: 10px;
-    line-height: 1.35;
+    font-size: 8px;
+    line-height: 1.2;
   }
 
 
-  /* SUBMIT */
+  /* =======================================================
+     SUBMIT
+  ======================================================= */
 
   #home .hero-quote-submit {
     width: 100%;
     max-width: 100%;
 
-    min-height: 46px;
+    min-height: 41px;
 
-    margin-top: 13px;
+    margin-top: 8px;
 
-    padding: 11px 14px;
+    padding: 9px 10px;
 
     box-sizing: border-box;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    border-radius: 10px;
+    border-radius: 8px;
   }
 
 
-  /* =====================================================
-     IMPORTANT
-     HIDE ORIGINAL DESKTOP CITY BAR ONLY ON MOBILE
-  ===================================================== */
-
-  #home .hero-content > .home-city-strip {
-    display: none !important;
-  }
-
-
-  /* =====================================================
+  /* =======================================================
      MOBILE CITY BAR
-     THIS ONE APPEARS AFTER SUBMIT
-  ===================================================== */
+     AFTER SUBMIT BUTTON
+  ======================================================= */
 
   #home .mobile-home-city-strip {
     display: block;
@@ -6300,36 +6362,44 @@ export default function App() {
     width: 100%;
     max-width: 100%;
 
-    margin-top: 18px;
+    margin-top: 8px;
 
     box-sizing: border-box;
 
     overflow: hidden;
+
+    position: relative;
   }
 
   #home .mobile-home-city-track {
     width: max-content;
+    max-width: none;
 
     display: flex;
 
-    gap: 8px;
+    align-items: center;
 
-    padding: 7px 0;
+    gap: 6px;
+
+    padding: 4px 0;
 
     white-space: nowrap;
 
     animation: mobileCityScroll 24s linear infinite;
+
+    will-change: transform;
   }
 
   #home .mobile-home-city-pill {
     flex: 0 0 auto;
 
-    padding: 7px 11px;
+    padding: 5px 8px;
 
-    font-size: 10px;
-    line-height: 1.2;
+    font-size: 8px;
 
-    border-radius: 20px;
+    line-height: 1.1;
+
+    border-radius: 16px;
 
     white-space: nowrap;
   }
@@ -6356,44 +6426,52 @@ export default function App() {
 @media (max-width: 420px) {
 
   #home.hero {
-    padding: 85px 12px 40px;
+    padding: 74px 9px 22px;
+  }
+
+  #home .hero-layout {
+    gap: 12px;
   }
 
   #home .hero-content h1 {
-    font-size: 31px;
+    font-size: 27px;
   }
 
   #home .hero-main-matter {
-    font-size: 12px;
+    font-size: 10.5px;
+  }
+
+  #home .hero-extra-matter {
+    margin-top: 8px;
   }
 
   #home .hero-extra-intro {
-    padding: 15px;
+    padding: 10px;
   }
 
   #home .hero-extra-intro h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   #home .hero-extra-intro p {
-    font-size: 11px;
+    font-size: 9.5px;
   }
 
   #home .kiran-about-animation {
-    height: 195px;
-    min-height: 195px;
+    height: 160px;
+    min-height: 160px;
   }
 
   #home .kiran-truck {
-    transform: translateX(-50%) scale(.70);
+    transform: translateX(-50%) scale(.60);
   }
 
   #home .hero-quote-card {
-    padding: 18px 13px;
+    padding: 13px 9px;
   }
 
   #home .hero-quote-card h2 {
-    font-size: 23px;
+    font-size: 20px;
   }
 
 }
@@ -6406,49 +6484,60 @@ export default function App() {
 @media (max-width: 360px) {
 
   #home.hero {
-    padding-left: 9px;
-    padding-right: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 70px;
+    padding-bottom: 20px;
   }
 
   #home .hero-content h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   #home .hero-badge {
-    font-size: 9px;
+    font-size: 7.5px;
   }
 
   #home .hero-main-matter {
-    font-size: 11px;
+    font-size: 10px;
+  }
+
+  #home .hero-extra-intro {
+    padding: 9px;
   }
 
   #home .hero-extra-intro h3 {
-    font-size: 17px;
+    font-size: 14px;
   }
 
   #home .hero-extra-intro p {
-    font-size: 10.5px;
+    font-size: 9px;
   }
 
   #home .kiran-about-animation {
-    height: 185px;
-    min-height: 185px;
+    height: 154px;
+    min-height: 154px;
   }
 
   #home .kiran-truck {
-    transform: translateX(-50%) scale(.64);
+    transform: translateX(-50%) scale(.56);
   }
 
   #home .hero-quote-card {
-    padding: 16px 11px;
+    padding: 12px 8px;
   }
 
   #home .hero-quote-card h2 {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   #home .hero-quote-intro {
-    font-size: 11px;
+    font-size: 9px;
+  }
+
+  #home .hero-form-group input,
+  #home .hero-form-group select {
+    height: 37px;
   }
 
 }
@@ -6481,21 +6570,31 @@ export default function App() {
 
   <div className="hero-layout">
 
+
     {/* =====================================================
         LEFT HERO CONTENT
     ===================================================== */}
 
     <div className="hero-content reveal show">
 
+
+      {/* BADGE */}
+
       <div className="hero-badge blink-text">
         🚚 PACKING • MOVING • RELOCATION
       </div>
+
+
+      {/* HEADING */}
 
       <h1 className="blink-text">
         Move with{" "}
         <span>confidence.</span>{" "}
         Settle with ease.
       </h1>
+
+
+      {/* MAIN TEXT */}
 
       <p className="blink-text hero-main-matter">
         Professional packing and moving support. Careful handling
@@ -6504,7 +6603,9 @@ export default function App() {
       </p>
 
 
-      {/* EXTRA CONTENT */}
+      {/* =====================================================
+          EXTRA CONTENT
+      ===================================================== */}
 
       <div className="hero-extra-matter">
 
@@ -6568,7 +6669,9 @@ export default function App() {
               </div>
 
               <div className="kiran-truck-cabin">
+
                 <div className="kiran-truck-window" />
+
               </div>
 
               <div className="kiran-wheel one" />
@@ -6583,7 +6686,9 @@ export default function App() {
       </div>
 
 
-      {/* LOCATION MESSAGE */}
+      {/* =====================================================
+          LOCATION MESSAGE
+      ===================================================== */}
 
       {locationMessage && (
 
@@ -6664,7 +6769,7 @@ export default function App() {
 
     {/* =====================================================
         QUOTE CARD
-        DESKTOP UNCHANGED
+        DESKTOP STRUCTURE UNCHANGED
     ===================================================== */}
 
     <div className="hero-quote-card reveal show">
@@ -6682,7 +6787,9 @@ export default function App() {
       </p>
 
 
-      {/* STARTING PRICE */}
+      {/* ===================================================
+          STARTING PRICE
+      =================================================== */}
 
       <div className="hero-price-box">
 
@@ -6697,7 +6804,9 @@ export default function App() {
       </div>
 
 
-      {/* FORM */}
+      {/* ===================================================
+          FORM
+      =================================================== */}
 
       <form
         onSubmit={submitQuote}
@@ -6918,7 +7027,9 @@ export default function App() {
           </div>
 
 
-          {/* PRICING */}
+          {/* =================================================
+              PRICING
+          ================================================= */}
 
           <div className="hero-form-price">
 
@@ -6959,7 +7070,9 @@ export default function App() {
         </div>
 
 
-        {/* SUBMIT */}
+        {/* =================================================
+            SUBMIT
+        ================================================= */}
 
         <button
           type="submit"
@@ -6971,7 +7084,7 @@ export default function App() {
 
         {/* =================================================
             MOBILE ONLY CITY BAR
-            DESKTOP DOES NOT SEE THIS
+            APPEARS AFTER SUBMIT
         ================================================= */}
 
         <div className="mobile-home-city-strip">
